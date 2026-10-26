@@ -9,12 +9,12 @@
 Оценка сети, каналы соседей, тест скорости, советы по настройке роутера<br>
 и скорость интернета прямо в строке меню.
 
-[![Последний релиз](https://img.shields.io/github/v/release/andrei-s96s/Efirometr?label=релиз&color=e83e5c)](https://github.com/andrei-s96s/Efirometr/releases/latest)
-[![Сборка](https://img.shields.io/github/actions/workflow/status/andrei-s96s/Efirometr/release.yml?label=сборка)](https://github.com/andrei-s96s/Efirometr/actions/workflows/release.yml)
+[![Последний релиз](https://img.shields.io/github/v/release/andrei-s96s/Efirometr?label=%D1%80%D0%B5%D0%BB%D0%B8%D0%B7&color=e83e5c&cacheSeconds=3600)](https://github.com/andrei-s96s/Efirometr/releases/latest)
+[![Сборка](https://img.shields.io/github/actions/workflow/status/andrei-s96s/Efirometr/release.yml?label=%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0)](https://github.com/andrei-s96s/Efirometr/actions/workflows/release.yml)
 ![macOS 15+](https://img.shields.io/badge/macOS-15%2B-black?logo=apple)
 ![Apple Silicon и Intel](https://img.shields.io/badge/Apple%20Silicon%20%2B%20Intel-universal-555)
 ![Swift 6](https://img.shields.io/badge/Swift-6-F05138?logo=swift&logoColor=white)
-[![Лицензия MIT](https://img.shields.io/badge/лицензия-MIT-blue)](LICENSE)
+[![Лицензия MIT](https://img.shields.io/badge/%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-MIT-blue)](LICENSE)
 
 ### [⬇️ Скачать для macOS (.dmg)](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.dmg)
 
