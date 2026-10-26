@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Build universal app
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then export VERSION="${GITHUB_REF_NAME#v}"; fi
+          ./build-app.sh
+
+      - name: Package .dmg and .zip
+        run: |
+          cd build
+          ditto -c -k --sequesterRsrc --keepParent "Эфирометр.app" Efirometr-macOS.zip
+          mkdir dmg && cp -R "Эфирометр.app" dmg/ && ln -s /Applications dmg/Applications
+          hdiutil create -volname "Эфирометр" -srcfolder dmg -ov -format UDZO Efirometr-macOS.dmg
+          shasum -a 256 Efirometr-macOS.dmg Efirometr-macOS.zip > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Efirometr-macOS
+          path: |
+            build/Efirometr-macOS.dmg
+            build/Efirometr-macOS.zip
+            build/SHA256SUMS.txt
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            build/Efirometr-macOS.dmg build/Efirometr-macOS.zip build/SHA256SUMS.txt \
+            --title "Эфирометр $GITHUB_REF_NAME" \
+            --notes-file .github/release-notes.md
