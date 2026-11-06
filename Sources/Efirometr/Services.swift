@@ -30,8 +30,8 @@ enum InterfaceCounters {
 enum Format {
     static func speed(_ bytesPerSecond: Double, compact: Bool = false) -> String {
         let bits = bytesPerSecond * 8
-        if compact && bits < 1000 { return bits < 50 ? "0К" : "0.\(Int(bits / 100))К" }
-        let units = compact ? ["б", "К", "М", "Г"] : ["бит/с", "Кбит/с", "Мбит/с", "Гбит/с"]
+        if compact && bits < 1000 { return bits < 50 ? String(localized: "0К") : String(localized: "0.\(Int(bits / 100))К") }
+        let units = compact ? [String(localized: "б"), String(localized: "К"), String(localized: "М"), String(localized: "Г")] : [String(localized: "бит/с"), String(localized: "Кбит/с"), String(localized: "Мбит/с"), String(localized: "Гбит/с")]
         var v = bits
         var i = 0
         while v >= 1000 && i < units.count - 1 { v /= 1000; i += 1 }

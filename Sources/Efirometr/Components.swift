@@ -362,7 +362,7 @@ struct RecommendationRow: View {
                     Text(rec.detail).font(.system(size: 13)).foregroundStyle(Theme.text2).fixedSize(horizontal: false, vertical: true).lineSpacing(2)
                     if !rec.steps.isEmpty {
                         HStack(spacing: 4) {
-                            Text(expanded ? "Скрыть инструкцию" : "Как сделать · шагов: \(rec.steps.count)")
+                            Text(expanded ? String(localized: "Скрыть инструкцию") : String(localized: "Как сделать · шагов: \(rec.steps.count)"))
                             Image(systemName: "chevron.down").rotationEffect(.degrees(expanded ? 180 : 0))
                         }
                         .font(.system(size: 12, weight: .semibold))

@@ -1,11 +1,17 @@
 import SwiftUI
 
 enum NetworkSort: String, CaseIterable, Identifiable {
-    case signal = "Сигнал"
-    case name = "Имя"
-    case channel = "Канал"
+    case signal, name, channel
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .signal: return String(localized: "Сигнал")
+        case .name: return String(localized: "Имя")
+        case .channel: return String(localized: "Канал")
+        }
+    }
 }
 
 /// Compact two-line list of networks — fits the window width, no horizontal scrolling.
@@ -41,7 +47,7 @@ struct NetworksView: View {
                     Card {
                         HStack(spacing: 10) {
                             if monitor.isScanning { ProgressView().controlSize(.small) }
-                            Text(monitor.isScanning ? "Сканирую эфир…" : "Сетей не найдено").foregroundStyle(Theme.text2)
+                            Text(monitor.isScanning ? String(localized: "Сканирую эфир…") : String(localized: "Сетей не найдено")).foregroundStyle(Theme.text2)
                         }
                     }
                 }
@@ -73,8 +79,8 @@ struct NetworksView: View {
 
     private func controls(count: Int) -> some View {
         HStack(spacing: 12) {
-            SegmentedControl(options: ["all"] + Band.allCases.map(\.rawValue), selection: $bandFilter) { $0 == "all" ? "Все" : $0 }
-            SegmentedControl(options: NetworkSort.allCases, selection: $sort) { $0.rawValue }
+            SegmentedControl(options: ["all"] + Band.allCases.map(\.rawValue), selection: $bandFilter) { id in id == "all" ? String(localized: "Все") : Band(rawValue: id)?.title ?? id }
+            SegmentedControl(options: NetworkSort.allCases, selection: $sort) { $0.title }
             HStack(spacing: 6) {
                 Image(systemName: "magnifyingglass").font(.system(size: 11)).foregroundStyle(Theme.text3)
                 TextField("Поиск по имени или BSSID", text: $search).textFieldStyle(.plain).font(.system(size: 12.5))
@@ -112,8 +118,8 @@ struct NetworkCard: View {
                     .font(.system(size: 14, weight: group.isMine ? .semibold : .medium))
                     .foregroundStyle(group.ssid == nil ? Theme.text2 : Theme.text)
                     .lineLimit(1)
-                if group.isCurrent { Badge(text: "подключено", icon: "checkmark", tint: Theme.good) }
-                else if group.isMine { Badge(text: "ваш роутер", tint: Theme.accent) }
+                if group.isCurrent { Badge(text: String(localized: "подключено"), icon: "checkmark", tint: Theme.good) }
+                else if group.isMine { Badge(text: String(localized: "ваш роутер"), tint: Theme.accent) }
                 Spacer(minLength: 8)
                 Text("\(best.rssi)").font(Theme.number(15)).foregroundStyle(Palette.rssi(best.rssi))
                 + Text(" dBm").font(.system(size: 11)).foregroundStyle(Theme.text3)
@@ -132,7 +138,7 @@ struct NetworkCard: View {
                      icon: group.weakestSecurity.score < 0.5 ? "lock.open" : "lock.fill")
                 if group.accessPoints > 1 {
                     dot
-                    meta("точек: \(group.accessPoints)", color: Theme.text2, icon: "point.3.connected.trianglepath.dotted")
+                    meta(String(localized: "точек: \(group.accessPoints)"), color: Theme.text2, icon: "point.3.connected.trianglepath.dotted")
                 }
             }
             .padding(.top, 7)
@@ -186,9 +192,9 @@ struct NetworkCard: View {
         let widths = Array(Set(radios.map(\.channel.width))).sorted()
         let tint = Self.color(b)
         return HStack(spacing: 5) {
-            Text(b.rawValue).font(.system(size: 11, weight: .semibold))
-            Text("кан. " + channels.map(String.init).joined(separator: ", ")).font(.system(size: 11).monospacedDigit())
-            Text(widths.map(String.init).joined(separator: "/") + " МГц").font(.system(size: 11)).opacity(0.75)
+            Text(b.title).font(.system(size: 11, weight: .semibold))
+            Text(String(localized: "кан. ") + channels.map(String.init).joined(separator: ", ")).font(.system(size: 11).monospacedDigit())
+            Text(widths.map(String.init).joined(separator: "/") + String(localized: " МГц")).font(.system(size: 11)).opacity(0.75)
             if radios.contains(where: { $0.channel.isDFS }) { Text("DFS").font(.system(size: 9, weight: .bold)).foregroundStyle(Theme.warn) }
             if radios.contains(where: { $0.channel.isLimited2G }) {
                 Image(systemName: "exclamationmark.triangle.fill").font(.system(size: 9)).foregroundStyle(Theme.warn)
@@ -200,7 +206,7 @@ struct NetworkCard: View {
         .overlay(Capsule().strokeBorder(tint.opacity(0.25)))
         .lineLimit(1)
         .fixedSize()
-        .help(radios.contains(where: { $0.channel.isLimited2G }) ? ChannelInfo.limited2GNote : b.rawValue)
+        .help(radios.contains(where: { $0.channel.isLimited2G }) ? ChannelInfo.limited2GNote : b.title)
     }
 
     /// One line per band; several BSSIDs of the same band are listed inside it.
@@ -212,7 +218,7 @@ struct NetworkCard: View {
         let bssids = radios.compactMap(\.bssid)
         return HStack(alignment: .top, spacing: 10) {
             Circle().fill(Self.color(b)).frame(width: 6, height: 6).padding(.top, 5)
-            Text(b.rawValue).frame(width: 52, alignment: .leading).foregroundStyle(Theme.text)
+            Text(b.title).frame(width: 52, alignment: .leading).foregroundStyle(Theme.text)
             Text("кан. \(channels) · \(widths) МГц").frame(width: 130, alignment: .leading)
             Text("\(best.rssi) dBm").foregroundStyle(Palette.rssi(best.rssi)).frame(width: 64, alignment: .leading)
             Text(PHY.label(best.phy)).frame(width: 84, alignment: .leading).help(PHY.explain(best.phy))
@@ -225,7 +231,7 @@ struct NetworkCard: View {
                     }
                 }
             }
-            .help(bssids.count > 1 ? "Несколько MAC‑адресов в одном диапазоне — виртуальные точки одного радиомодуля" : "MAC‑адрес точки доступа")
+            .help(bssids.count > 1 ? String(localized: "Несколько MAC‑адресов в одном диапазоне — виртуальные точки одного радиомодуля") : String(localized: "MAC‑адрес точки доступа"))
             Spacer(minLength: 0)
             if radios.contains(where: \.isCurrent) { Text("вы здесь").font(.system(size: 10.5, weight: .semibold)).foregroundStyle(Theme.good) }
         }

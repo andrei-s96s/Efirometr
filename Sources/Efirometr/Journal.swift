@@ -131,11 +131,11 @@ final class Notifier: NSObject, UNUserNotificationCenterDelegate {
         let enabled: Bool
         let title: String
         switch e.kind {
-        case .weakSignal: enabled = s.notifySignal; title = "Сигнал Wi‑Fi ослаб"
-        case .bandChange: enabled = s.notifyBand && e.text.hasSuffix("2,4 ГГц"); title = "Mac переключился на 2,4 ГГц"
-        case .disconnect: enabled = s.notifyDisconnect; title = "Wi‑Fi отключился"
-        case .reconnect: enabled = s.notifyDisconnect && lastSent[.disconnect] != nil; title = "Wi‑Fi снова на связи"
-        case .loss: enabled = s.notifyLoss; title = "Роутер не отвечает"
+        case .weakSignal: enabled = s.notifySignal; title = String(localized: "Сигнал Wi‑Fi ослаб")
+        case .bandChange: enabled = s.notifyBand && e.text.hasSuffix(Band.ghz2.title); title = String(localized: "Mac переключился на 2,4 ГГц")
+        case .disconnect: enabled = s.notifyDisconnect; title = String(localized: "Wi‑Fi отключился")
+        case .reconnect: enabled = s.notifyDisconnect && lastSent[.disconnect] != nil; title = String(localized: "Wi‑Fi снова на связи")
+        case .loss: enabled = s.notifyLoss; title = String(localized: "Роутер не отвечает")
         default: enabled = false; title = ""
         }
         guard enabled else { return }
@@ -150,7 +150,8 @@ final class Notifier: NSObject, UNUserNotificationCenterDelegate {
     }
 
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        await MainActor.run { MainWindowController.shared.show(section: .journal) }
+        let raw = response.notification.request.content.userInfo["section"] as? String
+        await MainActor.run { MainWindowController.shared.show(section: raw.flatMap(Section.init(rawValue:)) ?? .journal) }
     }
 
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
@@ -174,17 +175,17 @@ struct JournalView: View {
             VStack(spacing: 18) {
                 if !settings.journalActive { stateBanner }
                 HStack {
-                    SegmentedControl(options: [1, 6, 24], selection: $hours) { "\($0) ч" }
+                    SegmentedControl(options: [1, 6, 24], selection: $hours) { String(localized: "\($0) ч") }
                     Spacer()
                     summary
                 }
-                Card("Сигнал", icon: "wifi", hint: Hint(title: "История сигнала", body: "Запись каждые 10 секунд, хранится 24 часа. Провалы ниже оранжевой линии означают, что связь в этот момент могла тормозить.")) {
+                Card(String(localized: "Сигнал"), icon: "wifi", hint: Hint(title: String(localized: "История сигнала"), body: String(localized: "Запись каждые 10 секунд, хранится 24 часа. Провалы ниже оранжевой линии означают, что связь в этот момент могла тормозить."))) {
                     if samples.count < 3 { empty } else { signalChart }
                 }
-                Card("Задержка до роутера", icon: "timer", hint: Hint(title: "Задержка и потери", body: "Фоновый пинг роутера каждые 5 секунд. Красные отметки — моменты, когда роутер не ответил. Именно они чувствуются как «зависания» звонков.")) {
+                Card(String(localized: "Задержка до роутера"), icon: "timer", hint: Hint(title: String(localized: "Задержка и потери"), body: String(localized: "Фоновый пинг роутера каждые 5 секунд. Красные отметки — моменты, когда роутер не ответил. Именно они чувствуются как «зависания» звонков."))) {
                     if samples.filter({ $0.ping != nil || $0.lost }).count < 3 { empty } else { pingChart }
                 }
-                Card("События", icon: "list.bullet.rectangle",
+                Card(String(localized: "События"), icon: "list.bullet.rectangle",
                      trailing: AnyView(Button("Очистить журнал") { journal.clear() }.buttonStyle(.premiumSecondary))) {
                     if events.isEmpty {
                         Text("За выбранный период событий нет — связь была стабильной.").font(.system(size: 13)).foregroundStyle(Theme.text2)
@@ -214,11 +215,11 @@ struct JournalView: View {
                 .frame(width: 48, height: 48)
                 .background((paused ? Theme.warn : Theme.accent).opacity(0.12), in: RoundedRectangle(cornerRadius: 14))
             VStack(alignment: .leading, spacing: 4) {
-                Text(paused ? "Журнал на паузе — Mac работает от батареи" : "Журнал выключен")
+                Text(paused ? String(localized: "Журнал на паузе — Mac работает от батареи") : String(localized: "Журнал выключен"))
                     .font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.text)
                 Text(paused
-                     ? "Запись продолжится автоматически, когда подключите зарядку. Это можно изменить в настройках."
-                     : "Включите, чтобы записывать сигнал, задержку и обрывы за последние 24 часа. Удобно, если связь «иногда лагает» и нужно понять когда.")
+                     ? String(localized: "Запись продолжится автоматически, когда подключите зарядку. Это можно изменить в настройках.")
+                     : String(localized: "Включите, чтобы записывать сигнал, задержку и обрывы за последние 24 часа. Удобно, если связь «иногда лагает» и нужно понять когда."))
                     .font(.system(size: 12.5)).foregroundStyle(Theme.text2).fixedSize(horizontal: false, vertical: true)
             }
             Spacer()
@@ -238,14 +239,14 @@ struct JournalView: View {
         let pings = samples.compactMap(\.ping).sorted()
         let median = pings.isEmpty ? nil : pings[pings.count / 2]
         return HStack(spacing: 10) {
-            Badge(text: problems == 0 ? "без проблем" : "проблем: \(problems)", icon: problems == 0 ? "checkmark" : "exclamationmark", tint: problems == 0 ? Theme.good : Theme.warn)
-            if let median { Badge(text: String(format: "медиана пинга %.0f мс", median), tint: Theme.accent) }
-            if lost > 0 { Badge(text: "потерь: \(lost)", tint: Theme.bad) }
+            Badge(text: problems == 0 ? String(localized: "без проблем") : String(localized: "проблем: \(problems)"), icon: problems == 0 ? "checkmark" : "exclamationmark", tint: problems == 0 ? Theme.good : Theme.warn)
+            if let median { Badge(text: String(format: String(localized: "медиана пинга %.0f мс"), median), tint: Theme.accent) }
+            if lost > 0 { Badge(text: String(localized: "потерь: \(lost)"), tint: Theme.bad) }
         }
     }
 
     private var empty: some View {
-        Text(settings.journalActive ? "Данные копятся, пока приложение работает (в том числе только в строке меню). Загляните через несколько минут." : "Нет записей за этот период.")
+        Text(settings.journalActive ? String(localized: "Данные копятся, пока приложение работает (в том числе только в строке меню). Загляните через несколько минут.") : String(localized: "Нет записей за этот период."))
             .font(.system(size: 13)).foregroundStyle(Theme.text2).fixedSize(horizontal: false, vertical: true)
     }
 
@@ -253,14 +254,14 @@ struct JournalView: View {
         Chart {
             ForEach(samples) { s in
                 if let r = s.rssi {
-                    AreaMark(x: .value("Время", s.t), yStart: .value("dBm", -100), yEnd: .value("dBm", r))
+                    AreaMark(x: .value(String(localized: "Время"), s.t), yStart: .value("dBm", -100), yEnd: .value("dBm", r))
                         .foregroundStyle(LinearGradient(colors: [Theme.accent.opacity(0.3), .clear], startPoint: .top, endPoint: .bottom))
-                    LineMark(x: .value("Время", s.t), y: .value("dBm", r)).foregroundStyle(Theme.accent)
+                    LineMark(x: .value(String(localized: "Время"), s.t), y: .value("dBm", r)).foregroundStyle(Theme.accent)
                 }
             }
-            RuleMark(y: .value("Порог", -67)).foregroundStyle(Theme.warn.opacity(0.5)).lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 4]))
+            RuleMark(y: .value(String(localized: "Порог"), -67)).foregroundStyle(Theme.warn.opacity(0.5)).lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 4]))
             ForEach(events.filter { $0.kind == .disconnect || $0.kind == .roam || $0.kind == .bandChange }) { e in
-                RuleMark(x: .value("Время", e.t)).foregroundStyle(e.kind.color.opacity(0.6))
+                RuleMark(x: .value(String(localized: "Время"), e.t)).foregroundStyle(e.kind.color.opacity(0.6))
                     .annotation(position: .top, alignment: .leading) { Image(systemName: e.kind.icon).font(.system(size: 9)).foregroundStyle(e.kind.color) }
             }
         }
@@ -273,13 +274,13 @@ struct JournalView: View {
         Chart {
             ForEach(samples) { s in
                 if let p = s.ping {
-                    LineMark(x: .value("Время", s.t), y: .value("мс", min(p, 200))).foregroundStyle(Theme.cyan).interpolationMethod(.monotone)
+                    LineMark(x: .value(String(localized: "Время"), s.t), y: .value(String(localized: "мс"), min(p, 200))).foregroundStyle(Theme.cyan).interpolationMethod(.monotone)
                 }
                 if s.lost {
-                    RuleMark(x: .value("Время", s.t)).foregroundStyle(Theme.bad.opacity(0.7)).lineStyle(StrokeStyle(lineWidth: 2))
+                    RuleMark(x: .value(String(localized: "Время"), s.t)).foregroundStyle(Theme.bad.opacity(0.7)).lineStyle(StrokeStyle(lineWidth: 2))
                 }
             }
-            RuleMark(y: .value("Норма", 15)).foregroundStyle(Theme.warn.opacity(0.4)).lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 4]))
+            RuleMark(y: .value(String(localized: "Норма"), 15)).foregroundStyle(Theme.warn.opacity(0.4)).lineStyle(StrokeStyle(lineWidth: 1, dash: [5, 4]))
         }
         .modifier(DarkTimeAxes())
         .frame(height: 160)
@@ -316,9 +317,9 @@ extension Journal {
                                  ping: 3 + abs(sin(x / 7)) * 4 + ((200...215).contains(i) ? 40 : 0), lost: i == 207, down: 0, up: 0)
         }
         events = [
-            JournalEvent(t: now.addingTimeInterval(-1600), kind: .weakSignal, text: "Сигнал −71 dBm — ниже порога −70 dBm"),
-            JournalEvent(t: now.addingTimeInterval(-1450), kind: .signalRecovered, text: "Сигнал восстановился: −54 dBm"),
-            JournalEvent(t: now.addingTimeInterval(-900), kind: .speedTest, text: "Тест скорости: ↓ 341 / ↑ 48 Мбит/с"),
+            JournalEvent(t: now.addingTimeInterval(-1600), kind: .weakSignal, text: String(localized: "Сигнал −71 dBm — ниже порога −70 dBm")),
+            JournalEvent(t: now.addingTimeInterval(-1450), kind: .signalRecovered, text: String(localized: "Сигнал восстановился: −54 dBm")),
+            JournalEvent(t: now.addingTimeInterval(-900), kind: .speedTest, text: String(localized: "Тест скорости: ↓ 341 / ↑ 48 Мбит/с")),
         ]
         dirty = false
     }

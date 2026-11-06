@@ -18,7 +18,7 @@
 
 ### [⬇️ Скачать для macOS (.dmg)](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.dmg)
 
-[.zip‑архив](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.zip) · [все релизы](https://github.com/andrei-s96s/Efirometr/releases) · [как установить](#установка)
+[.zip‑архив](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.zip) · [Homebrew](#установка) · [все релизы](https://github.com/andrei-s96s/Efirometr/releases) · [🇬🇧 English](#-english)
 
 <img src="docs/screenshots/overview.png" width="860" alt="Обзор">
 
@@ -45,6 +45,8 @@ Wi‑Fi тормозит, а непонятно почему? Эфирометр
 | 🧩 **Трафик по приложениям** | Кто прямо сейчас занимает канал. |
 | ↕️ **Скорость в строке меню** | Входящий и исходящий трафик всегда на виду, цветная иконка качества сигнала, мини‑панель по клику. |
 | 📖 **Подсказки** | Кнопка ⓘ у каждой метрики объясняет, что она значит и какие значения нормальные. Стандарты Wi‑Fi расшифрованы: ax = Wi‑Fi 6 и т. д. |
+| 🔄 **Обновления** | Раз в сутки приложение проверяет новый релиз на GitHub и предлагает скачать его — без сторонних библиотек. |
+| 🌐 **Русский и English** | Интерфейс полностью переведён на английский; язык берётся из системы или выбирается в настройках. |
 
 ## Скриншоты
 
@@ -71,6 +73,14 @@ Wi‑Fi тормозит, а непонятно почему? Эфирометр
 
 ## Установка
 
+**Через Homebrew** — одной командой, обновления через `brew upgrade`:
+
+```bash
+brew install --cask andrei-s96s/tap/efirometr
+```
+
+**Вручную:**
+
 1. Скачайте **[Efirometr-macOS.dmg](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.dmg)** из [последнего релиза](https://github.com/andrei-s96s/Efirometr/releases/latest).
 2. Откройте образ и перетащите **Эфирометр** в папку «Программы».
 3. Первый запуск. Приложение не нотаризовано Apple, поэтому macOS его остановит:
@@ -88,6 +98,7 @@ Wi‑Fi тормозит, а непонятно почему? Эфирометр
 - Все данные остаются на вашем Mac: журнал, замеры и история тестов лежат в `~/Library/Application Support/Efirometr`.
 - Без аккаунтов, аналитики и рекламы.
 - В сеть приложение ходит только когда вы просите: тест скорости — к серверам Apple (`networkQuality`), тест задержки — ping до вашего роутера и `1.1.1.1`.
+- Проверка обновлений — один запрос в сутки к GitHub API за номером последней версии; отключается в настройках.
 - Геолокация нужна только потому, что macOS иначе не отдаёт имена сетей.
 
 ## Сборка из исходников
@@ -109,7 +120,8 @@ cd Efirometr
 - SwiftUI + AppKit, без сторонних зависимостей.
 - `CoreWLAN` — сеть, сканирование, каналы; `sysctl` — счётчики трафика; `networkQuality`, `ping`, `nettop` — тесты и трафик по приложениям.
 - `Analyzer.swift` — оценка и советы, `ChannelsView.swift` — спектр, `Live.swift` — лёгкие графики на Canvas (≈1% CPU).
-- `Efirometr --demo --snapshot <папка>` — отрисовать все экраны на демо‑данных в PNG.
+- `Efirometr --demo --snapshot <папка>` — отрисовать все экраны на демо‑данных в PNG (`-AppleLanguages "(en)"` — на английском).
+- Локализация: русский — исходный язык, английский — в `Resources/Localization/Localizable.xcstrings`. После правки текстов запустите `tools/sync-strings.sh`: компилятор выгрузит новые строки в каталог и покажет, какие ещё не переведены.
 
 </details>
 
@@ -140,11 +152,19 @@ TXaAjjkbDLFbFKS2pWfmneXzfRNZZgGWkW
 
 ---
 
-<details>
-<summary>🇬🇧 English</summary>
+## 🇬🇧 English
 
-**Efirometr** is a free macOS app that explains your home Wi‑Fi in plain language: a 0–100 network score, step‑by‑step router advice, a 2.4/5/6 GHz channel spectrum with neighbouring networks, a speed test (Apple `networkQuality`), live signal/traffic charts, an optional 24 h journal with notifications, a room‑by‑room survey, per‑app traffic and upload/download speed in the menu bar. The UI is in Russian.
+**Efirometr** is a free macOS app that explains your home Wi‑Fi in plain language: a 0–100 network score with step‑by‑step router advice, a 2.4 / 5 / 6 GHz channel spectrum with neighbouring networks, a speed test (Apple `networkQuality`), live signal and traffic charts, an optional 24‑hour journal with notifications, a room‑by‑room survey, per‑app traffic and upload/download speed right in the menu bar. The interface is available in **English and Russian**.
 
-[Download the latest release](https://github.com/andrei-s96s/Efirometr/releases/latest) · requires macOS 15+, Apple Silicon or Intel. The app isn't notarized: allow it in *System Settings → Privacy & Security → Open Anyway* on first launch.
+<p align="center"><img src="docs/screenshots/en/overview.png" width="860" alt="Overview"></p>
+<p align="center"><img src="docs/screenshots/en/channels.png" width="860" alt="Channels"></p>
 
-</details>
+**Install**
+
+```bash
+brew install --cask andrei-s96s/tap/efirometr
+```
+
+or [download the .dmg](https://github.com/andrei-s96s/Efirometr/releases/latest/download/Efirometr-macOS.dmg). Requires macOS 15+, Apple Silicon or Intel. The app isn't notarized: on first launch allow it in *System Settings → Privacy & Security → Open Anyway*, and grant Location access — without it macOS hides Wi‑Fi network names.
+
+**Privacy:** everything stays on your Mac. The app only goes online when you run a speed or latency test, plus one daily request to the GitHub API to check for updates (can be turned off).

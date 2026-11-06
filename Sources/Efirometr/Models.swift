@@ -2,11 +2,17 @@ import Foundation
 import CoreWLAN
 
 enum Band: String, CaseIterable, Identifiable, Hashable {
-    case ghz2 = "2,4 ГГц"
-    case ghz5 = "5 ГГц"
-    case ghz6 = "6 ГГц"
+    case ghz2, ghz5, ghz6
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .ghz2: return String(localized: "2,4 ГГц")
+        case .ghz5: return String(localized: "5 ГГц")
+        case .ghz6: return String(localized: "6 ГГц")
+        }
+    }
 
     init?(_ band: CWChannelBand) {
         switch band {
@@ -113,9 +119,9 @@ struct ChannelInfo: Hashable {
     /// Extra cost when recommending a channel: DFS may hop away on radar, 12–13 lock out some devices.
     var pickPenalty: Double { isDFS ? 0.15 : isLimited2G ? 0.5 : 0 }
 
-    static let limited2GNote = "Каналы 12–13 не видят устройства для рынка США и часть старой техники (некоторые ноутбуки, принтеры, умные лампы и розетки)."
+    static let limited2GNote = String(localized: "Каналы 12–13 не видят устройства для рынка США и часть старой техники (некоторые ноутбуки, принтеры, умные лампы и розетки).")
 
-    var title: String { "\(number) · \(band.rawValue) · \(width) МГц" }
+    var title: String { String(localized: "\(number) · \(band.title) · \(width) МГц") }
 }
 
 enum PHY {
@@ -192,7 +198,7 @@ enum SecurityKind: Int, Comparable {
 
     var name: String {
         switch self {
-        case .open: return "Открытая"
+        case .open: return String(localized: "Открытая")
         case .wep: return "WEP"
         case .wpa: return "WPA"
         case .wpa2: return "WPA2"
@@ -262,7 +268,7 @@ struct ScannedNetwork: Identifiable, Hashable {
     /// Another SSID broadcast by the same access point radio (guest network etc.).
     var isSibling = false
 
-    var displayName: String { ssid ?? "Скрытая / без доступа" }
+    var displayName: String { ssid ?? String(localized: "Скрытая / без доступа") }
 }
 
 struct Capabilities {

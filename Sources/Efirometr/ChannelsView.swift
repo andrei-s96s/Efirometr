@@ -44,14 +44,14 @@ struct ChannelsView: View {
     private var header: some View {
         HStack(spacing: 14) {
             SegmentedControl(options: Band.allCases, selection: $band) { b in
-                "\(b.rawValue)  \(monitor.networks.filter { $0.channel.band == b }.count)"
+                "\(b.title)  \(monitor.networks.filter { $0.channel.band == b }.count)"
             }
             Spacer()
             if let d = monitor.lastScan {
                 Text("обновлено в \(d.formatted(date: .omitted, time: .shortened))").font(.system(size: 12)).foregroundStyle(Theme.text3)
             }
             Button { monitor.scan() } label: {
-                Label(monitor.isScanning ? "Сканирую…" : "Обновить", systemImage: "arrow.clockwise")
+                Label(monitor.isScanning ? String(localized: "Сканирую…") : String(localized: "Обновить"), systemImage: "arrow.clockwise")
             }
             .buttonStyle(.premiumSecondary)
             .disabled(monitor.isScanning)
@@ -65,7 +65,7 @@ struct ChannelsView: View {
         let nets = bandNetworks
         let hovered = hoverFreq.map { f in nets.filter { $0.channel.range.contains(f) }.sorted { $0.rssi > $1.rssi } } ?? []
         let labeled = labelIDs(nets)
-        return Card("Спектр · \(band.rawValue)", icon: "chart.xyaxis.line", hint: Hints.spectrum,
+        return Card(String(localized: "Спектр · \(band.title)"), icon: "chart.xyaxis.line", hint: Hints.spectrum,
                     trailing: AnyView(Text("сетей: \(nets.count)").font(.system(size: 12)).foregroundStyle(Theme.text3))) {
             Chart {
                 ForEach(nets.sorted { ($0.isCurrent || $0.isSibling ? 1 : 0) < ($1.isCurrent || $1.isSibling ? 1 : 0) }) { n in
@@ -75,17 +75,17 @@ struct ChannelsView: View {
                     let color = n.isCurrent || n.isSibling ? Theme.accent : Palette.network(n.id)
                     let pts: [(Double, Double)] = [(r.lowerBound, 0), (r.lowerBound + edge, h), (r.upperBound - edge, h), (r.upperBound, 0)]
                     ForEach(Array(pts.enumerated()), id: \.offset) { _, p in
-                        AreaMark(x: .value("МГц", p.0), y: .value("Сила", p.1), series: .value("Сеть", n.id), stacking: .unstacked)
+                        AreaMark(x: .value(String(localized: "МГц"), p.0), y: .value(String(localized: "Сила"), p.1), series: .value(String(localized: "Сеть"), n.id), stacking: .unstacked)
                             .foregroundStyle(LinearGradient(colors: [color.opacity(n.isCurrent ? 0.5 : n.isSibling ? 0.3 : 0.25), color.opacity(0.02)], startPoint: .top, endPoint: .bottom))
-                        LineMark(x: .value("МГц", p.0), y: .value("Сила", p.1), series: .value("Сеть", n.id))
+                        LineMark(x: .value(String(localized: "МГц"), p.0), y: .value(String(localized: "Сила"), p.1), series: .value(String(localized: "Сеть"), n.id))
                             .foregroundStyle(color.opacity(n.isCurrent ? 1 : 0.75))
                             .lineStyle(StrokeStyle(lineWidth: n.isCurrent ? 2.5 : n.isSibling ? 1.8 : 1.2, dash: n.isSibling ? [5, 3] : []))
                     }
                     if labeled.contains(n.id) {
-                        PointMark(x: .value("МГц", (r.lowerBound + r.upperBound) / 2), y: .value("Сила", h))
+                        PointMark(x: .value(String(localized: "МГц"), (r.lowerBound + r.upperBound) / 2), y: .value(String(localized: "Сила"), h))
                             .symbolSize(0)
                             .annotation(position: .top, spacing: 3) {
-                                Text(n.isCurrent ? "★ \(n.ssid ?? "Ваша сеть")" : n.isSibling ? "☆ \(n.ssid ?? "ваш роутер")" : (n.ssid ?? "канал \(n.channel.number)"))
+                                Text(n.isCurrent ? "★ \(n.ssid ?? String(localized: "Ваша сеть"))" : n.isSibling ? "☆ \(n.ssid ?? String(localized: "ваш роутер"))" : (n.ssid ?? String(localized: "канал \(n.channel.number)")))
                                     .font(.system(size: 10.5, weight: n.isCurrent ? .bold : .medium))
                                     .foregroundStyle(n.isCurrent || n.isSibling ? Theme.accent : Theme.text2)
                                     .lineLimit(1)
@@ -93,7 +93,7 @@ struct ChannelsView: View {
                     }
                 }
                 if let f = hoverFreq {
-                    RuleMark(x: .value("МГц", f))
+                    RuleMark(x: .value(String(localized: "МГц"), f))
                         .foregroundStyle(Color.white.opacity(0.35))
                         .annotation(position: .top, overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
                             tooltip(freq: f, nets: hovered)
@@ -121,9 +121,9 @@ struct ChannelsView: View {
             .chartXSelection(value: $hoverFreq)
             .frame(height: 300)
             HStack(spacing: 18) {
-                axisHint("arrow.left.and.right", "номер канала")
-                axisHint("arrow.up.and.down", "сила сигнала, dBm")
-                axisHint("cursorarrow.rays", "наведите — увидите, кто на частоте")
+                axisHint("arrow.left.and.right", String(localized: "номер канала"))
+                axisHint("arrow.up.and.down", String(localized: "сила сигнала, dBm"))
+                axisHint("cursorarrow.rays", String(localized: "наведите — увидите, кто на частоте"))
             }
         }
     }
@@ -154,12 +154,12 @@ struct ChannelsView: View {
 
     private func tooltip(freq: Double, nets: [ScannedNetwork]) -> some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(String(format: "%.0f МГц", freq)).font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.text)
+            Text(String(format: String(localized: "%.0f МГц"), freq)).font(.system(size: 11, weight: .semibold)).foregroundStyle(Theme.text)
             if nets.isEmpty { Text("свободно — хорошее место для канала").font(.system(size: 11)).foregroundStyle(Theme.good) }
             ForEach(nets.prefix(6)) { n in
                 HStack(spacing: 6) {
                     Circle().fill(n.isCurrent || n.isSibling ? Theme.accent : Palette.network(n.id)).frame(width: 7, height: 7)
-                    Text(n.displayName + (n.isSibling ? " (ваш роутер)" : "")).lineLimit(1).foregroundStyle(Theme.text)
+                    Text(n.displayName + (n.isSibling ? String(localized: " (ваш роутер)") : "")).lineLimit(1).foregroundStyle(Theme.text)
                     Spacer(minLength: 8)
                     Text("кан. \(n.channel.number) · \(n.rssi)").foregroundStyle(Theme.text3)
                 }
@@ -184,7 +184,7 @@ struct ChannelsView: View {
         // When the winner is 12/13, also point at the best channel every device can see.
         let safeBest = best?.channel.isLimited2G == true ? cands.filter { !$0.channel.isLimited2G }.min { $0.load < $1.load } : nil
         let maxLoad = max(1.0, cands.map(\.load).max() ?? 1)
-        return Card("Загрузка каналов · \(width) МГц", icon: "chart.bar.xaxis", hint: Hints.channelLoad) {
+        return Card(String(localized: "Загрузка каналов · \(width) МГц"), icon: "chart.bar.xaxis", hint: Hints.channelLoad) {
             if cands.isEmpty {
                 Text("Нет доступных каналов в этом диапазоне").font(.system(size: 13)).foregroundStyle(Theme.text2)
             } else {
@@ -208,18 +208,18 @@ struct ChannelsView: View {
                             GaugeBar(value: c.load / maxLoad, tint: tint, height: 8)
                             Text(String(format: "%.1f", c.load)).font(Theme.number(11.5, .medium)).foregroundStyle(Theme.text2).frame(width: 28, alignment: .trailing)
                             Group {
-                                if isCur { Badge(text: "ваш", tint: Theme.accent) }
-                                else if isBest { Badge(text: "лучший", icon: "star.fill", tint: Theme.good) }
-                                else if isSafe { Badge(text: "для всех", icon: "checkmark", tint: Theme.cyan).help("Лучший из каналов, которые видят все устройства") }
-                                else { Text(c.networks == 0 ? "пусто" : "сетей: \(c.networks)").font(.system(size: 11)).foregroundStyle(Theme.text3) }
+                                if isCur { Badge(text: String(localized: "ваш"), tint: Theme.accent) }
+                                else if isBest { Badge(text: String(localized: "лучший"), icon: "star.fill", tint: Theme.good) }
+                                else if isSafe { Badge(text: String(localized: "для всех"), icon: "checkmark", tint: Theme.cyan).help("Лучший из каналов, которые видят все устройства") }
+                                else { Text(c.networks == 0 ? String(localized: "пусто") : String(localized: "сетей: \(c.networks)")).font(.system(size: 11)).foregroundStyle(Theme.text3) }
                             }
                             .fixedSize()
                             .frame(width: 84, alignment: .leading)
                         }
-                        .help(isCur ? "Канал, на котором сейчас ваш роутер" : isBest ? "Наименее загруженный канал — выберите его в настройках роутера" : "Давление соседей на этом канале")
+                        .help(isCur ? String(localized: "Канал, на котором сейчас ваш роутер") : isBest ? String(localized: "Наименее загруженный канал — выберите его в настройках роутера") : String(localized: "Давление соседей на этом канале"))
                     }
                 }
-                Text("0 — канал свободен, 1 — как одна сильная сеть прямо на нём. DFS‑каналы чуть штрафуются: на них роутер может уходить из‑за радаров." + (band == .ghz2 ? " ⚠ — " + ChannelInfo.limited2GNote : ""))
+                Text(String(localized: "0 — канал свободен, 1 — как одна сильная сеть прямо на нём. DFS‑каналы чуть штрафуются: на них роутер может уходить из‑за радаров.") + (band == .ghz2 ? " ⚠ — " + ChannelInfo.limited2GNote : ""))
                     .font(.system(size: 11.5)).foregroundStyle(Theme.text3).fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -227,9 +227,9 @@ struct ChannelsView: View {
 
     private var byChannelCard: some View {
         let groups = Dictionary(grouping: bandNetworks) { $0.channel.number }.sorted { $0.key < $1.key }
-        return Card("Соседи по каналам", icon: "list.bullet.rectangle") {
+        return Card(String(localized: "Соседи по каналам"), icon: "list.bullet.rectangle") {
             if groups.isEmpty {
-                Text(monitor.isScanning ? "Сканирую…" : "Сетей не найдено").font(.system(size: 13)).foregroundStyle(Theme.text2)
+                Text(monitor.isScanning ? String(localized: "Сканирую…") : String(localized: "Сетей не найдено")).font(.system(size: 13)).foregroundStyle(Theme.text2)
             }
             VStack(alignment: .leading, spacing: 12) {
                 ForEach(groups, id: \.key) { ch, nets in
@@ -238,7 +238,7 @@ struct ChannelsView: View {
                             Text("Канал \(ch)").font(.system(size: 13, weight: .semibold)).foregroundStyle(Theme.text)
                             if ChannelInfo(number: ch, band: band, width: 20).isDFS { Badge(text: "DFS", tint: Theme.warn) }
                             if ChannelInfo(number: ch, band: band, width: 20).isLimited2G {
-                                Badge(text: "не все устройства", icon: "exclamationmark.triangle.fill", tint: Theme.warn).help(ChannelInfo.limited2GNote)
+                                Badge(text: String(localized: "не все устройства"), icon: "exclamationmark.triangle.fill", tint: Theme.warn).help(ChannelInfo.limited2GNote)
                             }
                             Spacer()
                             Text("\(nets.count)").font(Theme.number(12)).foregroundStyle(Theme.text3)
@@ -246,9 +246,9 @@ struct ChannelsView: View {
                         ForEach(nets.sorted { $0.rssi > $1.rssi }) { n in
                             HStack(spacing: 8) {
                                 SignalBars(rssi: n.rssi)
-                                Text(n.isSibling && n.ssid == nil ? "Доп. сеть вашего роутера" : n.displayName).lineLimit(1).fontWeight(n.isCurrent ? .bold : .regular)
+                                Text(n.isSibling && n.ssid == nil ? String(localized: "Доп. сеть вашего роутера") : n.displayName).lineLimit(1).fontWeight(n.isCurrent ? .bold : .regular)
                                     .foregroundStyle(n.isCurrent ? Theme.accent : n.isSibling ? Theme.text2 : Theme.text)
-                                if n.isSibling { Badge(text: "ваш роутер", tint: Theme.accent).help("Другой диапазон или гостевая сеть вашего роутера — не считается помехой") }
+                                if n.isSibling { Badge(text: String(localized: "ваш роутер"), tint: Theme.accent).help("Другой диапазон или гостевая сеть вашего роутера — не считается помехой") }
                                 Spacer()
                                 Text("\(n.channel.width) МГц · \(n.rssi) dBm").font(.system(size: 11.5).monospacedDigit()).foregroundStyle(Theme.text3)
                             }

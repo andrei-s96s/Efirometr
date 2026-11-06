@@ -14,10 +14,10 @@ struct SpeedResult: Codable, Identifiable {
 
     var responsiveness: (label: String, color: Color) {
         switch rpm {
-        case 1000...: return ("высокая", Theme.good)
-        case 400..<1000: return ("средняя", Theme.fair)
-        case 200..<400: return ("низкая", Theme.warn)
-        default: return ("очень низкая", Theme.bad)
+        case 1000...: return (String(localized: "высокая"), Theme.good)
+        case 400..<1000: return (String(localized: "средняя"), Theme.fair)
+        case 200..<400: return (String(localized: "низкая"), Theme.warn)
+        default: return (String(localized: "очень низкая"), Theme.bad)
         }
     }
 
@@ -67,16 +67,16 @@ final class SpeedTester: ObservableObject {
                 self.running = false
                 self.progress = 1
                 guard let json, let down = json["dl_throughput"] as? Double, let up = json["ul_throughput"] as? Double else {
-                    self.error = "Тест не удался. Проверьте подключение к интернету."
+                    self.error = String(localized: "Тест не удался. Проверьте подключение к интернету.")
                     return
                 }
                 let r = SpeedResult(date: .now, down: down, up: up,
                                     rtt: json["base_rtt"] as? Double ?? 0, rpm: json["responsiveness"] as? Double ?? 0,
-                                    rssi: link?.rssi, band: link?.channel?.band.rawValue, phyRate: link?.txRate)
+                                    rssi: link?.rssi, band: link?.channel?.band.title, phyRate: link?.txRate)
                 self.results.append(r)
                 if self.results.count > 100 { self.results.removeFirst(self.results.count - 100) }
                 try? JSONEncoder().encode(self.results).write(to: self.url)
-                Journal.shared.add(.speedTest, String(format: "Тест скорости: ↓ %.0f / ↑ %.0f Мбит/с", down / 1e6, up / 1e6))
+                Journal.shared.add(.speedTest, String(format: String(localized: "Тест скорости: ↓ %.0f / ↑ %.0f Мбит/с"), down / 1e6, up / 1e6))
             }
         }
     }
@@ -113,13 +113,13 @@ struct SpeedTestView: View {
     private var hero: some View {
         let r = tester.last
         return HStack(spacing: 28) {
-            SpeedDial(title: "Загрузка", icon: "arrow.down", value: tester.running ? nil : r.map { $0.down / 1e6 }, tint: Theme.cyan,
+            SpeedDial(title: String(localized: "Загрузка"), icon: "arrow.down", value: tester.running ? nil : r.map { $0.down / 1e6 }, tint: Theme.cyan,
                       max: max(100, monitor.link?.txRate ?? 500))
-            SpeedDial(title: "Отдача", icon: "arrow.up", value: tester.running ? nil : r.map { $0.up / 1e6 }, tint: Theme.pink,
+            SpeedDial(title: String(localized: "Отдача"), icon: "arrow.up", value: tester.running ? nil : r.map { $0.up / 1e6 }, tint: Theme.pink,
                       max: max(100, monitor.link?.txRate ?? 500))
             VStack(alignment: .leading, spacing: 12) {
-                Eyebrow(text: "Реальная скорость интернета", icon: "speedometer")
-                Text(tester.running ? "Измеряю…" : r == nil ? "Ещё не измеряли" : "Последний тест · \(r!.date.formatted(date: .abbreviated, time: .shortened))")
+                Eyebrow(text: String(localized: "Реальная скорость интернета"), icon: "speedometer")
+                Text(tester.running ? String(localized: "Измеряю…") : r == nil ? String(localized: "Ещё не измеряли") : String(localized: "Последний тест · \(r!.date.formatted(date: .abbreviated, time: .shortened))"))
                     .font(.system(size: 22, weight: .bold, design: .rounded)).foregroundStyle(Theme.text)
                 Text("Использует встроенный в macOS тест Apple (networkQuality): несколько параллельных потоков на серверы Apple, около 15 секунд. Расходует 300–800 МБ трафика.")
                     .font(.system(size: 12.5)).foregroundStyle(Theme.text2).fixedSize(horizontal: false, vertical: true)
@@ -127,7 +127,7 @@ struct SpeedTestView: View {
                     GaugeBar(value: tester.progress, tint: Theme.accent, height: 6).frame(maxWidth: 320)
                 } else {
                     Button { tester.run(monitor: monitor) } label: {
-                        Label(r == nil ? "Запустить тест" : "Повторить тест", systemImage: "play.fill")
+                        Label(r == nil ? String(localized: "Запустить тест") : String(localized: "Повторить тест"), systemImage: "play.fill")
                     }
                     .buttonStyle(.premium)
                 }
@@ -151,17 +151,17 @@ struct SpeedTestView: View {
         let wifiReal = phy * 0.65
         let down = r.down / 1e6
         let wifiBound = wifiReal > 0 && down > wifiReal * 0.8
-        return Card("Где узкое место", icon: "point.topleft.down.to.point.bottomright.curvepath",
-                    hint: Hint(title: "Как это считается",
-                               body: "Wi‑Fi на практике даёт около 65% от скорости канала. Если интернет почти упирается в это значение, ограничивает Wi‑Fi. Если интернет заметно ниже, ограничивает тариф или провайдер.")) {
+        return Card(String(localized: "Где узкое место"), icon: "point.topleft.down.to.point.bottomright.curvepath",
+                    hint: Hint(title: String(localized: "Как это считается"),
+                               body: String(localized: "Wi‑Fi на практике даёт около 65% от скорости канала. Если интернет почти упирается в это значение, ограничивает Wi‑Fi. Если интернет заметно ниже, ограничивает тариф или провайдер."))) {
             HStack(spacing: 14) {
-                pipe("Wi‑Fi (реально)", wifiReal, Theme.accent, highlight: wifiBound)
+                pipe(String(localized: "Wi‑Fi (реально)"), wifiReal, Theme.accent, highlight: wifiBound)
                 Image(systemName: "chevron.right").foregroundStyle(Theme.text3)
-                pipe("Интернет", down, Theme.cyan, highlight: !wifiBound)
+                pipe(String(localized: "Интернет"), down, Theme.cyan, highlight: !wifiBound)
             }
             Text(wifiBound
-                 ? "Скорость упирается в Wi‑Fi. Улучшите сигнал или канал, тогда интернет станет быстрее."
-                 : String(format: "Wi‑Fi может дать до ~%.0f Мбит/с, а интернет — %.0f. Ограничивает тариф или провайдер, а не Wi‑Fi.", wifiReal, down))
+                 ? String(localized: "Скорость упирается в Wi‑Fi. Улучшите сигнал или канал, тогда интернет станет быстрее.")
+                 : String(format: String(localized: "Wi‑Fi может дать до ~%.0f Мбит/с, а интернет — %.0f. Ограничивает тариф или провайдер, а не Wi‑Fi."), wifiReal, down))
                 .font(.system(size: 13)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -173,7 +173,7 @@ struct SpeedTestView: View {
                 Text(String(format: "%.0f", v)).font(Theme.number(26)).foregroundStyle(c)
                 Text("Мбит/с").font(.system(size: 12)).foregroundStyle(Theme.text3)
             }
-            if highlight { Badge(text: "узкое место", icon: "exclamationmark", tint: Theme.warn) }
+            if highlight { Badge(text: String(localized: "узкое место"), icon: "exclamationmark", tint: Theme.warn) }
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -182,20 +182,20 @@ struct SpeedTestView: View {
 
     private func latencyCard(_ r: SpeedResult) -> some View {
         let resp = r.responsiveness
-        return Card("Отзывчивость под нагрузкой", icon: "bolt.horizontal.circle",
-                    hint: Hint(title: "Отзывчивость (RPM)",
-                               body: "Сколько запросов в минуту сеть успевает обработать, пока канал забит загрузкой. Это показывает, будут ли лагать звонки и игры, когда кто‑то качает файлы.",
-                               scale: [.init(range: "> 1000 RPM", label: "Высокая", color: Theme.good),
-                                       .init(range: "400–1000", label: "Средняя", color: Theme.fair),
-                                       .init(range: "200–400", label: "Низкая", color: Theme.warn),
-                                       .init(range: "< 200", label: "Лаги при загрузке", color: Theme.bad)],
-                               tip: "Низкая отзывчивость лечится включением SQM / Smart Queue (или «QoS») на роутере.")) {
+        return Card(String(localized: "Отзывчивость под нагрузкой"), icon: "bolt.horizontal.circle",
+                    hint: Hint(title: String(localized: "Отзывчивость (RPM)"),
+                               body: String(localized: "Сколько запросов в минуту сеть успевает обработать, пока канал забит загрузкой. Это показывает, будут ли лагать звонки и игры, когда кто‑то качает файлы."),
+                               scale: [.init(range: "> 1000 RPM", label: String(localized: "Высокая"), color: Theme.good),
+                                       .init(range: "400–1000", label: String(localized: "Средняя"), color: Theme.fair),
+                                       .init(range: "200–400", label: String(localized: "Низкая"), color: Theme.warn),
+                                       .init(range: "< 200", label: String(localized: "Лаги при загрузке"), color: Theme.bad)],
+                               tip: String(localized: "Низкая отзывчивость лечится включением SQM / Smart Queue (или «QoS») на роутере."))) {
             HStack(spacing: 14) {
-                stat("В покое", String(format: "%.0f", r.rtt), "мс", Theme.text)
-                stat("Под нагрузкой", String(format: "%.0f", r.loadedLatency), "мс", resp.color)
-                stat("Отзывчивость", String(format: "%.0f", r.rpm), "RPM", resp.color)
+                stat(String(localized: "В покое"), String(format: "%.0f", r.rtt), String(localized: "мс"), Theme.text)
+                stat(String(localized: "Под нагрузкой"), String(format: "%.0f", r.loadedLatency), String(localized: "мс"), resp.color)
+                stat(String(localized: "Отзывчивость"), String(format: "%.0f", r.rpm), "RPM", resp.color)
             }
-            Text("Отзывчивость \(resp.label). " + (r.rpm < 400 ? "Когда кто‑то качает, звонки и игры будут подлагивать." : "Звонки не пострадают даже при загрузке канала."))
+            Text(String(localized: "Отзывчивость \(resp.label). ") + (r.rpm < 400 ? String(localized: "Когда кто‑то качает, звонки и игры будут подлагивать.") : String(localized: "Звонки не пострадают даже при загрузке канала.")))
                 .font(.system(size: 13)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -212,16 +212,16 @@ struct SpeedTestView: View {
     }
 
     private var historyCard: some View {
-        Card("История тестов", icon: "clock.arrow.circlepath",
+        Card(String(localized: "История тестов"), icon: "clock.arrow.circlepath",
              trailing: AnyView(Group { if !tester.results.isEmpty { Button("Очистить") { tester.clear() }.buttonStyle(.premiumSecondary) } })) {
             if tester.results.count < 2 {
                 Text("Здесь появится график, когда будет хотя бы два теста. Запускайте тест в разное время суток, чтобы увидеть вечернюю просадку провайдера.")
                     .font(.system(size: 13)).foregroundStyle(Theme.text2).fixedSize(horizontal: false, vertical: true)
             } else {
                 Chart(tester.results) { r in
-                    LineMark(x: .value("Дата", r.date), y: .value("Мбит/с", r.down / 1e6), series: .value("Ряд", "↓"))
+                    LineMark(x: .value(String(localized: "Дата"), r.date), y: .value(String(localized: "Мбит/с"), r.down / 1e6), series: .value(String(localized: "Ряд"), "↓"))
                         .foregroundStyle(Theme.cyan).symbol(.circle)
-                    LineMark(x: .value("Дата", r.date), y: .value("Мбит/с", r.up / 1e6), series: .value("Ряд", "↑"))
+                    LineMark(x: .value(String(localized: "Дата"), r.date), y: .value(String(localized: "Мбит/с"), r.up / 1e6), series: .value(String(localized: "Ряд"), "↑"))
                         .foregroundStyle(Theme.pink).symbol(.circle)
                 }
                 .chartYAxis {
@@ -237,7 +237,7 @@ struct SpeedTestView: View {
                     }
                 }
                 .frame(height: 180)
-                ChartLegend(items: [("Загрузка, Мбит/с", Theme.cyan), ("Отдача", Theme.pink)])
+                ChartLegend(items: [(String(localized: "Загрузка, Мбит/с"), Theme.cyan), (String(localized: "Отдача"), Theme.pink)])
             }
             ForEach(tester.results.suffix(6).reversed()) { r in
                 HStack {
@@ -287,7 +287,7 @@ extension SpeedTester {
         let now = Date()
         results = [(-50, 286.0, 41.0, 22.0, 640.0), (-30, 302.0, 44.0, 19.0, 910.0), (-8, 318.0, 47.0, 17.0, 1180.0), (0, 341.0, 48.0, 16.0, 1250.0)].map {
             SpeedResult(date: now.addingTimeInterval(Double($0.0) * 3600), down: $0.1 * 1e6, up: $0.2 * 1e6, rtt: $0.3, rpm: $0.4,
-                        rssi: -52, band: "5 ГГц", phyRate: 1201)
+                        rssi: -52, band: String(localized: "5 ГГц"), phyRate: 1201)
         }
     }
 }

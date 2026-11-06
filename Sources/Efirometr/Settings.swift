@@ -9,10 +9,10 @@ enum MenuBarMode: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .speedSignal: return "Иконка + скорость"
-        case .speed: return "Только скорость"
-        case .score: return "Иконка + оценка"
-        case .icon: return "Только иконка"
+        case .speedSignal: return String(localized: "Иконка + скорость")
+        case .speed: return String(localized: "Только скорость")
+        case .score: return String(localized: "Иконка + оценка")
+        case .icon: return String(localized: "Только иконка")
         }
     }
 
@@ -42,6 +42,7 @@ final class AppSettings: ObservableObject {
     @Published var showWindowOnLaunch: Bool { didSet { d.set(showWindowOnLaunch, forKey: "showWindowOnLaunch") } }
     @Published var hideDockWhenClosed: Bool { didSet { d.set(hideDockWhenClosed, forKey: "hideDockWhenClosed") } }
     @Published var backgroundPing: Bool { didSet { d.set(backgroundPing, forKey: "backgroundPing") } }
+    @Published var autoCheckUpdates: Bool { didSet { d.set(autoCheckUpdates, forKey: "autoCheckUpdates") } }
     @Published var journalEnabled: Bool { didSet { d.set(journalEnabled, forKey: "journalEnabled") } }
     @Published var journalOnlyOnPower: Bool { didSet { d.set(journalOnlyOnPower, forKey: "journalOnlyOnPower") } }
     @Published private(set) var onBattery = false
@@ -53,7 +54,7 @@ final class AppSettings: ObservableObject {
             "menuBarMode": MenuBarMode.speedSignal.rawValue, "coloredIcon": true,
             "notifySignal": true, "notifyBand": true, "notifyDisconnect": true, "notifyLoss": true,
             "signalThreshold": -72, "showWindowOnLaunch": true, "hideDockWhenClosed": true, "backgroundPing": true,
-            "journalEnabled": false, "journalOnlyOnPower": true,
+            "journalEnabled": false, "journalOnlyOnPower": true, "autoCheckUpdates": true,
         ])
         menuBarMode = MenuBarMode(rawValue: d.string(forKey: "menuBarMode") ?? "") ?? .speedSignal
         coloredIcon = d.bool(forKey: "coloredIcon")
@@ -66,6 +67,7 @@ final class AppSettings: ObservableObject {
         hideDockWhenClosed = d.bool(forKey: "hideDockWhenClosed")
         backgroundPing = d.bool(forKey: "backgroundPing")
         journalEnabled = d.bool(forKey: "journalEnabled")
+        autoCheckUpdates = d.bool(forKey: "autoCheckUpdates")
         journalOnlyOnPower = d.bool(forKey: "journalOnlyOnPower")
         refreshPowerSource()
         refreshLaunchStatus()
@@ -85,7 +87,7 @@ final class AppSettings: ObservableObject {
         do {
             if on { try SMAppService.mainApp.register() } else { try SMAppService.mainApp.unregister() }
         } catch {
-            launchStatus = "Не удалось: \(error.localizedDescription)"
+            launchStatus = String(localized: "Не удалось: \(error.localizedDescription)")
         }
         refreshLaunchStatus()
     }
@@ -94,10 +96,10 @@ final class AppSettings: ObservableObject {
         let s = SMAppService.mainApp.status
         launchAtLogin = s == .enabled || s == .requiresApproval
         switch s {
-        case .enabled: launchStatus = "Приложение запустится при входе в систему, только в строке меню."
-        case .requiresApproval: launchStatus = "Нужно разрешение: Системные настройки → Основные → Объекты входа."
-        case .notFound: launchStatus = "Установите приложение в папку «Программы», чтобы включить автозапуск."
-        default: launchStatus = "Выключено."
+        case .enabled: launchStatus = String(localized: "Приложение запустится при входе в систему, только в строке меню.")
+        case .requiresApproval: launchStatus = String(localized: "Нужно разрешение: Системные настройки → Основные → Объекты входа.")
+        case .notFound: launchStatus = String(localized: "Установите приложение в папку «Программы», чтобы включить автозапуск.")
+        default: launchStatus = String(localized: "Выключено.")
         }
     }
 }
@@ -159,7 +161,8 @@ struct SettingsView: View {
     var body: some View {
         SnapshotScroll {
             VStack(spacing: 18) {
-                Card("Строка меню", icon: "menubar.rectangle") {
+                LanguageCard()
+                Card(String(localized: "Строка меню"), icon: "menubar.rectangle") {
                     HStack(spacing: 12) {
                         ForEach(MenuBarMode.allCases) { m in
                             let on = settings.menuBarMode == m
@@ -179,15 +182,15 @@ struct SettingsView: View {
                         }
                     }
                     Toggle(isOn: $settings.coloredIcon) {
-                        SettingRow(title: "Цветная иконка Wi‑Fi", detail: "Зелёная — отличный сигнал, жёлтая — средний, красная — слабый.") { EmptyView() }
+                        SettingRow(title: String(localized: "Цветная иконка Wi‑Fi"), detail: String(localized: "Зелёная — отличный сигнал, жёлтая — средний, красная — слабый.")) { EmptyView() }
                     }
                     .toggleStyle(.premium)
-                    tip("Чтобы поставить индикатор рядом со значком Wi‑Fi, зажмите ⌘ и перетащите его мышью в строке меню.")
+                    tip(String(localized: "Чтобы поставить индикатор рядом со значком Wi‑Fi, зажмите ⌘ и перетащите его мышью в строке меню."))
                 }
 
-                Card("Уведомления", icon: "bell.badge") {
+                Card(String(localized: "Уведомления"), icon: "bell.badge") {
                     Toggle(isOn: $settings.notifySignal) {
-                        SettingRow(title: "Сигнал ослаб", detail: "Если сигнал дольше 15 секунд ниже \(settings.signalThreshold) dBm.") { EmptyView() }
+                        SettingRow(title: String(localized: "Сигнал ослаб"), detail: String(localized: "Если сигнал дольше 15 секунд ниже \(settings.signalThreshold) dBm.")) { EmptyView() }
                     }.toggleStyle(.premium)
                     HStack(spacing: 10) {
                         Text("Порог").font(.system(size: 12)).foregroundStyle(Theme.text3)
@@ -196,30 +199,31 @@ struct SettingsView: View {
                     }
                     Divider().overlay(Theme.stroke)
                     Toggle(isOn: $settings.notifyBand) {
-                        SettingRow(title: "Переключение на 2,4 ГГц", detail: "Mac ушёл с 5 ГГц на медленный диапазон.") { EmptyView() }
+                        SettingRow(title: String(localized: "Переключение на 2,4 ГГц"), detail: String(localized: "Mac ушёл с 5 ГГц на медленный диапазон.")) { EmptyView() }
                     }.toggleStyle(.premium)
                     Toggle(isOn: $settings.notifyDisconnect) {
-                        SettingRow(title: "Обрыв Wi‑Fi", detail: "Отключение от сети и восстановление связи.") { EmptyView() }
+                        SettingRow(title: String(localized: "Обрыв Wi‑Fi"), detail: String(localized: "Отключение от сети и восстановление связи.")) { EmptyView() }
                     }.toggleStyle(.premium)
                     Toggle(isOn: $settings.notifyLoss) {
-                        SettingRow(title: "Роутер не отвечает", detail: settings.journalActive && settings.backgroundPing
-                                   ? "Несколько пингов подряд до роутера потеряны."
-                                   : "Работает только при включённом журнале с пингом роутера.") { EmptyView() }
+                        SettingRow(title: String(localized: "Роутер не отвечает"), detail: settings.journalActive && settings.backgroundPing
+                                   ? String(localized: "Несколько пингов подряд до роутера потеряны.")
+                                   : String(localized: "Работает только при включённом журнале с пингом роутера.")) { EmptyView() }
                     }.toggleStyle(.premium)
                 }
 
-                Card("Запуск", icon: "power") {
+                Card(String(localized: "Запуск"), icon: "power") {
                     Toggle(isOn: Binding(get: { settings.launchAtLogin }, set: { settings.setLaunchAtLogin($0) })) {
-                        SettingRow(title: "Запускать при входе в систему", detail: settings.launchStatus) { EmptyView() }
+                        SettingRow(title: String(localized: "Запускать при входе в систему"), detail: settings.launchStatus) { EmptyView() }
                     }.toggleStyle(.premium)
                     Toggle(isOn: $settings.showWindowOnLaunch) {
-                        SettingRow(title: "Открывать окно при запуске", detail: "Если выключено, приложение стартует только в строке меню.") { EmptyView() }
+                        SettingRow(title: String(localized: "Открывать окно при запуске"), detail: String(localized: "Если выключено, приложение стартует только в строке меню.")) { EmptyView() }
                     }.toggleStyle(.premium)
                     Toggle(isOn: $settings.hideDockWhenClosed) {
-                        SettingRow(title: "Убирать из Dock, когда окно закрыто", detail: "Индикатор в строке меню продолжит работать.") { EmptyView() }
+                        SettingRow(title: String(localized: "Убирать из Dock, когда окно закрыто"), detail: String(localized: "Индикатор в строке меню продолжит работать.")) { EmptyView() }
                     }.toggleStyle(.premium)
                 }
 
+                UpdateSettingsCard()
                 JournalSettingsCard()
             }
             .padding(24)
@@ -241,16 +245,16 @@ struct JournalSettingsCard: View {
     @EnvironmentObject var settings: AppSettings
 
     var body: some View {
-        Card("Журнал и фоновый мониторинг", icon: "waveform.path.ecg.rectangle") {
+        Card(String(localized: "Журнал и фоновый мониторинг"), icon: "waveform.path.ecg.rectangle") {
             Toggle(isOn: $settings.journalEnabled) {
-                SettingRow(title: "Вести журнал", detail: "История сигнала, задержки и обрывов за 24 часа. Запись раз в 10 секунд. По умолчанию выключено, чтобы не тратить батарею.") { EmptyView() }
+                SettingRow(title: String(localized: "Вести журнал"), detail: String(localized: "История сигнала, задержки и обрывов за 24 часа. Запись раз в 10 секунд. По умолчанию выключено, чтобы не тратить батарею.")) { EmptyView() }
             }.toggleStyle(.premium)
             Group {
                 Toggle(isOn: $settings.journalOnlyOnPower) {
-                    SettingRow(title: "Только при питании от сети", detail: "На батарее журнал встаёт на паузу и продолжает запись, когда подключите зарядку.") { EmptyView() }
+                    SettingRow(title: String(localized: "Только при питании от сети"), detail: String(localized: "На батарее журнал встаёт на паузу и продолжает запись, когда подключите зарядку.")) { EmptyView() }
                 }.toggleStyle(.premium)
                 Toggle(isOn: $settings.backgroundPing) {
-                    SettingRow(title: "Пинговать роутер каждые 5 секунд", detail: "Нужно для графика задержек и уведомлений «Роутер не отвечает». Нагрузка — один пакет в 5 секунд.") { EmptyView() }
+                    SettingRow(title: String(localized: "Пинговать роутер каждые 5 секунд"), detail: String(localized: "Нужно для графика задержек и уведомлений «Роутер не отвечает». Нагрузка — один пакет в 5 секунд.")) { EmptyView() }
                 }.toggleStyle(.premium)
             }
             .disabled(!settings.journalEnabled)
@@ -259,7 +263,7 @@ struct JournalSettingsCard: View {
                 Circle().fill(statusColor).frame(width: 7, height: 7).shadow(color: statusColor, radius: 3)
                 Text(statusText).font(.system(size: 12)).foregroundStyle(Theme.text2)
             }
-            SettingsView.tip("Без журнала приложение всё равно раз в секунду обновляет скорость и сигнал для строки меню. Это лёгкий системный запрос, заметного влияния на батарею он не оказывает.")
+            SettingsView.tip(String(localized: "Без журнала приложение всё равно раз в секунду обновляет скорость и сигнал для строки меню. Это лёгкий системный запрос, заметного влияния на батарею он не оказывает."))
         }
     }
 
@@ -268,8 +272,65 @@ struct JournalSettingsCard: View {
     }
 
     private var statusText: String {
-        if !settings.journalEnabled { return "Журнал выключен" }
-        if !settings.journalActive { return "На паузе: Mac работает от батареи" }
-        return "Журнал ведётся" + (settings.backgroundPing ? ", роутер пингуется" : "")
+        if !settings.journalEnabled { return String(localized: "Журнал выключен") }
+        if !settings.journalActive { return String(localized: "На паузе: Mac работает от батареи") }
+        return String(localized: "Журнал ведётся") + (settings.backgroundPing ? String(localized: ", роутер пингуется") : "")
+    }
+}
+
+// MARK: - Language
+
+enum AppLanguage: String, CaseIterable, Identifiable {
+    case system, ru, en
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .system: return String(localized: "Системный")
+        case .ru: return String(localized: "Русский")
+        case .en: return "English"
+        }
+    }
+
+    /// Per-app override stored in the app's own defaults domain (same mechanism as System Settings → Language & Region → Applications).
+    static var current: AppLanguage {
+        let langs = UserDefaults.standard.persistentDomain(forName: AppInfo.bundleID)?["AppleLanguages"] as? [String]
+        guard let first = langs?.first else { return .system }
+        return first.hasPrefix("en") ? .en : first.hasPrefix("ru") ? .ru : .system
+    }
+
+    func apply() {
+        if self == .system { UserDefaults.standard.removeObject(forKey: "AppleLanguages") }
+        else { UserDefaults.standard.set([rawValue], forKey: "AppleLanguages") }
+    }
+}
+
+struct LanguageCard: View {
+    @State private var selection = AppLanguage.current
+    @State private var initial = AppLanguage.current
+
+    var body: some View {
+        Card(String(localized: "Язык"), icon: "globe") {
+            HStack(spacing: 12) {
+                SegmentedControl(options: AppLanguage.allCases, selection: $selection) { $0.title }
+                Spacer()
+                if selection != initial {
+                    Button { relaunch() } label: { Label("Перезапустить", systemImage: "arrow.clockwise") }
+                        .buttonStyle(.premium)
+                }
+            }
+            Text(selection != initial ? String(localized: "Язык сменится после перезапуска приложения.") : String(localized: "«Системный» — как в настройках macOS. Русский и английский переведены полностью."))
+                .font(.system(size: 12)).foregroundStyle(Theme.text3)
+        }
+        .onChange(of: selection) { _, new in new.apply() }
+    }
+
+    private func relaunch() {
+        let config = NSWorkspace.OpenConfiguration()
+        config.createsNewApplicationInstance = true
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: config) { _, _ in
+            DispatchQueue.main.async { NSApp.terminate(nil) }
+        }
     }
 }

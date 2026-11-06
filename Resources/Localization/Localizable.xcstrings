@@ -1,0 +1,6066 @@
+{
+  "sourceLanguage": "ru",
+  "strings": {
+    "": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
+        }
+      }
+    },
+    " (ваш роутер)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (your router)"
+          }
+        }
+      }
+    },
+    " dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " dBm"
+          }
+        }
+      }
+    },
+    " Если какое‑то устройство не находит вашу сеть — причина, скорее всего, в этом.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " If some device can't find your network, this is most likely why."
+          }
+        }
+      }
+    },
+    " МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " MHz"
+          }
+        }
+      }
+    },
+    " Учтите: ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " Note: "
+          }
+        }
+      }
+    },
+    " Это DFS‑канал: роутер может кратковременно уходить с него при обнаружении радаров.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " This is a DFS channel: the router may briefly leave it when radar is detected."
+          }
+        }
+      }
+    },
+    " включая 6E": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " including 6E"
+          }
+        }
+      }
+    },
+    " к «%@»": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " to “%@”"
+          }
+        }
+      }
+    },
+    " от «%@»": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " from “%@”"
+          }
+        }
+      }
+    },
+    "%.0f МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f MHz"
+          }
+        }
+      }
+    },
+    "%.0f Мбит/с · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f Mbps · %@"
+          }
+        }
+      }
+    },
+    "%.0f мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f ms"
+          }
+        }
+      }
+    },
+    "%.0f мс, потери %.0f%%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f ms, loss %.0f%%"
+          }
+        }
+      }
+    },
+    "%.0f%% от потолка %.0f": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f%% of the %.0f ceiling"
+          }
+        }
+      }
+    },
+    "%@ %@ · сделано с любовью к стабильному интернету": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@ · made with love for stable internet"
+          }
+        }
+      }
+    },
+    "%@ = %@, %@ г. · %@ · %@. %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ = %@, %@ · %@ · %@. %@"
+          }
+        }
+      }
+    },
+    "%@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@"
+          }
+        }
+      }
+    },
+    "%@ · %lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld dBm"
+          }
+        }
+      }
+    },
+    "%@ · канал %lld · %lld МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · channel %lld · %lld MHz"
+          }
+        }
+      }
+    },
+    "%@, %@, %lld МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, %@, %lld MHz"
+          }
+        }
+      }
+    },
+    "%lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
+        }
+      }
+    },
+    "%lld / 100": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld / 100"
+          }
+        }
+      }
+    },
+    "%lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dBm"
+          }
+        }
+      }
+    },
+    "%lld dBm · SNR %lld dB": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dBm · SNR %lld dB"
+          }
+        }
+      }
+    },
+    "%lld · %@ · %lld МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld · %@ · %lld MHz"
+          }
+        }
+      }
+    },
+    "%lld МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld MHz"
+          }
+        }
+      }
+    },
+    "%lld МГц · %lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld MHz · %lld dBm"
+          }
+        }
+      }
+    },
+    "%lld сетей · %lld BSSID": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld networks · %lld BSSIDs"
+          }
+        }
+      }
+    },
+    "%lld ч": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld h"
+          }
+        }
+      }
+    },
+    "%lld–%lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld–%lld"
+          }
+        }
+      }
+    },
+    "* — неофициальные номера: Wi‑Fi Alliance пронумеровала только начиная с Wi‑Fi 4.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "* — unofficial numbers: the Wi‑Fi Alliance only numbered generations starting with Wi‑Fi 4."
+          }
+        }
+      }
+    },
+    ", роутер пингуется": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", pinging the router"
+          }
+        }
+      }
+    },
+    "0 — канал свободен, 1 — как одна сильная сеть прямо на нём. DFS‑каналы чуть штрафуются: на них роутер может уходить из‑за радаров.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "0 means the channel is free, 1 is like one strong network right on it. DFS channels get a small penalty: the router may leave them because of radar."
+          }
+        }
+      }
+    },
+    "0.%lldК": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "0.%lldK"
+          }
+        }
+      }
+    },
+    "0К": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "0K"
+          }
+        }
+      }
+    },
+    "1. Перейдите в комнату": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1. Go to the room"
+          }
+        }
+      }
+    },
+    "12–13 — не видят устройства для рынка США и часть старой техники": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12–13 — not visible to devices made for the US market and some older hardware"
+          }
+        }
+      }
+    },
+    "2,4 · 5 · 6 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2.4 · 5 · 6 GHz"
+          }
+        }
+      }
+    },
+    "2,4 · 5 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2.4 · 5 GHz"
+          }
+        }
+      }
+    },
+    "2,4 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2.4 GHz"
+          }
+        }
+      }
+    },
+    "2. Выберите название": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2. Pick a name"
+          }
+        }
+      }
+    },
+    "2020": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2020"
+          }
+        }
+      }
+    },
+    "3. Замерьте и не двигайтесь 10 с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3. Measure and keep still for 10 s"
+          }
+        }
+      }
+    },
+    "40 МГц в плотном эфире больше мешают, чем помогают: роутер постоянно уступает соседям.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In a crowded band, 40 MHz hurts more than it helps: the router keeps yielding to neighbours."
+          }
+        }
+      }
+    },
+    "5 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 GHz"
+          }
+        }
+      }
+    },
+    "5–15 мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5–15 ms"
+          }
+        }
+      }
+    },
+    "6 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6 GHz"
+          }
+        }
+      }
+    },
+    "6 ГГц (Wi‑Fi 6E) недоступен на этом Mac": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6 GHz (Wi‑Fi 6E) is not available on this Mac"
+          }
+        }
+      }
+    },
+    "802.11 — общее название семейства стандартов Wi‑Fi, а буквы после него — версия. С 2018 года версиям дали простые номера: ax = Wi‑Fi 6, ac = Wi‑Fi 5, n = Wi‑Fi 4. Устройство и роутер работают на самом новом стандарте, который поддерживают оба.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "802.11 is the family name of Wi‑Fi standards, and the letters after it are the version. Since 2018 the versions also have simple numbers: ax = Wi‑Fi 6, ac = Wi‑Fi 5, n = Wi‑Fi 4. A device and a router use the newest standard both of them support."
+          }
+        }
+      }
+    },
+    "802.11ax + 6 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "802.11ax + 6 GHz"
+          }
+        }
+      }
+    },
+    "> 15 мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "> 15 ms"
+          }
+        }
+      }
+    },
+    "BSSID скрыт": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BSSID hidden"
+          }
+        }
+      }
+    },
+    "DFS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DFS"
+          }
+        }
+      }
+    },
+    "DFS — каналы 52–144: часто свободны, но роутер обязан покинуть их при обнаружении радара. На 2,4 ГГц каналы 12–13 не видят устройства для рынка США и часть старой техники — надёжнее 1, 6 или 11.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DFS means channels 52–144: often free, but the router must leave them when radar is detected. On 2.4 GHz, channels 12–13 are not visible to devices made for the US market and some older hardware — 1, 6 or 11 are safer."
+          }
+        }
+      }
+    },
+    "DFS — роутер уходит с канала при обнаружении радара": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DFS — the router leaves the channel when radar is detected"
+          }
+        }
+      }
+    },
+    "DFS‑канал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DFS channel"
+          }
+        }
+      }
+    },
+    "MAC‑адрес точки доступа": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Access point MAC address"
+          }
+        }
+      }
+    },
+    "Mac не подключён ни к одной сети.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac isn't connected to any network."
+          }
+        }
+      }
+    },
+    "Mac переключился на 2,4 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac switched to 2.4 GHz"
+          }
+        }
+      }
+    },
+    "Mac поддерживает 6 ГГц, и роутер вещает в нём. Это самый чистый диапазон — подключитесь к нему.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Mac supports 6 GHz and the router broadcasts there. It's the cleanest band — connect to it."
+          }
+        }
+      }
+    },
+    "Mac ушёл с 5 ГГц на медленный диапазон.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Mac left 5 GHz for the slower band."
+          }
+        }
+      }
+    },
+    "OFDMA и Target Wake Time: быстрее в квартире с десятками устройств, меньше расход батареи.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OFDMA and Target Wake Time: faster in a home with dozens of devices, lower battery drain."
+          }
+        }
+      }
+    },
+    "USDT · сеть TRON (TRC20)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "USDT · TRON network (TRC20)"
+          }
+        }
+      }
+    },
+    "WPA3 защищает от подбора пароля офлайн. Безопасный вариант — режим «WPA2/WPA3», чтобы старые устройства не отвалились.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WPA3 protects against offline password guessing. The safe option is “WPA2/WPA3” mode so older devices keep working."
+          }
+        }
+      }
+    },
+    "Wi‑Fi (реально)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi (real)"
+          }
+        }
+      }
+    },
+    "Wi‑Fi 6E": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi 6E"
+          }
+        }
+      }
+    },
+    "Wi‑Fi в порядке, задержку добавляет провайдер.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi is fine; the delay is added by your provider."
+          }
+        }
+      }
+    },
+    "Wi‑Fi выключен. Включите его в Пункте управления.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi is off. Turn it on in Control Center."
+          }
+        }
+      }
+    },
+    "Wi‑Fi делит диапазон на каналы. Если соседи на том же или пересекающемся канале, роутеры вынуждены делить эфир по очереди. Ширина (20/40/80/160 МГц) — это «полосность дороги»: шире — быстрее, но выше шанс столкнуться с соседями.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi splits a band into channels. If neighbours use the same or an overlapping channel, the routers have to take turns on the air. Width (20/40/80/160 MHz) is like the number of lanes on a road: wider is faster, but more likely to collide with neighbours."
+          }
+        }
+      }
+    },
+    "Wi‑Fi может дать до ~%.0f Мбит/с, а интернет — %.0f. Ограничивает тариф или провайдер, а не Wi‑Fi.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi can deliver up to ~%.0f Mbps, while the internet gives %.0f. Your plan or provider is the limit, not Wi‑Fi."
+          }
+        }
+      }
+    },
+    "Wi‑Fi на практике даёт около 65% от скорости канала. Если интернет почти упирается в это значение, ограничивает Wi‑Fi. Если интернет заметно ниже, ограничивает тариф или провайдер.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In practice Wi‑Fi delivers about two‑thirds of the link rate. If the internet almost reaches that value, Wi‑Fi is the limit. If the internet is noticeably lower, your plan or provider is the limit."
+          }
+        }
+      }
+    },
+    "Wi‑Fi отключился": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi disconnected"
+          }
+        }
+      }
+    },
+    "Wi‑Fi снова на связи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi is back"
+          }
+        }
+      }
+    },
+    "Wi‑Fi тормозит, а непонятно почему? Приложение смотрит на сеть глазами инженера: силу сигнала, помехи, загрузку каналов соседями, стандарт и защиту — и переводит всё это на человеческий язык. Без графиков ради графиков: только понятный диагноз и конкретные шаги, что сделать.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi is slow and you don't know why? The app looks at your network like an engineer would: signal strength, interference, channel congestion from neighbours, standard and security — and explains it all in plain language. No charts for the sake of charts: just a clear diagnosis and concrete steps."
+          }
+        }
+      }
+    },
+    "Wi‑Fi → 2,4 ГГц → «Канал»: выберите 1, 6 или 11 (самый свободный — на вкладке «Каналы»).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi → 2.4 GHz → “Channel”: pick 1, 6 or 11 (the least busy one is on the Channels tab)."
+          }
+        }
+      }
+    },
+    "Wi‑Fi → 2,4 ГГц → «Ширина канала» (Bandwidth) → 20 МГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi → 2.4 GHz → “Channel width” (Bandwidth) → 20 MHz."
+          }
+        }
+      }
+    },
+    "Wi‑Fi → 5 ГГц → «Ширина канала» → 80 МГц (или 20/40/80 МГц).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi → 5 GHz → “Channel width” → 80 MHz (or 20/40/80 MHz)."
+          }
+        }
+      }
+    },
+    "Wi‑Fi → Безопасность → «WPA2/WPA3‑Personal» (Transition).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi → Security → “WPA2/WPA3‑Personal” (Transition)."
+          }
+        }
+      }
+    },
+    "Wi‑Fi → Безопасность → «WPA2/WPA3‑Personal».": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi → Security → “WPA2/WPA3‑Personal”."
+          }
+        }
+      }
+    },
+    "dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dBm"
+          }
+        }
+      }
+    },
+    "macOS показывает SSID только приложениям с доступом к геолокации. Разрешите его в Настройках → Конфиденциальность → Службы геолокации.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS shows SSIDs only to apps with location access. Allow it in Settings → Privacy → Location Services."
+          }
+        }
+      }
+    },
+    "«Системный» — как в настройках macOS. Русский и английский переведены полностью.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“System” follows your macOS settings. Russian and English are fully translated."
+          }
+        }
+      }
+    },
+    "·": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "·"
+          }
+        }
+      }
+    },
+    "Балкон": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balcony"
+          }
+        }
+      }
+    },
+    "Балл от 0 до 100 и пошаговые инструкции, что поменять в роутере": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A score from 0 to 100 and step‑by‑step instructions on what to change in your router"
+          }
+        }
+      }
+    },
+    "Без аккаунтов и рекламы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No accounts, no ads"
+          }
+        }
+      }
+    },
+    "Без журнала приложение всё равно раз в секунду обновляет скорость и сигнал для строки меню. Это лёгкий системный запрос, заметного влияния на батарею он не оказывает.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Without the journal the app still refreshes speed and signal once a second for the menu bar. It's a lightweight system call with no noticeable effect on battery."
+          }
+        }
+      }
+    },
+    "Безопасность": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Security"
+          }
+        }
+      }
+    },
+    "Бесплатно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
+          }
+        }
+      }
+    },
+    "Буквы в строке «802.11 a/b/g/n/ac/ax» — это и есть список поддерживаемых стандартов. * — неофициальные номера: официально нумерация начинается с Wi‑Fi 4.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The letters in “802.11 a/b/g/n/ac/ax” are exactly the list of supported standards. * — unofficial numbers: official numbering starts with Wi‑Fi 4."
+          }
+        }
+      }
+    },
+    "В покое": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idle"
+          }
+        }
+      }
+    },
+    "Важно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Important"
+          }
+        }
+      }
+    },
+    "Ванная": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom"
+          }
+        }
+      }
+    },
+    "Ваш Mac поддерживает 160 МГц, а эфир вокруг канала %d свободен (давление %.1f). Это поднимет скорость соединения примерно до 1200 Мбит/с.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Mac supports 160 MHz, and the air around channel %d is free (pressure %.1f). This would raise the link rate to about 1200 Mbps."
+          }
+        }
+      }
+    },
+    "Ваш Mac поддерживает до %@ (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Mac supports up to %@ (%@)"
+          }
+        }
+      }
+    },
+    "Ваша Wi‑Fi сеть": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Wi‑Fi network"
+          }
+        }
+      }
+    },
+    "Ваша сеть": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your network"
+          }
+        }
+      }
+    },
+    "Ваша сеть «%@» вещает и на 5 ГГц (%lld dBm, канал %lld). Там в разы выше скорость и меньше помех. Разделите имена сетей на роутере или включите Band Steering.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your network “%@” also broadcasts on 5 GHz (%lld dBm, channel %lld). It's much faster there with less interference. Split the network names on your router or enable Band Steering."
+          }
+        }
+      }
+    },
+    "Вернитесь в приложение и нажмите «Сканировать эфир», чтобы проверить результат.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back to the app and click “Scan the air” to check the result."
+          }
+        }
+      }
+    },
+    "Вернитесь в приложение: имена сетей появятся при следующем скане.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back to the app: network names will appear on the next scan."
+          }
+        }
+      }
+    },
+    "Версия %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        }
+      }
+    },
+    "Вести журнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep a journal"
+          }
+        }
+      }
+    },
+    "Взламывается за минуты и режет скорость до 54 Мбит/с. Переключите роутер на WPA2/WPA3.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cracked in minutes and caps speed at 54 Mbps. Switch the router to WPA2/WPA3."
+          }
+        }
+      }
+    },
+    "Включите WPA3": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on WPA3"
+          }
+        }
+      }
+    },
+    "Включите переключатель у «%@».": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on the switch next to “%@”."
+          }
+        }
+      }
+    },
+    "Включите ширину 80 МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use 80 MHz width"
+          }
+        }
+      }
+    },
+    "Включите, чтобы записывать сигнал, задержку и обрывы за последние 24 часа. Удобно, если связь «иногда лагает» и нужно понять когда.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn it on to record signal, latency and drop‑outs for the last 24 hours. Handy when the connection “sometimes lags” and you want to know when."
+          }
+        }
+      }
+    },
+    "Включить журнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on journal"
+          }
+        }
+      }
+    },
+    "Включён VPN: трафик приложений внутри туннеля виден одной строкой — самим VPN‑клиентом.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VPN is on: traffic of apps inside the tunnel shows up as a single line — the VPN client itself."
+          }
+        }
+      }
+    },
+    "Во всех комнатах сигнал достаточный. Лучше всего в «%@», хуже всего в «%@» (%lld dBm), но и там хватит для видео.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The signal is good enough in every room. Best in “%@”, worst in “%@” (%lld dBm), but even there it's enough for video."
+          }
+        }
+      }
+    },
+    "Время": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time"
+          }
+        }
+      }
+    },
+    "Все": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        }
+      }
+    },
+    "Все советы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All tips"
+          }
+        }
+      }
+    },
+    "Все советы →": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All tips →"
+          }
+        }
+      }
+    },
+    "Всего входящий": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total download"
+          }
+        }
+      }
+    },
+    "Всего исходящий": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total upload"
+          }
+        }
+      }
+    },
+    "Всё хорошо": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All good"
+          }
+        }
+      }
+    },
+    "Входящий": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download"
+          }
+        }
+      }
+    },
+    "Входящий и исходящий трафик всегда на виду": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download and upload traffic always in sight"
+          }
+        }
+      }
+    },
+    "Вы на 2,4 ГГц, хотя рядом есть 5 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're on 2.4 GHz while 5 GHz is available"
+          }
+        }
+      }
+    },
+    "Вывод": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verdict"
+          }
+        }
+      }
+    },
+    "Выйти": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit"
+          }
+        }
+      }
+    },
+    "Выключено.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off."
+          }
+        }
+      }
+    },
+    "Высокая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
+          }
+        }
+      }
+    },
+    "Высокий уровень помех (SNR %lld dB)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High interference (SNR %lld dB)"
+          }
+        }
+      }
+    },
+    "Г": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "G"
+          }
+        }
+      }
+    },
+    "Гбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gbps"
+          }
+        }
+      }
+    },
+    "Где узкое место": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where the bottleneck is"
+          }
+        }
+      }
+    },
+    "Гостиная": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living room"
+          }
+        }
+      }
+    },
+    "График сигнала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal chart"
+          }
+        }
+      }
+    },
+    "Давление соседей на этом канале": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neighbour pressure on this channel"
+          }
+        }
+      }
+    },
+    "Данные копятся, пока приложение работает (в том числе только в строке меню). Загляните через несколько минут.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data accumulates while the app is running (including menu‑bar‑only mode). Check back in a few minutes."
+          }
+        }
+      }
+    },
+    "Данные не покидают Mac": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your data never leaves the Mac"
+          }
+        }
+      }
+    },
+    "Дата": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
+          }
+        }
+      }
+    },
+    "Детская": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kids' room"
+          }
+        }
+      }
+    },
+    "Диапазон и стандарт": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band and standard"
+          }
+        }
+      }
+    },
+    "Диапазон: %@ → %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band: %@ → %@"
+          }
+        }
+      }
+    },
+    "Диапазоны": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bands"
+          }
+        }
+      }
+    },
+    "Для видеозвонков и стабильной скорости желательно −65 dBm и лучше. Поставьте роутер выше и ближе к центру помещения.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For video calls and stable speed aim for −65 dBm or better. Place the router higher and closer to the middle of the home."
+          }
+        }
+      }
+    },
+    "Для звонков и игр лучше всего кабель Ethernet через USB‑C адаптер.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For calls and games, an Ethernet cable via a USB‑C adapter is best."
+          }
+        }
+      }
+    },
+    "Для каждого канала считаем «давление соседей»: каждая сеть учитывается с весом по силе её сигнала и по тому, насколько её полоса перекрывает канал.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For each channel we compute “neighbour pressure”: every network counts with a weight based on its signal strength and how much its band overlaps the channel."
+          }
+        }
+      }
+    },
+    "До интернета": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To internet"
+          }
+        }
+      }
+    },
+    "До роутера": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To router"
+          }
+        }
+      }
+    },
+    "До роутера %.0f мс, до интернета %.0f мс. Wi‑Fi тут ни при чём — дело в канале провайдера.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.0f ms to the router, %.0f ms to the internet. Wi‑Fi isn't the issue — it's your provider's link."
+          }
+        }
+      }
+    },
+    "Доп. сеть вашего роутера": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra network of your router"
+          }
+        }
+      }
+    },
+    "Доступен %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@ is available"
+          }
+        }
+      }
+    },
+    "Доступна ваша сеть на 6 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your network is available on 6 GHz"
+          }
+        }
+      }
+    },
+    "Доступна версия %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@ is available"
+          }
+        }
+      }
+    },
+    "Доступна версия %@ (у вас %@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@ is available (you have %@)"
+          }
+        }
+      }
+    },
+    "Другой диапазон или гостевая сеть вашего роутера — не считается помехой": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Another band or guest network of your router — not counted as interference"
+          }
+        }
+      }
+    },
+    "Если выключено, приложение стартует только в строке меню.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If off, the app starts in the menu bar only."
+          }
+        }
+      }
+    },
+    "Если не помогло — поставьте mesh‑систему или вторую точку доступа по кабелю.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If that doesn't help, add a mesh system or a second access point wired with a cable."
+          }
+        }
+      }
+    },
+    "Если плохо и рядом — перезагрузите роутер и смените канал (вкладка «Каналы»).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If it's bad even nearby, restart the router and change the channel (Channels tab)."
+          }
+        }
+      }
+    },
+    "Если приложение помогло — можно угостить автора кофе": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the app helped — you can buy the author a coffee"
+          }
+        }
+      }
+    },
+    "Если сигнал дольше 15 секунд ниже %lld dBm.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the signal stays below %lld dBm for more than 15 seconds."
+          }
+        }
+      }
+    },
+    "Есть что подкрутить, но в целом стабильно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some room for tuning, but stable overall"
+          }
+        }
+      }
+    },
+    "Ещё не измеряли": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not measured yet"
+          }
+        }
+      }
+    },
+    "Журнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal"
+          }
+        }
+      }
+    },
+    "Журнал ведётся": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal is on"
+          }
+        }
+      }
+    },
+    "Журнал выключен": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal is off"
+          }
+        }
+      }
+    },
+    "Журнал и уведомления": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal and notifications"
+          }
+        }
+      }
+    },
+    "Журнал и фоновый мониторинг": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal and background monitoring"
+          }
+        }
+      }
+    },
+    "Журнал на паузе — Mac работает от батареи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journal paused — Mac is on battery"
+          }
+        }
+      }
+    },
+    "За выбранный период событий нет — связь была стабильной.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No events in the selected period — the connection was stable."
+          }
+        }
+      }
+    },
+    "Загрузка": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download"
+          }
+        }
+      }
+    },
+    "Загрузка канала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel load"
+          }
+        }
+      }
+    },
+    "Загрузка каналов": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel load"
+          }
+        }
+      }
+    },
+    "Загрузка каналов · %lld МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel load · %lld MHz"
+          }
+        }
+      }
+    },
+    "Загрузка, Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download, Mbps"
+          }
+        }
+      }
+    },
+    "Задайте пароль не короче 12 символов.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set a password of at least 12 characters."
+          }
+        }
+      }
+    },
+    "Задайте этот канал вручную вместо «Авто» и сохраните.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set this channel manually instead of “Auto” and save."
+          }
+        }
+      }
+    },
+    "Задержка в основном у провайдера": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most of the latency is on the provider side"
+          }
+        }
+      }
+    },
+    "Задержка до роутера": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latency to router"
+          }
+        }
+      }
+    },
+    "Задержка и потери": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latency and loss"
+          }
+        }
+      }
+    },
+    "Замерить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure"
+          }
+        }
+      }
+    },
+    "Замеры по комнатам: где слабый сигнал и куда ставить роутер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room‑by‑room measurements: where the signal is weak and where to put the router"
+          }
+        }
+      }
+    },
+    "Замерьте ещё хотя бы одну комнату, чтобы сравнить.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure at least one more room to compare."
+          }
+        }
+      }
+    },
+    "Замеряю «%@»…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measuring “%@”…"
+          }
+        }
+      }
+    },
+    "Запись каждые 10 секунд, хранится 24 часа. Провалы ниже оранжевой линии означают, что связь в этот момент могла тормозить.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorded every 10 seconds, kept for 24 hours. Dips below the orange line mean the connection may have been sluggish at that moment."
+          }
+        }
+      }
+    },
+    "Запись продолжится автоматически, когда подключите зарядку. Это можно изменить в настройках.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording resumes automatically when you plug in the charger. You can change this in Settings."
+          }
+        }
+      }
+    },
+    "Запуск": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch"
+          }
+        }
+      }
+    },
+    "Запускать при входе в систему": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch at login"
+          }
+        }
+      }
+    },
+    "Запустить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run"
+          }
+        }
+      }
+    },
+    "Запустить тест": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run test"
+          }
+        }
+      }
+    },
+    "Звонки не пострадают даже при загрузке канала.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calls won't suffer even when the link is busy."
+          }
+        }
+      }
+    },
+    "Здесь появится график, когда будет хотя бы два теста. Запускайте тест в разное время суток, чтобы увидеть вечернюю просадку провайдера.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A chart appears here once there are at least two tests. Run the test at different times of day to see your provider's evening slowdown."
+          }
+        }
+      }
+    },
+    "Зелёная — отличный сигнал, жёлтая — средний, красная — слабый.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Green — excellent signal, yellow — fair, red — weak."
+          }
+        }
+      }
+    },
+    "И Wi‑Fi, и интернет отвечают быстро.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Both Wi‑Fi and the internet respond quickly."
+          }
+        }
+      }
+    },
+    "Идентификатор": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Identifier"
+          }
+        }
+      }
+    },
+    "Из чего складывается оценка": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What the score is made of"
+          }
+        }
+      }
+    },
+    "Измеряю…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measuring…"
+          }
+        }
+      }
+    },
+    "Иконка + оценка": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon + score"
+          }
+        }
+      }
+    },
+    "Иконка + скорость": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon + speed"
+          }
+        }
+      }
+    },
+    "Или своё название": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Or your own name"
+          }
+        }
+      }
+    },
+    "Имена сетей скрыты": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Network names are hidden"
+          }
+        }
+      }
+    },
+    "Имена сетей скрыты: разрешите приложению доступ к геолокации, тогда сети одного роутера объединятся в одну строку.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Network names are hidden: allow the app to use location, and networks from one router will merge into a single row."
+          }
+        }
+      }
+    },
+    "Имя": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "Индикатор в строке меню продолжит работать.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The menu bar indicator keeps working."
+          }
+        }
+      }
+    },
+    "Инструменты": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tools"
+          }
+        }
+      }
+    },
+    "Интернет": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Internet"
+          }
+        }
+      }
+    },
+    "Использует встроенный в macOS тест Apple (networkQuality): несколько параллельных потоков на серверы Apple, около 15 секунд. Расходует 300–800 МБ трафика.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uses Apple's built‑in macOS test (networkQuality): several parallel streams to Apple servers, about 15 seconds. Uses 300–800 MB of data."
+          }
+        }
+      }
+    },
+    "История обрывов и задержек, оповещения о проблемах": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History of drop‑outs and latency, problem alerts"
+          }
+        }
+      }
+    },
+    "История сигнала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal history"
+          }
+        }
+      }
+    },
+    "История сигнала, задержки и обрывов за 24 часа. Запись раз в 10 секунд. По умолчанию выключено, чтобы не тратить батарею.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "History of signal, latency and drop‑outs for 24 hours. Recorded every 10 seconds. Off by default to save battery."
+          }
+        }
+      }
+    },
+    "История тестов": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test history"
+          }
+        }
+      }
+    },
+    "Исходящий": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload"
+          }
+        }
+      }
+    },
+    "К": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "K"
+          }
+        }
+      }
+    },
+    "К сведению": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For your information"
+          }
+        }
+      }
+    },
+    "Кабинет": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Office"
+          }
+        }
+      }
+    },
+    "Каждая полоска — отдельный фактор от 0 до 100%. Самая короткая полоска — главное, что тянет оценку вниз. С неё и стоит начинать.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each bar is a separate factor from 0 to 100%. The shortest bar is the main thing pulling the score down — start there."
+          }
+        }
+      }
+    },
+    "Каждый «горб» — одна сеть. По горизонтали — частота (номера каналов), ширина горба — ширина канала сети. Высота — сила её сигнала у вас. Ваша сеть выделена синим со звёздочкой. Где горбы перекрываются, сети мешают друг другу.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each “hump” is one network. Horizontally — frequency (channel numbers), the hump's width is the network's channel width. Height — its signal strength at your location. Your network is highlighted with a star. Where humps overlap, the networks interfere with each other."
+          }
+        }
+      }
+    },
+    "Как пользоваться": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to use"
+          }
+        }
+      }
+    },
+    "Как сделать · шагов: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to do it · steps: %lld"
+          }
+        }
+      }
+    },
+    "Как читать спектр": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to read the spectrum"
+          }
+        }
+      }
+    },
+    "Как это считается": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How it's calculated"
+          }
+        }
+      }
+    },
+    "Канал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel"
+          }
+        }
+      }
+    },
+    "Канал %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel %lld"
+          }
+        }
+      }
+    },
+    "Канал %lld видят не все устройства": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not all devices can see channel %lld"
+          }
+        }
+      }
+    },
+    "Канал выбирают в настройках роутера: Wi‑Fi → 2,4/5 ГГц → Канал.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The channel is set in the router settings: Wi‑Fi → 2.4/5 GHz → Channel."
+          }
+        }
+      }
+    },
+    "Канал выбран удачно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good channel choice"
+          }
+        }
+      }
+    },
+    "Канал и ширина": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel and width"
+          }
+        }
+      }
+    },
+    "Канал роутера: %lld → %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Router channel: %lld → %lld"
+          }
+        }
+      }
+    },
+    "Канал, на котором сейчас ваш роутер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The channel your router is on now"
+          }
+        }
+      }
+    },
+    "Каналов 6 ГГц нет в списке разрешённых: либо модуль не поддерживает Wi‑Fi 6E, либо диапазон запрещён в регионе %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are no 6 GHz channels in the allowed list: either the module doesn't support Wi‑Fi 6E, or the band is not allowed in region %@."
+          }
+        }
+      }
+    },
+    "Каналы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channels"
+          }
+        }
+      }
+    },
+    "Каналы 12–13 не видят устройства для рынка США и часть старой техники (некоторые ноутбуки, принтеры, умные лампы и розетки).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channels 12–13 are not visible to devices made for the US market and some older hardware (some laptops, printers, smart bulbs and plugs)."
+          }
+        }
+      }
+    },
+    "Каналы 320 МГц и MLO — работа сразу в нескольких диапазонах для минимальной задержки.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "320 MHz channels and MLO — using several bands at once for minimal latency."
+          }
+        }
+      }
+    },
+    "Каналы 80/160 МГц и MU‑MIMO. Только 5 ГГц — на 2,4 ГГц такие устройства работают по n.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "80/160 MHz channels and MU‑MIMO. 5 GHz only — on 2.4 GHz such devices fall back to n."
+          }
+        }
+      }
+    },
+    "Каналы · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channels · %@"
+          }
+        }
+      }
+    },
+    "Каналы и соседи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channels and neighbours"
+          }
+        }
+      }
+    },
+    "Каналы на 2,4 ГГц: только 1, 6 или 11 — они не пересекаются.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On 2.4 GHz use only channels 1, 6 or 11 — they don't overlap."
+          }
+        }
+      }
+    },
+    "Карта квартиры": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room map"
+          }
+        }
+      }
+    },
+    "Кбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kbps"
+          }
+        }
+      }
+    },
+    "Когда кто‑то качает, звонки и игры будут подлагивать.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When someone is downloading, calls and games will stutter."
+          }
+        }
+      }
+    },
+    "Код страны": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Country code"
+          }
+        }
+      }
+    },
+    "Кто сейчас использует Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who is using Wi‑Fi right now"
+          }
+        }
+      }
+    },
+    "Кухня": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen"
+          }
+        }
+      }
+    },
+    "Лаги при загрузке": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lag under load"
+          }
+        }
+      }
+    },
+    "Лучший из каналов, которые видят все устройства": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The best channel that every device can see"
+          }
+        }
+      }
+    },
+    "Лёгкое: ~1% процессора": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lightweight: about 1 percent CPU"
+          }
+        }
+      }
+    },
+    "М": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "M"
+          }
+        }
+      }
+    },
+    "МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MHz"
+          }
+        }
+      }
+    },
+    "Макс. ширина канала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max channel width"
+          }
+        }
+      }
+    },
+    "Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mbps"
+          }
+        }
+      }
+    },
+    "Медианная задержка %.0f мс, джиттер %.0f мс, потери %.0f%%. Для локальной сети норма — до 5 мс без потерь. Причина обычно в помехах или слабом сигнале.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Median latency %.0f ms, jitter %.0f ms, loss %.0f%%. On a local network, up to 5 ms with no loss is normal. The cause is usually interference or a weak signal."
+          }
+        }
+      }
+    },
+    "Медленно переставляйте роутер или ноутбук, пока сигнал не поднимется выше −65 dBm.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slowly move the router or the laptop until the signal rises above −65 dBm."
+          }
+        }
+      }
+    },
+    "Медленно, 2009": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow, 2009"
+          }
+        }
+      }
+    },
+    "Метки на полоске — пороги −67 и −55 dBm.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The ticks on the bar mark the −67 and −55 dBm thresholds."
+          }
+        }
+      }
+    },
+    "Модель": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Model"
+          }
+        }
+      }
+    },
+    "Модуль %@ не имеет радио 6 ГГц, поэтому Wi‑Fi 6E на этом Mac невозможен ни программно, ни через настройки. Он появился в MacBook Pro на M2 Pro/Max и новее.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The %@ module has no 6 GHz radio, so Wi‑Fi 6E is impossible on this Mac, by software or settings. It arrived in MacBook Pro with M2 Pro/Max and later."
+          }
+        }
+      }
+    },
+    "Модуль %@ физически не имеет радио 6 ГГц. Это ограничение железа — драйвером или настройками не исправить. Wi‑Fi 6E есть в Mac на M2 Pro/Max и новее.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The %@ module physically has no 6 GHz radio. It's a hardware limit — no driver or setting can fix it. Wi‑Fi 6E is available on Macs with M2 Pro/Max and later."
+          }
+        }
+      }
+    },
+    "Модуль Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi module"
+          }
+        }
+      }
+    },
+    "Модуль Wi‑Fi этого Mac (или регион %@) ограничен %d МГц, поэтому потолок соединения — около %.0f Мбит/с (сейчас %.0f). Широкий канал роутера при этом сильнее пересекается с соседями; если устройств с поддержкой 160 МГц нет, 80 МГц на роутере будет стабильнее.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac's Wi‑Fi module (or region %@) is limited to %d MHz, so the link ceiling is about %.0f Mbps (now %.0f). The router's wide channel also overlaps neighbours more; if you have no 160 MHz devices, 80 MHz on the router will be more stable."
+          }
+        }
+      }
+    },
+    "Можно включить 160 МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can enable 160 MHz"
+          }
+        }
+      }
+    },
+    "Монитор": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monitor"
+          }
+        }
+      }
+    },
+    "Музыка": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
+          }
+        }
+      }
+    },
+    "На Mac: меню Wi‑Fi → подключитесь к сети 5G.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the Mac: Wi‑Fi menu → join the 5G network."
+          }
+        }
+      }
+    },
+    "На батарее журнал встаёт на паузу и продолжает запись, когда подключите зарядку.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On battery the journal pauses and resumes recording when you plug in the charger."
+          }
+        }
+      }
+    },
+    "На вашем канале давление соседей %.1f, на канале %d — %.1f. Выберите его вручную в настройках роутера вместо «Авто».": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neighbour pressure on your channel is %.1f, on channel %d it's %.1f. Select it manually in the router settings instead of “Auto”."
+          }
+        }
+      }
+    },
+    "На паузе: Mac работает от батареи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused: Mac is on battery"
+          }
+        }
+      }
+    },
+    "Наведите курсор на график — появится список сетей на этой частоте.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hover over the chart to see the list of networks on that frequency."
+          }
+        }
+      }
+    },
+    "Нажмите «Тест задержки», чтобы оценка учла стабильность связи с роутером.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click “Latency test” so the score takes the router connection stability into account."
+          }
+        }
+      }
+    },
+    "Нажмите на совет, чтобы раскрыть пошаговую инструкцию.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click a tip to expand the step‑by‑step instructions."
+          }
+        }
+      }
+    },
+    "Нажмите, чтобы показать диапазоны и MAC‑адреса": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click to show bands and MAC addresses"
+          }
+        }
+      }
+    },
+    "Наименее загруженный канал — выберите его в настройках роутера": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The least busy channel — select it in your router settings"
+          }
+        }
+      }
+    },
+    "Найти все сети вокруг и пересчитать оценку": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find all networks around and recalculate the score"
+          }
+        }
+      }
+    },
+    "Насколько громко Mac «слышит» роутер, в dBm. Значения отрицательные: чем ближе к нулю, тем лучше. Каждые −3 dBm — это вдвое меньше мощности.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How loudly the Mac “hears” the router, in dBm. Values are negative: the closer to zero, the better. Every −3 dBm halves the power."
+          }
+        }
+      }
+    },
+    "Настройки": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "Начать новый обход": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start a new walk‑through"
+          }
+        }
+      }
+    },
+    "Не подключено": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not connected"
+          }
+        }
+      }
+    },
+    "Не удалось получить данные о релизе": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't get release information"
+          }
+        }
+      }
+    },
+    "Не удалось: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Failed: %@"
+          }
+        }
+      }
+    },
+    "Несколько MAC‑адресов в одном диапазоне — виртуальные точки одного радиомодуля": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Several MAC addresses in one band — virtual access points of one radio"
+          }
+        }
+      }
+    },
+    "Несколько пингов подряд до роутера потеряны.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Several pings in a row to the router were lost."
+          }
+        }
+      }
+    },
+    "Нестабильная связь с роутером": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unstable connection to the router"
+          }
+        }
+      }
+    },
+    "Нет данных": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No data"
+          }
+        }
+      }
+    },
+    "Нет доступных каналов в этом диапазоне": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No channels available in this band"
+          }
+        }
+      }
+    },
+    "Нет записей за этот период.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No records for this period."
+          }
+        }
+      }
+    },
+    "Нет каналов 6 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No 6 GHz channels"
+          }
+        }
+      }
+    },
+    "Нет подключения": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No connection"
+          }
+        }
+      }
+    },
+    "Нет подключения к Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Wi‑Fi connection"
+          }
+        }
+      }
+    },
+    "Нет связи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No connection"
+          }
+        }
+      }
+    },
+    "Нет связи с GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't reach GitHub"
+          }
+        }
+      }
+    },
+    "Низкая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low"
+          }
+        }
+      }
+    },
+    "Низкая отзывчивость лечится включением SQM / Smart Queue (или «QoS») на роутере.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low responsiveness is fixed by enabling SQM / Smart Queue (or “QoS”) on the router."
+          }
+        }
+      }
+    },
+    "Низкая скорость при хорошем сигнале": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low speed despite a good signal"
+          }
+        }
+      }
+    },
+    "Новейший, 2024": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest, 2024"
+          }
+        }
+      }
+    },
+    "Норма": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "Нормально": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Нужно для графика задержек и уведомлений «Роутер не отвечает». Нагрузка — один пакет в 5 секунд.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needed for the latency chart and “Router not responding” alerts. Load — one packet every 5 seconds."
+          }
+        }
+      }
+    },
+    "Нужно разрешение: Системные настройки → Основные → Объекты входа.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permission needed: System Settings → General → Login Items."
+          }
+        }
+      }
+    },
+    "О проекте": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        }
+      }
+    },
+    "ОЦЕНКА СЕТИ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NETWORK SCORE · %@"
+          }
+        }
+      }
+    },
+    "Обзор": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overview"
+          }
+        }
+      }
+    },
+    "Обновить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refresh"
+          }
+        }
+      }
+    },
+    "Обновление %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update %@"
+          }
+        }
+      }
+    },
+    "Обновления": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        }
+      }
+    },
+    "Обрыв Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi drop‑out"
+          }
+        }
+      }
+    },
+    "Обход квартиры": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home walk‑through"
+          }
+        }
+      }
+    },
+    "Общая оценка сети": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overall network score"
+          }
+        }
+      }
+    },
+    "Отдача": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upload"
+          }
+        }
+      }
+    },
+    "Отзывчивость": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Responsiveness"
+          }
+        }
+      }
+    },
+    "Отзывчивость %@. ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Responsiveness %@. "
+          }
+        }
+      }
+    },
+    "Отзывчивость (RPM)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Responsiveness (RPM)"
+          }
+        }
+      }
+    },
+    "Отзывчивость под нагрузкой": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Responsiveness under load"
+          }
+        }
+      }
+    },
+    "Отключение от сети и восстановление связи.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnecting from the network and reconnecting."
+          }
+        }
+      }
+    },
+    "Откройте Системные настройки → Конфиденциальность и безопасность → Службы геолокации.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open System Settings → Privacy & Security → Location Services."
+          }
+        }
+      }
+    },
+    "Откройте в браузере **http://%@** и войдите в настройки роутера (логин и пароль обычно на наклейке снизу).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open **http://%@** in a browser and sign in to the router settings (the login and password are usually on a sticker underneath)."
+          }
+        }
+      }
+    },
+    "Откройте вкладку «Каналы» и найдите самый свободный канал.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the Channels tab and find the least busy channel."
+          }
+        }
+      }
+    },
+    "Откройте вкладку «Обзор» и следите за графиком сигнала.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the Overview tab and watch the signal chart."
+          }
+        }
+      }
+    },
+    "Открывать окно при запуске": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the window at launch"
+          }
+        }
+      }
+    },
+    "Открытая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
+    "Открыть %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open %@"
+          }
+        }
+      }
+    },
+    "Открыть настройки": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open settings"
+          }
+        }
+      }
+    },
+    "Открыть рекомендации": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open recommendations"
+          }
+        }
+      }
+    },
+    "Отлично": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excellent"
+          }
+        }
+      }
+    },
+    "Отличный": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excellent"
+          }
+        }
+      }
+    },
+    "Отодвиньте от ноутбука USB‑хабы и док‑станции USB 3: они фонят на 2,4 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move USB hubs and USB 3 docks away from the laptop: they emit noise on 2.4 GHz."
+          }
+        }
+      }
+    },
+    "Отправляем 20 пингов до роутера и до 1.1.1.1. Показана медиана: Wi‑Fi в режиме энергосбережения иногда даёт одиночные всплески, и медиана их не учитывает. Если плохо уже до роутера, проблема в Wi‑Fi. Если до роутера хорошо, а до интернета плохо, проблема у провайдера.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We send 20 pings to the router and to 1.1.1.1. The median is shown: Wi‑Fi in power‑saving mode sometimes produces single spikes, and the median ignores them. If it's already bad to the router, the problem is Wi‑Fi. If the router is fine but the internet is bad, the problem is your provider."
+          }
+        }
+      }
+    },
+    "Отправляйте только USDT в сети TRON (TRC20). Перевод в другой сети (ERC20, BEP20 и т. п.) или другой монеты будет потерян.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send only USDT on the TRON network (TRC20). A transfer on another network (ERC20, BEP20, etc.) or of another coin will be lost."
+          }
+        }
+      }
+    },
+    "Отсканируйте в кошельке": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan with your wallet"
+          }
+        }
+      }
+    },
+    "Оценка и советы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Score and tips"
+          }
+        }
+      }
+    },
+    "Очистить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        }
+      }
+    },
+    "Очистить журнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear journal"
+          }
+        }
+      }
+    },
+    "Первый с MIMO (несколько антенн) и каналами 40 МГц. Сейчас — минимум для нормальной работы.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The first with MIMO (several antennas) and 40 MHz channels. Today it's the minimum for normal use."
+          }
+        }
+      }
+    },
+    "Первый стандарт на 5 ГГц. Устаревший.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The first standard on 5 GHz. Outdated."
+          }
+        }
+      }
+    },
+    "Перегружен": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overloaded"
+          }
+        }
+      }
+    },
+    "Перезапустить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relaunch"
+          }
+        }
+      }
+    },
+    "Переключение на 2,4 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch to 2.4 GHz"
+          }
+        }
+      }
+    },
+    "Перенесите ноутбук в комнату, выберите её название и нажмите «Замерить». За 10 секунд приложение усреднит сигнал и проверит пинг до роутера. Повторите для каждой комнаты: увидите, где связь проседает и куда ставить роутер или mesh‑точку.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take the laptop to a room, pick its name and click “Measure”. In 10 seconds the app averages the signal and pings the router. Repeat for each room to see where the connection drops and where to put the router or a mesh node."
+          }
+        }
+      }
+    },
+    "Пересканировать эфир": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rescan the air"
+          }
+        }
+      }
+    },
+    "Пересканировать эфир (≈3 секунды)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rescan the air (≈3 seconds)"
+          }
+        }
+      }
+    },
+    "Переход на другую точку доступа (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roamed to another access point (%@)"
+          }
+        }
+      }
+    },
+    "Пинг": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping"
+          }
+        }
+      }
+    },
+    "Пинговать роутер каждые 5 секунд": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ping the router every 5 seconds"
+          }
+        }
+      }
+    },
+    "Писать и на батарее": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record on battery too"
+          }
+        }
+      }
+    },
+    "Плохо": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poor"
+          }
+        }
+      }
+    },
+    "Плохо для звонков и игр": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bad for calls and games"
+          }
+        }
+      }
+    },
+    "Повторите тест рядом с роутером. Если там хорошо — дело в покрытии.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat the test next to the router. If it's fine there, coverage is the issue."
+          }
+        }
+      }
+    },
+    "Повторить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat"
+          }
+        }
+      }
+    },
+    "Повторить тест": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run again"
+          }
+        }
+      }
+    },
+    "Под нагрузкой": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Under load"
+          }
+        }
+      }
+    },
+    "Поддержать": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support"
+          }
+        }
+      }
+    },
+    "Поддержать разработку": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support development"
+          }
+        }
+      }
+    },
+    "Подключение идёт по %@, хотя Mac умеет 802.11ax (Wi‑Fi 6). Обновите роутер или включите режим ax/Wi‑Fi 6 в его настройках.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected over %@, although the Mac supports 802.11ax (Wi‑Fi 6). Upgrade the router or enable ax/Wi‑Fi 6 mode in its settings."
+          }
+        }
+      }
+    },
+    "Подключение на 2,4 ГГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected on 2.4 GHz"
+          }
+        }
+      }
+    },
+    "Подключено": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        }
+      }
+    },
+    "Подключитесь к появившейся сети из меню Wi‑Fi.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Join the new network from the Wi‑Fi menu."
+          }
+        }
+      }
+    },
+    "Подключитесь к сети, чтобы получить оценку": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect to a network to get a score"
+          }
+        }
+      }
+    },
+    "Подойдите ближе к роутеру или уберите препятствия — стены, зеркала, аквариумы. Для большой квартиры лучше mesh‑система или вторая точка доступа, а не репитер.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move closer to the router or remove obstacles — walls, mirrors, aquariums. For a large home, a mesh system or a second access point is better than a repeater."
+          }
+        }
+      }
+    },
+    "Поиск по имени или BSSID": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by name or BSSID"
+          }
+        }
+      }
+    },
+    "Показать имена сетей…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show network names…"
+          }
+        }
+      }
+    },
+    "Поколение протокола, по которому идёт связь. Wi‑Fi 6 (802.11ax) лучше справляется с множеством устройств и экономит батарею. Wi‑Fi 6E — то же, но ещё и в чистом диапазоне 6 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The protocol generation used for the connection. Wi‑Fi 6 (802.11ax) handles many devices better and saves battery. Wi‑Fi 6E is the same, plus the clean 6 GHz band."
+          }
+        }
+      }
+    },
+    "Полная расшифровка всех стандартов и что поддерживает ваш Mac — на вкладке «Устройство».": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full breakdown of all standards and what your Mac supports is on the Device tab."
+          }
+        }
+      }
+    },
+    "Помехи / слабый сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interference / weak signal"
+          }
+        }
+      }
+    },
+    "Помехи режут скорость": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interference cuts speed"
+          }
+        }
+      }
+    },
+    "Понятная диагностика домашнего Wi‑Fi для Mac": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear home Wi‑Fi diagnostics for Mac"
+          }
+        }
+      }
+    },
+    "Порог": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Threshold"
+          }
+        }
+      }
+    },
+    "Последний тест · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last test · %@"
+          }
+        }
+      }
+    },
+    "Поставьте роутер выше, на шкаф или полку, а не на пол и не в тумбу.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place the router higher, on a cabinet or shelf, not on the floor or inside a cupboard."
+          }
+        }
+      }
+    },
+    "Потолок Wi‑Fi 6 с двумя антеннами: ≈1200 Мбит/с при 80 МГц и ≈2400 Мбит/с при 160 МГц. Достигается только вблизи роутера в чистом эфире.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi 6 ceiling with two antennas: ≈1200 Mbps at 80 MHz and ≈2400 Mbps at 160 MHz. Only reachable close to the router in a clean band."
+          }
+        }
+      }
+    },
+    "Потолок скорости": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed ceiling"
+          }
+        }
+      }
+    },
+    "Походите с ноутбуком по квартире и посмотрите, где сигнал проседает.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk around your home with the laptop and see where the signal drops."
+          }
+        }
+      }
+    },
+    "Приложение запустится при входе в систему, только в строке меню.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The app will start at login, in the menu bar only."
+          }
+        }
+      }
+    },
+    "Приложения": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps"
+          }
+        }
+      }
+    },
+    "Проверить сейчас": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check now"
+          }
+        }
+      }
+    },
+    "Проверьте, что роутер не стоит за телевизором или в закрытом шкафу.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make sure the router isn't behind a TV or inside a closed cabinet."
+          }
+        }
+      }
+    },
+    "Проверять обновления автоматически": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check for updates automatically"
+          }
+        }
+      }
+    },
+    "Проверяю…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking…"
+          }
+        }
+      }
+    },
+    "Проект": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Project"
+          }
+        }
+      }
+    },
+    "Проект развивается в свободное время. Любая сумма помогает добавлять новые функции и держать приложение бесплатным.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The project is developed in spare time. Any amount helps add new features and keep the app free."
+          }
+        }
+      }
+    },
+    "Пропустить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        }
+      }
+    },
+    "Процессор": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Processor"
+          }
+        }
+      }
+    },
+    "Работает только при включённом журнале с пингом роутера.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works only when the journal with router pinging is on."
+          }
+        }
+      }
+    },
+    "Раз в сутки приложение спрашивает GitHub, вышла ли новая версия. Больше ничего не отправляется.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once a day the app asks GitHub whether a new version is out. Nothing else is sent."
+          }
+        }
+      }
+    },
+    "Разверните антенны: одну вертикально, другую горизонтально.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Point the antennas differently: one vertical, one horizontal."
+          }
+        }
+      }
+    },
+    "Раздел Wi‑Fi → %@ → «Канал» (Channel).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi section → %@ → “Channel”."
+          }
+        }
+      }
+    },
+    "Раздел Wi‑Fi → включите радиомодуль 5 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi section → turn on the 5 GHz radio."
+          }
+        }
+      }
+    },
+    "Раздел Wi‑Fi: дайте сети 5 ГГц отдельное имя, например «%@‑5G».": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi section: give the 5 GHz network its own name, e.g. “%@‑5G”."
+          }
+        }
+      }
+    },
+    "Разница между сигналом роутера и фоновым радиошумом. Даже сильный сигнал бесполезен, если вокруг много помех. Именно SNR определяет, какую скорость сможет выбрать Wi‑Fi.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The difference between the router's signal and background radio noise. Even a strong signal is useless with lots of interference. SNR is what decides which speed Wi‑Fi can use."
+          }
+        }
+      }
+    },
+    "Реальная скорость интернета": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Real internet speed"
+          }
+        }
+      }
+    },
+    "Реальная скорость интернета и где узкое место — Wi‑Fi или провайдер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Real internet speed and where the bottleneck is — Wi‑Fi or provider"
+          }
+        }
+      }
+    },
+    "Режим — 802.11ax или ac/ax.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode — 802.11ax or ac/ax."
+          }
+        }
+      }
+    },
+    "Рекомендации": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recommendations"
+          }
+        }
+      }
+    },
+    "Роутер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Router"
+          }
+        }
+      }
+    },
+    "Роутер вещает %lld МГц, а Mac берёт только %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The router broadcasts %lld MHz, but the Mac uses only %lld"
+          }
+        }
+      }
+    },
+    "Роутер вещает эту сеть с нескольких MAC‑адресов в одном диапазоне — это виртуальные точки (mesh, гостевой режим или WPA2/WPA3). Физически это один радиомодуль, так и должно быть.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The router broadcasts this network from several MAC addresses in one band — these are virtual access points (mesh, guest mode or WPA2/WPA3). Physically it's one radio, and that's expected."
+          }
+        }
+      }
+    },
+    "Роутер не даёт Wi‑Fi 6": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The router doesn't provide Wi‑Fi 6"
+          }
+        }
+      }
+    },
+    "Роутер не ответил на 3 пинга подряд": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The router didn't answer 3 pings in a row"
+          }
+        }
+      }
+    },
+    "Роутер не отвечает": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Router not responding"
+          }
+        }
+      }
+    },
+    "Роутер снова отвечает (%.0f мс)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The router responds again (%.0f ms)"
+          }
+        }
+      }
+    },
+    "Русский": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Русский"
+          }
+        }
+      }
+    },
+    "Ряд": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Series"
+          }
+        }
+      }
+    },
+    "СЛАБОЕ МЕСТО": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WEAK SPOT"
+          }
+        }
+      }
+    },
+    "Самый первый массовый Wi‑Fi. Устаревший и очень медленный.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The very first mass‑market Wi‑Fi. Outdated and very slow."
+          }
+        }
+      }
+    },
+    "Свободно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
+          }
+        }
+      }
+    },
+    "Сводный балл от 0 до 100. Складывается из силы сигнала, уровня помех, диапазона и стандарта, загрузки канала соседями, защиты и (после теста) задержки до роутера.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A combined score from 0 to 100. It's made of signal strength, interference level, band and standard, channel congestion from neighbours, security and (after the test) latency to the router."
+          }
+        }
+      }
+    },
+    "Связь нестабильна": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection is unstable"
+          }
+        }
+      }
+    },
+    "Сейчас %lld МГц. При 80 МГц скорость вырастет примерно в %@ раза.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Now %lld MHz. At 80 MHz speed will grow about %@×."
+          }
+        }
+      }
+    },
+    "Сейчас никто не передаёт данные через Wi‑Fi.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nobody is sending data over Wi‑Fi right now."
+          }
+        }
+      }
+    },
+    "Серьёзных проблем нет": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No serious problems"
+          }
+        }
+      }
+    },
+    "Серьёзных проблем нет — сеть работает хорошо.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No serious problems — the network works well."
+          }
+        }
+      }
+    },
+    "Сетей не найдено": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No networks found"
+          }
+        }
+      }
+    },
+    "Сети": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Networks"
+          }
+        }
+      }
+    },
+    "Сеть": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Network"
+          }
+        }
+      }
+    },
+    "Сеть без пароля": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Network without a password"
+          }
+        }
+      }
+    },
+    "Сеть работает на пределе возможностей": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The network is running at full capacity"
+          }
+        }
+      }
+    },
+    "Сеть требует внимания": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The network needs attention"
+          }
+        }
+      }
+    },
+    "Сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal"
+          }
+        }
+      }
+    },
+    "Сигнал %lld dBm — ниже порога %lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal %lld dBm — below the %lld dBm threshold"
+          }
+        }
+      }
+    },
+    "Сигнал / шум": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal / noise"
+          }
+        }
+      }
+    },
+    "Сигнал / шум (SNR)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal / noise (SNR)"
+          }
+        }
+      }
+    },
+    "Сигнал Wi‑Fi ослаб": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi signal weakened"
+          }
+        }
+      }
+    },
+    "Сигнал в реальном времени · 2 минуты": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live signal · 2 minutes"
+          }
+        }
+      }
+    },
+    "Сигнал восстановился: %lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal recovered: %lld dBm"
+          }
+        }
+      }
+    },
+    "Сигнал восстановился: −54 dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal recovered: −54 dBm"
+          }
+        }
+      }
+    },
+    "Сигнал ослаб": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weak signal"
+          }
+        }
+      }
+    },
+    "Сигнал отличный, но скорость всего %.0f Мбит/с. Проверьте ширину канала и режим на роутере, обновите его прошивку.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The signal is excellent, but the speed is only %.0f Mbps. Check the channel width and mode on the router and update its firmware."
+          }
+        }
+      }
+    },
+    "Сигнал средний (%lld dBm)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fair signal (%lld dBm)"
+          }
+        }
+      }
+    },
+    "Сигнал −71 dBm — ниже порога −70 dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal −71 dBm — below the −70 dBm threshold"
+          }
+        }
+      }
+    },
+    "Сигнал, канал и защита в порядке.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal, channel and security are fine."
+          }
+        }
+      }
+    },
+    "Сигнал/шум": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal/noise"
+          }
+        }
+      }
+    },
+    "Сила": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strength"
+          }
+        }
+      }
+    },
+    "Сила сигнала (RSSI)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signal strength (RSSI)"
+          }
+        }
+      }
+    },
+    "Синяя линия — сила сигнала за последние минуты, серый пунктир — уровень шума. Чем больше расстояние между ними, тем лучше. Оранжевая линия −67 dBm — рекомендуемый минимум для звонков и видео.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The line shows signal strength over the last minutes, the grey dashes show the noise level. The bigger the gap between them, the better. The orange −67 dBm line is the recommended minimum for calls and video."
+          }
+        }
+      }
+    },
+    "Системные настройки → Wi‑Fi → Подробнее: поставьте сеть 5G выше в списке или отключите автоподключение к 2,4.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System Settings → Wi‑Fi → Details: move the 5G network up the list or turn off auto‑join for 2.4."
+          }
+        }
+      }
+    },
+    "Системный": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        }
+      }
+    },
+    "Скан": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan"
+          }
+        }
+      }
+    },
+    "Сканировать эфир": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan the air"
+          }
+        }
+      }
+    },
+    "Сканирую эфир…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning the air…"
+          }
+        }
+      }
+    },
+    "Сканирую…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning…"
+          }
+        }
+      }
+    },
+    "Скачать": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download"
+          }
+        }
+      }
+    },
+    "Скачать %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download %@"
+          }
+        }
+      }
+    },
+    "Скачать новую версию": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download the new version"
+          }
+        }
+      }
+    },
+    "Сколько данных прямо сейчас проходит через Wi‑Fi: ↓ входящий (загрузка) и ↑ исходящий (отдача). Это реальная нагрузка, а не тест скорости. Те же цифры видны в строке меню.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How much data is going through Wi‑Fi right now: ↓ download and ↑ upload. This is actual load, not a speed test. The same numbers are shown in the menu bar."
+          }
+        }
+      }
+    },
+    "Сколько запросов в минуту сеть успевает обработать, пока канал забит загрузкой. Это показывает, будут ли лагать звонки и игры, когда кто‑то качает файлы.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many requests per minute the network can handle while the link is saturated. It shows whether calls and games will lag when someone is downloading files."
+          }
+        }
+      }
+    },
+    "Скопировано": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copied"
+          }
+        }
+      }
+    },
+    "Скопировать": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy"
+          }
+        }
+      }
+    },
+    "Скорость": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed"
+          }
+        }
+      }
+    },
+    "Скорость в строке меню": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed in the menu bar"
+          }
+        }
+      }
+    },
+    "Скорость и стабильность заметно страдают": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed and stability noticeably suffer"
+          }
+        }
+      }
+    },
+    "Скорость каждого процесса через Wi‑Fi за последнюю секунду (данные системной утилиты nettop). Помогает найти, кто «съедает» канал: облачная синхронизация, торрент, обновления.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per‑process Wi‑Fi speed over the last second (from the nettop system tool). Helps find who is “eating” the link: cloud sync, torrents, updates."
+          }
+        }
+      }
+    },
+    "Скорость канала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link rate"
+          }
+        }
+      }
+    },
+    "Скорость упирается в Wi‑Fi. Улучшите сигнал или канал, тогда интернет станет быстрее.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed is capped by Wi‑Fi. Improve the signal or channel and the internet will get faster."
+          }
+        }
+      }
+    },
+    "Скорость, о которой Mac и роутер договорились по воздуху (PHY rate). Это потолок, а не реальная скорость интернета: на деле получается примерно 60–70% от этого числа.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The rate the Mac and router agreed on over the air (PHY rate). It's a ceiling, not your real internet speed: in practice you get about 60–70 percent of it."
+          }
+        }
+      }
+    },
+    "Скрытая / без доступа": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hidden / no access"
+          }
+        }
+      }
+    },
+    "Скрыть инструкцию": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide instructions"
+          }
+        }
+      }
+    },
+    "Слабое покрытие: %@. Передвиньте роутер ближе к этим комнатам или поставьте mesh‑точку на полпути между «%@» и «%@». Репитер в самой слабой комнате не поможет: он будет повторять уже плохой сигнал.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weak coverage: %@. Move the router closer to these rooms or put a mesh node halfway between “%@” and “%@”. A repeater in the weakest room won't help: it would repeat an already bad signal."
+          }
+        }
+      }
+    },
+    "Слабый сигнал (%lld dBm)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weak signal (%lld dBm)"
+          }
+        }
+      }
+    },
+    "Слабый, обрывы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weak, drop‑outs"
+          }
+        }
+      }
+    },
+    "Смените «Авто» на **%lld**, ширину оставьте %lld МГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change “Auto” to **%lld**, keep the width at %lld MHz."
+          }
+        }
+      }
+    },
+    "Смените канал %lld → %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change channel %lld → %lld"
+          }
+        }
+      }
+    },
+    "События": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Events"
+          }
+        }
+      }
+    },
+    "Советы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tips"
+          }
+        }
+      }
+    },
+    "Современный, 2019": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modern, 2019"
+          }
+        }
+      }
+    },
+    "Соседи по каналам": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neighbours by channel"
+          }
+        }
+      }
+    },
+    "Соседние сети почти не пересекаются с вашей.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neighbouring networks barely overlap with yours."
+          }
+        }
+      }
+    },
+    "Сохраните и проверьте, что проблемное устройство теперь видит сеть.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save and check that the problem device can now see the network."
+          }
+        }
+      }
+    },
+    "Сохраните. Mac переподключится через 10–30 секунд.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save. The Mac will reconnect in 10–30 seconds."
+          }
+        }
+      }
+    },
+    "Сохраните. Пароль менять не нужно.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save. No need to change the password."
+          }
+        }
+      }
+    },
+    "Спальня": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedroom"
+          }
+        }
+      }
+    },
+    "Спектр · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spectrum · %@"
+          }
+        }
+      }
+    },
+    "Спектр эфира, загрузка каналов и лучший канал для вашей сети": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Air spectrum, channel load and the best channel for your network"
+          }
+        }
+      }
+    },
+    "Список разрешённых каналов не содержит 6 ГГц. Либо модуль не поддерживает Wi‑Fi 6E, либо диапазон запрещён в регионе (код страны %@).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The allowed channel list contains no 6 GHz. Either the module doesn't support Wi‑Fi 6E, or the band isn't allowed in the region (country code %@)."
+          }
+        }
+      }
+    },
+    "Средне": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fair"
+          }
+        }
+      }
+    },
+    "Средний, бывают провалы": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fair, occasional dips"
+          }
+        }
+      }
+    },
+    "Средняя": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medium"
+          }
+        }
+      }
+    },
+    "Стандарт Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi standard"
+          }
+        }
+      }
+    },
+    "Стандарт не определён": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown standard"
+          }
+        }
+      }
+    },
+    "Стандарты": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standards"
+          }
+        }
+      }
+    },
+    "Стандарты Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi standards"
+          }
+        }
+      }
+    },
+    "Стоит исправить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worth fixing"
+          }
+        }
+      }
+    },
+    "Строка меню": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu bar"
+          }
+        }
+      }
+    },
+    "Сузьте канал 2,4 ГГц до 20 МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Narrow the 2.4 GHz channel to 20 MHz"
+          }
+        }
+      }
+    },
+    "Текущий канал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current channel"
+          }
+        }
+      }
+    },
+    "Терпимо": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tolerable"
+          }
+        }
+      }
+    },
+    "Тесно": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crowded"
+          }
+        }
+      }
+    },
+    "Тест не удался. Проверьте подключение к интернету.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The test failed. Check your internet connection."
+          }
+        }
+      }
+    },
+    "Тест покажет, где теряется скорость: в Wi‑Fi (до роутера) или у провайдера (до интернета). Занимает около 5 секунд.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The test shows where speed is lost: in Wi‑Fi (to the router) or at the provider (to the internet). Takes about 5 seconds."
+          }
+        }
+      }
+    },
+    "Тест скорости": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed test"
+          }
+        }
+      }
+    },
+    "Тест скорости: ↓ %.0f / ↑ %.0f Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed test: ↓ %.0f / ↑ %.0f Mbps"
+          }
+        }
+      }
+    },
+    "Тест скорости: ↓ 341 / ↑ 48 Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed test: ↓ 341 / ↑ 48 Mbps"
+          }
+        }
+      }
+    },
+    "Тест… %lld%%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test… %lld%%"
+          }
+        }
+      }
+    },
+    "Только иконка": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon only"
+          }
+        }
+      }
+    },
+    "Только при питании от сети": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only on AC power"
+          }
+        }
+      }
+    },
+    "Только скорость": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speed only"
+          }
+        }
+      }
+    },
+    "Тот же Wi‑Fi 6, но ещё и в диапазоне 6 ГГц. На этом Mac недоступен: ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The same Wi‑Fi 6, plus the 6 GHz band. Not available on this Mac: "
+          }
+        }
+      }
+    },
+    "Тот же Wi‑Fi 6, но ещё и в чистом диапазоне 6 ГГц без старых устройств и соседей.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The same Wi‑Fi 6, plus the clean 6 GHz band without old devices and neighbours."
+          }
+        }
+      }
+    },
+    "Трафик Wi‑Fi · Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi‑Fi traffic · Mbps"
+          }
+        }
+      }
+    },
+    "Трафик могут перехватить. Включите WPA3 или WPA2/WPA3 на роутере, а в чужих сетях используйте VPN.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traffic can be intercepted. Enable WPA3 or WPA2/WPA3 on the router, and use a VPN on other people's networks."
+          }
+        }
+      }
+    },
+    "Трафик по приложениям": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traffic by app"
+          }
+        }
+      }
+    },
+    "Трафик сейчас": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traffic now"
+          }
+        }
+      }
+    },
+    "У вас %@. Если ставили через Homebrew: brew upgrade --cask efirometr": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have %@. Installed with Homebrew? brew upgrade --cask efirometr"
+          }
+        }
+      }
+    },
+    "У вас версия %@. Откройте приложение, чтобы скачать обновление.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have version %@. Open the app to download the update."
+          }
+        }
+      }
+    },
+    "У вас последняя версия %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have the latest version %@"
+          }
+        }
+      }
+    },
+    "Уберите его от металла, зеркал, аквариумов и микроволновки.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep it away from metal, mirrors, aquariums and microwaves."
+          }
+        }
+      }
+    },
+    "Убирать из Dock, когда окно закрыто": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide from Dock when the window is closed"
+          }
+        }
+      }
+    },
+    "Уведомления": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        }
+      }
+    },
+    "Удалить замер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete measurement"
+          }
+        }
+      }
+    },
+    "Узкое место — Wi‑Fi между Mac и роутером.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The bottleneck is Wi‑Fi between the Mac and the router."
+          }
+        }
+      }
+    },
+    "Улучшение": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Improvement"
+          }
+        }
+      }
+    },
+    "Установите приложение в папку «Программы», чтобы включить автозапуск.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install the app in the Applications folder to enable launch at login."
+          }
+        }
+      }
+    },
+    "Устаревает, 2013": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aging, 2013"
+          }
+        }
+      }
+    },
+    "Устаревшая защита %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdated security %@"
+          }
+        }
+      }
+    },
+    "Устаревший. Если в сети есть такое устройство, роутер может замедлять всех остальных.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdated. If such a device is on the network, the router may slow everyone else down."
+          }
+        }
+      }
+    },
+    "Устройство": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device"
+          }
+        }
+      }
+    },
+    "Фоновый пинг роутера каждые 5 секунд. Красные отметки — моменты, когда роутер не ответил. Именно они чувствуются как «зависания» звонков.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Background router ping every 5 seconds. Red marks are moments when the router didn't answer. Those are what you feel as call “freezes”."
+          }
+        }
+      }
+    },
+    "Хороший, хватит для видео": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good, enough for video"
+          }
+        }
+      }
+    },
+    "Хорошо": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good"
+          }
+        }
+      }
+    },
+    "Цветная иконка Wi‑Fi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colored Wi‑Fi icon"
+          }
+        }
+      }
+    },
+    "Чип": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chip"
+          }
+        }
+      }
+    },
+    "Чистый эфир": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clean air"
+          }
+        }
+      }
+    },
+    "Что значат буквы 802.11": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What the 802.11 letters mean"
+          }
+        }
+      }
+    },
+    "Что нового": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's new"
+          }
+        }
+      }
+    },
+    "Что улучшить": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What to improve"
+          }
+        }
+      }
+    },
+    "Чтобы поставить индикатор рядом со значком Wi‑Fi, зажмите ⌘ и перетащите его мышью в строке меню.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To place the indicator next to the Wi‑Fi icon, hold ⌘ and drag it in the menu bar."
+          }
+        }
+      }
+    },
+    "Шум": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noise"
+          }
+        }
+      }
+    },
+    "Шум %lld dBm. Источники: микроволновки, Bluetooth, USB 3‑хабы рядом с ноутбуком, соседние сети. Попробуйте другой канал или 5 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noise %lld dBm. Sources: microwaves, Bluetooth, USB 3 hubs near the laptop, neighbouring networks. Try another channel or 5 GHz."
+          }
+        }
+      }
+    },
+    "Этот Mac не принимает 6 ГГц, поэтому сети в этом диапазоне ему не видны, даже если они есть.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac can't receive 6 GHz, so networks in that band are invisible to it even if they exist."
+          }
+        }
+      }
+    },
+    "Этот диапазон медленный и загружен соседями. Если роутер поддерживает 5 ГГц — включите его и подключитесь к нему.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This band is slow and crowded by neighbours. If your router supports 5 GHz, turn it on and connect to it."
+          }
+        }
+      }
+    },
+    "Эфирометр": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Efirometr"
+          }
+        }
+      }
+    },
+    "Язык": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "Язык сменится после перезапуска приложения.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The language changes after the app relaunches."
+          }
+        }
+      }
+    },
+    "б": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "b"
+          }
+        }
+      }
+    },
+    "без проблем": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no problems"
+          }
+        }
+      }
+    },
+    "бит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bps"
+          }
+        }
+      }
+    },
+    "ваш": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yours"
+          }
+        }
+      }
+    },
+    "ваш роутер": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "your router"
+          }
+        }
+      }
+    },
+    "всё в порядке": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "all good"
+          }
+        }
+      }
+    },
+    "вы здесь": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "you are here"
+          }
+        }
+      }
+    },
+    "высокая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "high"
+          }
+        }
+      }
+    },
+    "джиттер %.0f мс · %.0f–%.0f мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jitter %.0f ms · %.0f–%.0f ms"
+          }
+        }
+      }
+    },
+    "для всех": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "for all"
+          }
+        }
+      }
+    },
+    "до %@ (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to %@ (%@)"
+          }
+        }
+      }
+    },
+    "до 11 Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 11 Mbps"
+          }
+        }
+      }
+    },
+    "до 46 Гбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 46 Gbps"
+          }
+        }
+      }
+    },
+    "до 54 Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 54 Mbps"
+          }
+        }
+      }
+    },
+    "до 6,9 Гбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 6.9 Gbps"
+          }
+        }
+      }
+    },
+    "до 600 Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 600 Mbps"
+          }
+        }
+      }
+    },
+    "до 9,6 Гбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "up to 9.6 Gbps"
+          }
+        }
+      }
+    },
+    "до роутера < 5 мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to router < 5 ms"
+          }
+        }
+      }
+    },
+    "ещё не было": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "none yet"
+          }
+        }
+      }
+    },
+    "живые графики": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "live charts"
+          }
+        }
+      }
+    },
+    "загрузка…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "loading…"
+          }
+        }
+      }
+    },
+    "и ещё %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "and %lld more"
+          }
+        }
+      }
+    },
+    "из 100": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "out of 100"
+          }
+        }
+      }
+    },
+    "кан. ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ch. "
+          }
+        }
+      }
+    },
+    "кан. %@ · %@ МГц": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ch. %@ · %@ MHz"
+          }
+        }
+      }
+    },
+    "кан. %lld · %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ch. %lld · %lld"
+          }
+        }
+      }
+    },
+    "канал %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "channel %lld"
+          }
+        }
+      }
+    },
+    "каналов: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "channels: %lld"
+          }
+        }
+      }
+    },
+    "комнат: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rooms: %lld"
+          }
+        }
+      }
+    },
+    "лучший": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "best"
+          }
+        }
+      }
+    },
+    "медиана пинга %.0f мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "median ping %.0f ms"
+          }
+        }
+      }
+    },
+    "модуль не имеет радио 6 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "the module has no 6 GHz radio."
+          }
+        }
+      }
+    },
+    "мс": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ms"
+          }
+        }
+      }
+    },
+    "наведите — увидите, кто на частоте": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hover to see who is on that frequency"
+          }
+        }
+      }
+    },
+    "не все устройства": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "not all devices"
+          }
+        }
+      }
+    },
+    "не поддерживается": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "not supported"
+          }
+        }
+      }
+    },
+    "нет данных": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no data"
+          }
+        }
+      }
+    },
+    "нет ответа": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no response"
+          }
+        }
+      }
+    },
+    "нет разрешённых каналов 6 ГГц.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "there are no allowed 6 GHz channels."
+          }
+        }
+      }
+    },
+    "ниже −75": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "below −75"
+          }
+        }
+      }
+    },
+    "низкая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "low"
+          }
+        }
+      }
+    },
+    "номер канала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "channel number"
+          }
+        }
+      }
+    },
+    "нормально": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "normal"
+          }
+        }
+      }
+    },
+    "обновлено %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "updated %@"
+          }
+        }
+      }
+    },
+    "обновлено в %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "updated at %@"
+          }
+        }
+      }
+    },
+    "обход комнат": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "room walk‑through"
+          }
+        }
+      }
+    },
+    "отличный сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "excellent signal"
+          }
+        }
+      }
+    },
+    "очень низкая": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "very low"
+          }
+        }
+      }
+    },
+    "подключено": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "connected"
+          }
+        }
+      }
+    },
+    "помехи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "interference"
+          }
+        }
+      }
+    },
+    "потери %.0f%%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "loss %.0f%%"
+          }
+        }
+      }
+    },
+    "потери > 1%": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "loss > 1%"
+          }
+        }
+      }
+    },
+    "потерь: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "losses: %lld"
+          }
+        }
+      }
+    },
+    "проблем: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "problems: %lld"
+          }
+        }
+      }
+    },
+    "проверено %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "checked %@"
+          }
+        }
+      }
+    },
+    "пусто": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "empty"
+          }
+        }
+      }
+    },
+    "свободно — хорошее место для канала": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "free — a good spot for a channel"
+          }
+        }
+      }
+    },
+    "сейчас": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "now"
+          }
+        }
+      }
+    },
+    "сейчас %lld dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "now %lld dBm"
+          }
+        }
+      }
+    },
+    "сетей рядом: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "networks nearby: %lld"
+          }
+        }
+      }
+    },
+    "сетей: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "networks: %lld"
+          }
+        }
+      }
+    },
+    "сила сигнала, dBm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "signal strength, dBm"
+          }
+        }
+      }
+    },
+    "сильные помехи": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "heavy interference"
+          }
+        }
+      }
+    },
+    "слабый сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "weak signal"
+          }
+        }
+      }
+    },
+    "соседей нет": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no neighbours"
+          }
+        }
+      }
+    },
+    "соседей: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "neighbours: %lld"
+          }
+        }
+      }
+    },
+    "средний сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fair signal"
+          }
+        }
+      }
+    },
+    "средняя": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "medium"
+          }
+        }
+      }
+    },
+    "текущий": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "current"
+          }
+        }
+      }
+    },
+    "точек: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "access points: %lld"
+          }
+        }
+      }
+    },
+    "узкое место": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bottleneck"
+          }
+        }
+      }
+    },
+    "хороший сигнал": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "good signal"
+          }
+        }
+      }
+    },
+    "чисто": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "clean"
+          }
+        }
+      }
+    },
+    "что улучшить: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to improve: %lld"
+          }
+        }
+      }
+    },
+    "шум %lld dBm · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "noise %lld dBm · %@"
+          }
+        }
+      }
+    },
+    "↑ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↑ %@"
+          }
+        }
+      }
+    },
+    "↑ отдача ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↑ upload "
+          }
+        }
+      }
+    },
+    "↓ %.0f / ↑ %.0f Мбит/с · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↓ %.0f / ↑ %.0f Mbps · %@"
+          }
+        }
+      }
+    },
+    "↓ %.0f Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↓ %.0f Mbps"
+          }
+        }
+      }
+    },
+    "↓ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↓ %@"
+          }
+        }
+      }
+    },
+    "−67 dBm — минимум для видео": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "−67 dBm — minimum for video"
+          }
+        }
+      }
+    },
+    "≈ %.0f Мбит/с": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "≈ %.0f Mbps"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

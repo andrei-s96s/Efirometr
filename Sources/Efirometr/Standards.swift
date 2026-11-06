@@ -14,20 +14,20 @@ struct StandardInfo: Identifiable {
     var code: String { "802.11" + letters }
 
     static let catalog: [StandardInfo] = [
-        .init(letters: "be", generation: "Wi‑Fi 7", year: "2024", bands: "2,4 · 5 · 6 ГГц", maxSpeed: "до 46 Гбит/с",
-              note: "Каналы 320 МГц и MLO — работа сразу в нескольких диапазонах для минимальной задержки."),
-        .init(letters: "ax", generation: "Wi‑Fi 6", year: "2019", bands: "2,4 · 5 ГГц", maxSpeed: "до 9,6 Гбит/с",
-              note: "OFDMA и Target Wake Time: быстрее в квартире с десятками устройств, меньше расход батареи."),
-        .init(letters: "ac", generation: "Wi‑Fi 5", year: "2013", bands: "5 ГГц", maxSpeed: "до 6,9 Гбит/с",
-              note: "Каналы 80/160 МГц и MU‑MIMO. Только 5 ГГц — на 2,4 ГГц такие устройства работают по n."),
-        .init(letters: "n", generation: "Wi‑Fi 4", year: "2009", bands: "2,4 · 5 ГГц", maxSpeed: "до 600 Мбит/с",
-              note: "Первый с MIMO (несколько антенн) и каналами 40 МГц. Сейчас — минимум для нормальной работы."),
-        .init(letters: "g", generation: "Wi‑Fi 3*", year: "2003", bands: "2,4 ГГц", maxSpeed: "до 54 Мбит/с",
-              note: "Устаревший. Если в сети есть такое устройство, роутер может замедлять всех остальных."),
-        .init(letters: "a", generation: "Wi‑Fi 2*", year: "1999", bands: "5 ГГц", maxSpeed: "до 54 Мбит/с",
-              note: "Первый стандарт на 5 ГГц. Устаревший."),
-        .init(letters: "b", generation: "Wi‑Fi 1*", year: "1999", bands: "2,4 ГГц", maxSpeed: "до 11 Мбит/с",
-              note: "Самый первый массовый Wi‑Fi. Устаревший и очень медленный."),
+        .init(letters: "be", generation: "Wi‑Fi 7", year: "2024", bands: String(localized: "2,4 · 5 · 6 ГГц"), maxSpeed: String(localized: "до 46 Гбит/с"),
+              note: String(localized: "Каналы 320 МГц и MLO — работа сразу в нескольких диапазонах для минимальной задержки.")),
+        .init(letters: "ax", generation: "Wi‑Fi 6", year: "2019", bands: String(localized: "2,4 · 5 ГГц"), maxSpeed: String(localized: "до 9,6 Гбит/с"),
+              note: String(localized: "OFDMA и Target Wake Time: быстрее в квартире с десятками устройств, меньше расход батареи.")),
+        .init(letters: "ac", generation: "Wi‑Fi 5", year: "2013", bands: String(localized: "5 ГГц"), maxSpeed: String(localized: "до 6,9 Гбит/с"),
+              note: String(localized: "Каналы 80/160 МГц и MU‑MIMO. Только 5 ГГц — на 2,4 ГГц такие устройства работают по n.")),
+        .init(letters: "n", generation: "Wi‑Fi 4", year: "2009", bands: String(localized: "2,4 · 5 ГГц"), maxSpeed: String(localized: "до 600 Мбит/с"),
+              note: String(localized: "Первый с MIMO (несколько антенн) и каналами 40 МГц. Сейчас — минимум для нормальной работы.")),
+        .init(letters: "g", generation: "Wi‑Fi 3*", year: "2003", bands: String(localized: "2,4 ГГц"), maxSpeed: String(localized: "до 54 Мбит/с"),
+              note: String(localized: "Устаревший. Если в сети есть такое устройство, роутер может замедлять всех остальных.")),
+        .init(letters: "a", generation: "Wi‑Fi 2*", year: "1999", bands: String(localized: "5 ГГц"), maxSpeed: String(localized: "до 54 Мбит/с"),
+              note: String(localized: "Первый стандарт на 5 ГГц. Устаревший.")),
+        .init(letters: "b", generation: "Wi‑Fi 1*", year: "1999", bands: String(localized: "2,4 ГГц"), maxSpeed: String(localized: "до 11 Мбит/с"),
+              note: String(localized: "Самый первый массовый Wi‑Fi. Устаревший и очень медленный.")),
     ]
 
     static func info(_ letters: String) -> StandardInfo? { catalog.first { $0.letters == letters } }
@@ -57,8 +57,8 @@ extension PHY {
 
     /// One-line explanation for tooltips.
     static func explain(_ mode: CWPHYMode) -> String {
-        guard let i = StandardInfo.info(letters(mode)) else { return "Стандарт не определён" }
-        return "\(i.generation.replacingOccurrences(of: "*", with: "")) = \(i.code), \(i.year) г. · \(i.bands) · \(i.maxSpeed). \(i.note)"
+        guard let i = StandardInfo.info(letters(mode)) else { return String(localized: "Стандарт не определён") }
+        return String(localized: "\(i.generation.replacingOccurrences(of: "*", with: "")) = \(i.code), \(i.year) г. · \(i.bands) · \(i.maxSpeed). \(i.note)")
     }
 }
 
@@ -82,14 +82,14 @@ struct StandardsCard: View {
     var body: some View {
         let supported = caps.supportedStandards
         let currentLetters = current.map(PHY.letters) ?? ""
-        Card("Стандарты Wi‑Fi", icon: "list.bullet.rectangle.portrait",
-             hint: Hint(title: "Что значат буквы 802.11",
-                        body: "802.11 — общее название семейства стандартов Wi‑Fi, а буквы после него — версия. С 2018 года версиям дали простые номера: ax = Wi‑Fi 6, ac = Wi‑Fi 5, n = Wi‑Fi 4. Устройство и роутер работают на самом новом стандарте, который поддерживают оба.",
-                        tip: "* — неофициальные номера: Wi‑Fi Alliance пронумеровала только начиная с Wi‑Fi 4.")) {
+        Card(String(localized: "Стандарты Wi‑Fi"), icon: "list.bullet.rectangle.portrait",
+             hint: Hint(title: String(localized: "Что значат буквы 802.11"),
+                        body: String(localized: "802.11 — общее название семейства стандартов Wi‑Fi, а буквы после него — версия. С 2018 года версиям дали простые номера: ax = Wi‑Fi 6, ac = Wi‑Fi 5, n = Wi‑Fi 4. Устройство и роутер работают на самом новом стандарте, который поддерживают оба."),
+                        tip: String(localized: "* — неофициальные номера: Wi‑Fi Alliance пронумеровала только начиная с Wi‑Fi 4."))) {
             if let best = caps.bestStandard {
                 HStack(spacing: 10) {
                     Image(systemName: "checkmark.seal.fill").foregroundStyle(Theme.good).font(.system(size: 18))
-                    Text("Ваш Mac поддерживает до \(best.generation) (\(best.code))" + (caps.supports(.ghz6) && best.letters == "ax" ? " включая 6E" : "") + ".")
+                    Text(String(localized: "Ваш Mac поддерживает до \(best.generation) (\(best.code))") + (caps.supports(.ghz6) && best.letters == "ax" ? String(localized: " включая 6E") : "") + ".")
                         .font(.system(size: 13.5, weight: .medium)).foregroundStyle(Theme.text)
                 }
             }
@@ -115,7 +115,7 @@ struct StandardsCard: View {
                 HStack(spacing: 8) {
                     Text(s.generation).font(.system(size: 13.5, weight: .semibold)).foregroundStyle(supported ? Theme.text : Theme.text2)
                     Text(s.code).font(.system(size: 12).monospaced()).foregroundStyle(Theme.text3)
-                    if inUse { Badge(text: "сейчас", tint: Theme.good) }
+                    if inUse { Badge(text: String(localized: "сейчас"), tint: Theme.good) }
                     Spacer(minLength: 8)
                     Text(s.year).frame(width: 40, alignment: .trailing)
                     Text(s.bands).frame(width: 120, alignment: .trailing)
@@ -148,8 +148,8 @@ struct StandardsCard: View {
                 }
                 .font(.system(size: 12).monospacedDigit())
                 .foregroundStyle(Theme.text2)
-                Text(ok ? "Тот же Wi‑Fi 6, но ещё и в чистом диапазоне 6 ГГц без старых устройств и соседей."
-                        : "Тот же Wi‑Fi 6, но ещё и в диапазоне 6 ГГц. На этом Mac недоступен: " + (caps.chipLacks6GHz ? "модуль не имеет радио 6 ГГц." : "нет разрешённых каналов 6 ГГц."))
+                Text(ok ? String(localized: "Тот же Wi‑Fi 6, но ещё и в чистом диапазоне 6 ГГц без старых устройств и соседей.")
+                        : String(localized: "Тот же Wi‑Fi 6, но ещё и в диапазоне 6 ГГц. На этом Mac недоступен: ") + (caps.chipLacks6GHz ? String(localized: "модуль не имеет радио 6 ГГц.") : String(localized: "нет разрешённых каналов 6 ГГц.")))
                     .font(.system(size: 11.5)).foregroundStyle(Theme.text3).fixedSize(horizontal: false, vertical: true)
             }
         }

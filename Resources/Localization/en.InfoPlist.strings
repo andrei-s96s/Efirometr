@@ -1,0 +1,4 @@
+"CFBundleName" = "Efirometr";
+"CFBundleDisplayName" = "Efirometr";
+"NSLocationUsageDescription" = "macOS shows Wi‑Fi network names (SSID/BSSID) only to apps with location access. Your location itself is not used.";
+"NSLocationWhenInUseUsageDescription" = "macOS shows Wi‑Fi network names (SSID/BSSID) only to apps with location access. Your location itself is not used.";

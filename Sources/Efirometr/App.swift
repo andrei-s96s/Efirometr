@@ -20,6 +20,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             } else {
                 monitor.start()
                 Notifier.shared.requestAuthorization()
+                UpdateChecker.shared.start()
             }
             statusItem = StatusItemController(monitor: monitor, settings: settings)
 
@@ -70,18 +71,24 @@ struct EfirometrApp: App {
 }
 
 enum Section: String, CaseIterable, Identifiable {
-    case overview = "Обзор"
-    case advice = "Советы"
-    case monitor = "Монитор"
-    case channels = "Каналы"
-    case networks = "Сети"
-    case speed = "Тест скорости"
-    case journal = "Журнал"
-    case survey = "Карта квартиры"
-    case apps = "Приложения"
-    case device = "Устройство"
-    case settings = "Настройки"
-    case donate = "Поддержать"
+    case overview, advice, monitor, channels, networks, speed, journal, survey, apps, device, settings, donate
+
+    var title: String {
+        switch self {
+        case .overview: return String(localized: "Обзор")
+        case .advice: return String(localized: "Советы")
+        case .monitor: return String(localized: "Монитор")
+        case .channels: return String(localized: "Каналы")
+        case .networks: return String(localized: "Сети")
+        case .speed: return String(localized: "Тест скорости")
+        case .journal: return String(localized: "Журнал")
+        case .survey: return String(localized: "Карта квартиры")
+        case .apps: return String(localized: "Приложения")
+        case .device: return String(localized: "Устройство")
+        case .settings: return String(localized: "Настройки")
+        case .donate: return String(localized: "Поддержать")
+        }
+    }
 
     var id: String { rawValue }
 
@@ -103,10 +110,10 @@ enum Section: String, CaseIterable, Identifiable {
     }
 
     static let groups: [(String, [Section])] = [
-        ("Сеть", [.overview, .advice, .monitor, .channels, .networks]),
-        ("Инструменты", [.speed, .journal, .survey, .apps]),
+        (String(localized: "Сеть"), [.overview, .advice, .monitor, .channels, .networks]),
+        (String(localized: "Инструменты"), [.speed, .journal, .survey, .apps]),
         ("Mac", [.device, .settings]),
-        ("Проект", [.donate]),
+        (String(localized: "Проект"), [.donate]),
     ]
 }
 
@@ -172,7 +179,7 @@ struct SidebarRow: View {
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(selected ? Color.white : Theme.accent.opacity(0.9))
                 .frame(width: 20)
-            Text(section.rawValue)
+            Text(section.title)
                 .font(.system(size: 13, weight: selected ? .semibold : .regular))
                 .foregroundStyle(selected ? Color.white : Theme.text)
             Spacer(minLength: 4)
@@ -231,6 +238,7 @@ struct SidebarFooter: View {
                 Button("Показать имена сетей…") { monitor.openLocationSettings() }
                     .buttonStyle(.link).font(.caption)
             }
+            UpdatePill()
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -250,18 +258,18 @@ struct MenuBarPanel: View {
             HStack(spacing: 12) {
                 ScoreRing(score: monitor.assessment.score, size: 56, lineWidth: 6, showCaption: false)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(l?.ssid ?? (l?.isConnected == true ? "Wi‑Fi" : "Не подключено")).font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.text).lineLimit(1)
+                    Text(l?.ssid ?? (l?.isConnected == true ? "Wi‑Fi" : String(localized: "Не подключено"))).font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.text).lineLimit(1)
                     Text(monitor.assessment.grade).font(.system(size: 12.5, weight: .medium)).foregroundStyle(Palette.score(Double(monitor.assessment.score) / 100))
                     if let l, l.isConnected, let ch = l.channel {
-                        Text("\(ch.band.rawValue) · канал \(ch.number) · \(ch.width) МГц").font(.system(size: 11)).foregroundStyle(Theme.text3)
+                        Text("\(ch.band.title) · канал \(ch.number) · \(ch.width) МГц").font(.system(size: 11)).foregroundStyle(Theme.text3)
                     }
                 }
                 Spacer()
             }
 
             HStack(spacing: 10) {
-                speedTile("Входящий", live.downRate, "arrow.down", Theme.cyan)
-                speedTile("Исходящий", live.upRate, "arrow.up", Theme.pink)
+                speedTile(String(localized: "Входящий"), live.downRate, "arrow.down", Theme.cyan)
+                speedTile(String(localized: "Исходящий"), live.upRate, "arrow.up", Theme.pink)
             }
 
             LiveThroughputChart(showLabels: false)
@@ -270,11 +278,11 @@ struct MenuBarPanel: View {
             if let l, l.isConnected {
                 Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 4) {
                     GridRow { Text("Сигнал").foregroundStyle(Theme.text3); Text("\(l.rssi) dBm · SNR \(l.snr) dB").foregroundStyle(Theme.text) }
-                    GridRow { Text("Канал").foregroundStyle(Theme.text3); Text(String(format: "%.0f Мбит/с · %@", l.txRate, PHY.label(l.phy))).foregroundStyle(Theme.text) }
+                    GridRow { Text("Канал").foregroundStyle(Theme.text3); Text(String(format: String(localized: "%.0f Мбит/с · %@"), l.txRate, PHY.label(l.phy))).foregroundStyle(Theme.text) }
                     if let r = tester.last {
                         GridRow {
                             Text("Интернет").foregroundStyle(Theme.text3)
-                            Text(String(format: "↓ %.0f / ↑ %.0f Мбит/с · %@", r.down / 1e6, r.up / 1e6, r.date.formatted(date: .omitted, time: .shortened))).foregroundStyle(Theme.text)
+                            Text(String(format: String(localized: "↓ %.0f / ↑ %.0f Мбит/с · %@"), r.down / 1e6, r.up / 1e6, r.date.formatted(date: .omitted, time: .shortened))).foregroundStyle(Theme.text)
                         }
                     }
                 }
@@ -285,7 +293,7 @@ struct MenuBarPanel: View {
                 Button {
                     tester.run(monitor: monitor)
                 } label: {
-                    Label(tester.running ? "Тест… \(Int(tester.progress * 100))%" : "Тест скорости", systemImage: "speedometer")
+                    Label(tester.running ? String(localized: "Тест… \(Int(tester.progress * 100))%") : String(localized: "Тест скорости"), systemImage: "speedometer")
                 }
                 .buttonStyle(.premiumSecondary)
                 .disabled(tester.running)
@@ -303,6 +311,7 @@ struct MenuBarPanel: View {
                     .help("Открыть рекомендации")
             }
 
+            UpdatePill()
             Divider().overlay(Theme.stroke)
             HStack {
                 Button("Открыть \(AppInfo.name)") { MainWindowController.shared.show() }

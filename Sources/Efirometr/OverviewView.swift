@@ -10,6 +10,7 @@ struct OverviewView: View {
         let a = monitor.assessment
         SnapshotScroll {
             VStack(spacing: 18) {
+                UpdateBanner()
                 hero(a)
                 LiveMetrics()
                 HStack(alignment: .top, spacing: 18) {
@@ -43,16 +44,16 @@ struct OverviewView: View {
                 Text(a.summary).font(.system(size: 14)).foregroundStyle(Theme.text2)
                 if let l = monitor.link, l.isConnected, let ch = l.channel {
                     HStack(spacing: 6) {
-                        Badge(text: ch.band.rawValue, icon: "antenna.radiowaves.left.and.right", tint: NetworkCard.color(ch.band))
-                        Badge(text: "Канал \(ch.number)", tint: Theme.accent)
-                        Badge(text: "\(ch.width) МГц", tint: Theme.text2)
+                        Badge(text: ch.band.title, icon: "antenna.radiowaves.left.and.right", tint: NetworkCard.color(ch.band))
+                        Badge(text: String(localized: "Канал \(ch.number)"), tint: Theme.accent)
+                        Badge(text: String(localized: "\(ch.width) МГц"), tint: Theme.text2)
                         Badge(text: PHY.label(l.phy), tint: Theme.pink).help(PHY.explain(l.phy))
                         Badge(text: l.security.name, icon: "lock.fill", tint: l.security.score >= 0.75 ? Theme.good : Theme.warn)
                     }
                 }
                 HStack(spacing: 10) {
                     Button { monitor.scan() } label: {
-                        Label(monitor.isScanning ? "Сканирую…" : "Сканировать эфир", systemImage: "dot.radiowaves.left.and.right")
+                        Label(monitor.isScanning ? String(localized: "Сканирую…") : String(localized: "Сканировать эфир"), systemImage: "dot.radiowaves.left.and.right")
                     }
                     .buttonStyle(.premium)
                     .disabled(monitor.isScanning)
@@ -76,13 +77,13 @@ struct OverviewView: View {
     }
 
     private var networkTitle: String {
-        guard let l = monitor.link, l.isConnected else { return "Не подключено" }
-        return l.ssid ?? "Ваша Wi‑Fi сеть"
+        guard let l = monitor.link, l.isConnected else { return String(localized: "Не подключено") }
+        return l.ssid ?? String(localized: "Ваша Wi‑Fi сеть")
     }
 
     private func topTips(_ a: Assessment) -> some View {
         let tips = a.recommendations.filter { $0.severity <= .tip }
-        return Card("Что улучшить", icon: "lightbulb",
+        return Card(String(localized: "Что улучшить"), icon: "lightbulb",
                     trailing: AnyView(Button("Все советы →") { nav.section = .advice }.buttonStyle(.plain).font(.system(size: 12, weight: .semibold)).foregroundStyle(Theme.accent))) {
             if tips.isEmpty {
                 HStack(spacing: 10) {
@@ -112,12 +113,12 @@ struct OverviewView: View {
     }
 
     private var shortcuts: some View {
-        Card("Инструменты", icon: "square.grid.2x2") {
+        Card(String(localized: "Инструменты"), icon: "square.grid.2x2") {
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
-                ShortcutTile(icon: "speedometer", title: "Тест скорости", subtitle: SpeedTester.shared.last.map { String(format: "↓ %.0f Мбит/с", $0.down / 1e6) } ?? "ещё не было", tint: Theme.cyan) { nav.section = .speed }
-                ShortcutTile(icon: "waveform.path.ecg", title: "Монитор", subtitle: "живые графики", tint: Theme.accent) { nav.section = .monitor }
-                ShortcutTile(icon: "chart.xyaxis.line", title: "Каналы", subtitle: "сетей рядом: \(monitor.groups.filter { !$0.isMine }.count)", tint: Theme.violet) { nav.section = .channels }
-                ShortcutTile(icon: "map", title: "Карта квартиры", subtitle: SurveyStore.shared.rooms.isEmpty ? "обход комнат" : "комнат: \(SurveyStore.shared.rooms.count)", tint: Theme.pink) { nav.section = .survey }
+                ShortcutTile(icon: "speedometer", title: String(localized: "Тест скорости"), subtitle: SpeedTester.shared.last.map { String(format: String(localized: "↓ %.0f Мбит/с"), $0.down / 1e6) } ?? String(localized: "ещё не было"), tint: Theme.cyan) { nav.section = .speed }
+                ShortcutTile(icon: "waveform.path.ecg", title: String(localized: "Монитор"), subtitle: String(localized: "живые графики"), tint: Theme.accent) { nav.section = .monitor }
+                ShortcutTile(icon: "chart.xyaxis.line", title: String(localized: "Каналы"), subtitle: String(localized: "сетей рядом: \(monitor.groups.filter { !$0.isMine }.count)"), tint: Theme.violet) { nav.section = .channels }
+                ShortcutTile(icon: "map", title: String(localized: "Карта квартиры"), subtitle: SurveyStore.shared.rooms.isEmpty ? String(localized: "обход комнат") : String(localized: "комнат: \(SurveyStore.shared.rooms.count)"), tint: Theme.pink) { nav.section = .survey }
             }
         }
     }
@@ -158,34 +159,34 @@ struct LiveMetrics: View {
         let ok = l?.isConnected == true
         let ceiling = Analyzer.maxRate(width: min(monitor.capabilities?.maxWidth ?? 80, l?.channel?.width ?? 80))
         return HStack(spacing: 14) {
-            MetricCard(title: "Сигнал", value: ok ? "\(l!.rssi)" : "—", unit: "dBm",
-                       caption: ok ? quality(l!.rssi) : "нет данных", icon: "wifi",
+            MetricCard(title: String(localized: "Сигнал"), value: ok ? "\(l!.rssi)" : "—", unit: "dBm",
+                       caption: ok ? quality(l!.rssi) : String(localized: "нет данных"), icon: "wifi",
                        tint: ok ? Palette.rssi(l!.rssi) : Theme.text3,
                        progress: ok ? Double(l!.rssi + 90) / 60 : nil, ticks: [23.0 / 60, 35.0 / 60], hint: Hints.signal)
-            MetricCard(title: "Сигнал / шум", value: ok ? "\(l!.snr)" : "—", unit: "dB",
-                       caption: ok ? "шум \(l!.noise) dBm · \(snrQuality(l!.snr))" : "нет данных", icon: "waveform",
+            MetricCard(title: String(localized: "Сигнал / шум"), value: ok ? "\(l!.snr)" : "—", unit: "dB",
+                       caption: ok ? String(localized: "шум \(l!.noise) dBm · \(snrQuality(l!.snr))") : String(localized: "нет данных"), icon: "waveform",
                        tint: ok ? Palette.score(Double(l!.snr - 10) / 30) : Theme.text3,
                        progress: ok ? Double(l!.snr) / 50 : nil, ticks: [0.5, 0.8], hint: Hints.snr)
-            MetricCard(title: "Скорость канала", value: ok ? String(format: "%.0f", l!.txRate) : "—", unit: "Мбит/с",
-                       caption: ok ? String(format: "%.0f%% от потолка %.0f", l!.txRate / ceiling * 100, ceiling) : "нет данных",
+            MetricCard(title: String(localized: "Скорость канала"), value: ok ? String(format: "%.0f", l!.txRate) : "—", unit: String(localized: "Мбит/с"),
+                       caption: ok ? String(format: String(localized: "%.0f%% от потолка %.0f"), l!.txRate / ceiling * 100, ceiling) : String(localized: "нет данных"),
                        icon: "speedometer", tint: Theme.accent, progress: ok ? l!.txRate / ceiling : nil, hint: Hints.rate)
-            MetricCard(title: "Трафик сейчас", value: Format.speed(live.downRate), unit: "",
-                       caption: "↑ отдача " + Format.speed(live.upRate), icon: "arrow.up.arrow.down", tint: Theme.cyan, hint: Hints.traffic)
+            MetricCard(title: String(localized: "Трафик сейчас"), value: Format.speed(live.downRate), unit: "",
+                       caption: String(localized: "↑ отдача ") + Format.speed(live.upRate), icon: "arrow.up.arrow.down", tint: Theme.cyan, hint: Hints.traffic)
         }
     }
 
     private func quality(_ rssi: Int) -> String {
-        if rssi >= -55 { return "отличный сигнал" }
-        if rssi >= -67 { return "хороший сигнал" }
-        if rssi >= -75 { return "средний сигнал" }
-        return "слабый сигнал"
+        if rssi >= -55 { return String(localized: "отличный сигнал") }
+        if rssi >= -67 { return String(localized: "хороший сигнал") }
+        if rssi >= -75 { return String(localized: "средний сигнал") }
+        return String(localized: "слабый сигнал")
     }
 
     private func snrQuality(_ snr: Int) -> String {
-        if snr >= 40 { return "чисто" }
-        if snr >= 25 { return "нормально" }
-        if snr >= 15 { return "помехи" }
-        return "сильные помехи"
+        if snr >= 40 { return String(localized: "чисто") }
+        if snr >= 25 { return String(localized: "нормально") }
+        if snr >= 15 { return String(localized: "помехи") }
+        return String(localized: "сильные помехи")
     }
 }
 
@@ -211,7 +212,7 @@ struct AdviceView: View {
 
     private func breakdown(_ a: Assessment) -> some View {
         let weakest = a.components.min { $0.value < $1.value }?.id
-        return Card("Из чего складывается оценка", icon: "chart.bar.doc.horizontal", hint: Hints.breakdown,
+        return Card(String(localized: "Из чего складывается оценка"), icon: "chart.bar.doc.horizontal", hint: Hints.breakdown,
                     trailing: AnyView(Text("\(a.score) / 100").font(Theme.number(14)).foregroundStyle(Palette.score(Double(a.score) / 100)))) {
             VStack(spacing: 14) {
                 ForEach(a.components) { c in
@@ -237,8 +238,8 @@ struct AdviceView: View {
     private func recommendations(_ a: Assessment) -> some View {
         let firstWithSteps = a.recommendations.first { !$0.steps.isEmpty }?.title
         let actionable = a.recommendations.filter { $0.severity <= .tip }.count
-        return Card("Рекомендации", icon: "lightbulb",
-                    trailing: AnyView(Text(actionable == 0 ? "всё в порядке" : "что улучшить: \(actionable)")
+        return Card(String(localized: "Рекомендации"), icon: "lightbulb",
+                    trailing: AnyView(Text(actionable == 0 ? String(localized: "всё в порядке") : String(localized: "что улучшить: \(actionable)"))
                         .font(.system(size: 12)).foregroundStyle(Theme.text3))) {
             VStack(spacing: 2) {
                 // Keyed by title so rows keep their expanded state when the assessment refreshes.
@@ -261,18 +262,18 @@ struct MonitorView: View {
         SnapshotScroll {
             VStack(spacing: 18) {
                 LiveMetrics()
-                Card("Сигнал в реальном времени · 2 минуты", icon: "waveform.path.ecg", hint: Hints.signalChart,
+                Card(String(localized: "Сигнал в реальном времени · 2 минуты"), icon: "waveform.path.ecg", hint: Hints.signalChart,
                      trailing: AnyView(Text(live.link.map { "\($0.rssi) dBm" } ?? "").font(Theme.number(13)).foregroundStyle(Theme.accent))) {
                     LiveSignalChart().frame(height: 200)
-                    ChartLegend(items: [("Сигнал", Theme.accent), ("Шум", Theme.text3)])
+                    ChartLegend(items: [(String(localized: "Сигнал"), Theme.accent), (String(localized: "Шум"), Theme.text3)])
                 }
-                Card("Трафик Wi‑Fi · Мбит/с", icon: "arrow.up.arrow.down", hint: Hints.traffic,
+                Card(String(localized: "Трафик Wi‑Fi · Мбит/с"), icon: "arrow.up.arrow.down", hint: Hints.traffic,
                      trailing: AnyView(HStack(spacing: 10) {
                          Text("↓ \(Format.speed(live.downRate))").foregroundStyle(Theme.cyan)
                          Text("↑ \(Format.speed(live.upRate))").foregroundStyle(Theme.pink)
                      }.font(Theme.number(12.5)))) {
                     LiveThroughputChart().frame(height: 200)
-                    ChartLegend(items: [("Входящий", Theme.cyan), ("Исходящий", Theme.pink)])
+                    ChartLegend(items: [(String(localized: "Входящий"), Theme.cyan), (String(localized: "Исходящий"), Theme.pink)])
                 }
                 LatencyCard()
             }
@@ -301,8 +302,8 @@ struct LatencyCard: View {
     @EnvironmentObject var monitor: WiFiMonitor
 
     var body: some View {
-        Card("Задержка и потери", icon: "timer", hint: Hints.latency,
-             trailing: AnyView(Button(monitor.isTestingLatency ? "Измеряю…" : (monitor.latency.isEmpty ? "Запустить" : "Повторить")) { monitor.testLatency() }
+        Card(String(localized: "Задержка и потери"), icon: "timer", hint: Hints.latency,
+             trailing: AnyView(Button(monitor.isTestingLatency ? String(localized: "Измеряю…") : (monitor.latency.isEmpty ? String(localized: "Запустить") : String(localized: "Повторить"))) { monitor.testLatency() }
                 .buttonStyle(.premiumSecondary)
                 .disabled(monitor.isTestingLatency))) {
             if monitor.latency.isEmpty {
@@ -327,27 +328,27 @@ struct LatencyCard: View {
     }
 
     private var verdict: String? {
-        guard let gw = monitor.latency.first(where: { $0.label == "Роутер" }),
-              let inet = monitor.latency.first(where: { $0.label == "Интернет" }) else { return nil }
-        if gw.avg > 15 || gw.loss > 0.01 { return "Узкое место — Wi‑Fi между Mac и роутером." }
-        if inet.avg - gw.avg > 60 { return "Wi‑Fi в порядке, задержку добавляет провайдер." }
-        return "И Wi‑Fi, и интернет отвечают быстро."
+        guard let gw = monitor.latency.first(where: { $0.label == String(localized: "Роутер") }),
+              let inet = monitor.latency.first(where: { $0.label == String(localized: "Интернет") }) else { return nil }
+        if gw.avg > 15 || gw.loss > 0.01 { return String(localized: "Узкое место — Wi‑Fi между Mac и роутером.") }
+        if inet.avg - gw.avg > 60 { return String(localized: "Wi‑Fi в порядке, задержку добавляет провайдер.") }
+        return String(localized: "И Wi‑Fi, и интернет отвечают быстро.")
     }
 
     private func tile(_ r: LatencyResult) -> some View {
-        let isGW = r.label == "Роутер"
+        let isGW = r.label == String(localized: "Роутер")
         let tint = r.loss >= 1 ? Theme.bad : Palette.score(1 - r.avg / (isGW ? 40 : 150))
         return VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 6) {
                 Image(systemName: isGW ? "wifi.router" : "globe").foregroundStyle(Theme.text3)
-                Text(isGW ? "До роутера" : "До интернета").font(.system(size: 12, weight: .semibold)).foregroundStyle(Theme.text2)
+                Text(isGW ? String(localized: "До роутера") : String(localized: "До интернета")).font(.system(size: 12, weight: .semibold)).foregroundStyle(Theme.text2)
             }
             HStack(alignment: .firstTextBaseline, spacing: 4) {
                 Text(r.loss >= 1 ? "—" : String(format: "%.0f", r.avg)).font(Theme.number(30)).foregroundStyle(tint)
-                Text(r.loss >= 1 ? "нет ответа" : "мс").font(.system(size: 13)).foregroundStyle(Theme.text3)
+                Text(r.loss >= 1 ? String(localized: "нет ответа") : String(localized: "мс")).font(.system(size: 13)).foregroundStyle(Theme.text3)
             }
-            Text(String(format: "джиттер %.0f мс · %.0f–%.0f мс", r.jitter, r.min, r.max)).font(.system(size: 11.5)).foregroundStyle(Theme.text3)
-            Text(String(format: "потери %.0f%%", r.loss * 100)).font(.system(size: 11.5, weight: r.loss > 0 ? .semibold : .regular))
+            Text(String(format: String(localized: "джиттер %.0f мс · %.0f–%.0f мс"), r.jitter, r.min, r.max)).font(.system(size: 11.5)).foregroundStyle(Theme.text3)
+            Text(String(format: String(localized: "потери %.0f%%"), r.loss * 100)).font(.system(size: 11.5, weight: r.loss > 0 ? .semibold : .regular))
                 .foregroundStyle(r.loss > 0 ? Theme.warn : Theme.text3)
         }
         .padding(14)

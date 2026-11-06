@@ -40,7 +40,7 @@ final class SurveyStore: ObservableObject {
         progress = 0
         Task {
             let gateway = monitor.capabilities?.gateway
-            async let ping: LatencyResult? = gateway != nil ? Pinger.run(label: "Роутер", host: gateway!, count: 20) : nil
+            async let ping: LatencyResult? = gateway != nil ? Pinger.run(label: String(localized: "Роутер"), host: gateway!, count: 20) : nil
             var rssi: [Int] = [], snr: [Int] = [], rate: [Double] = []
             for i in 0..<20 {
                 if let l = LiveData.shared.link, l.isConnected {
@@ -55,7 +55,7 @@ final class SurveyStore: ObservableObject {
                 let m = RoomMeasurement(name: name, date: .now,
                                         rssi: rssi.reduce(0, +) / rssi.count, snr: snr.reduce(0, +) / snr.count,
                                         rate: rate.reduce(0, +) / Double(rate.count),
-                                        ping: p?.avg, loss: p?.loss, band: monitor.link?.channel?.band.rawValue)
+                                        ping: p?.avg, loss: p?.loss, band: monitor.link?.channel?.band.title)
                 rooms.removeAll { $0.name.lowercased() == name.lowercased() }
                 rooms.append(m)
                 save()
@@ -74,15 +74,15 @@ struct SurveyView: View {
     @ObservedObject var store = SurveyStore.shared
     @State private var name = ""
 
-    private let presets = ["Гостиная", "Спальня", "Кухня", "Кабинет", "Детская", "Балкон", "Ванная"]
+    private let presets = [String(localized: "Гостиная"), String(localized: "Спальня"), String(localized: "Кухня"), String(localized: "Кабинет"), String(localized: "Детская"), String(localized: "Балкон"), String(localized: "Ванная")]
 
     var body: some View {
         SnapshotScroll {
             VStack(spacing: 18) {
-                Card("Обход квартиры", icon: "map", hint: Hint(title: "Как пользоваться",
-                    body: "Перенесите ноутбук в комнату, выберите её название и нажмите «Замерить». За 10 секунд приложение усреднит сигнал и проверит пинг до роутера. Повторите для каждой комнаты: увидите, где связь проседает и куда ставить роутер или mesh‑точку.")) {
+                Card(String(localized: "Обход квартиры"), icon: "map", hint: Hint(title: String(localized: "Как пользоваться"),
+                    body: String(localized: "Перенесите ноутбук в комнату, выберите её название и нажмите «Замерить». За 10 секунд приложение усреднит сигнал и проверит пинг до роутера. Повторите для каждой комнаты: увидите, где связь проседает и куда ставить роутер или mesh‑точку."))) {
                     HStack(spacing: 6) {
-                        ForEach(Array(["1. Перейдите в комнату", "2. Выберите название", "3. Замерьте и не двигайтесь 10 с"].enumerated()), id: \.offset) { _, s in
+                        ForEach(Array([String(localized: "1. Перейдите в комнату"), String(localized: "2. Выберите название"), String(localized: "3. Замерьте и не двигайтесь 10 с")].enumerated()), id: \.offset) { _, s in
                             Text(s).font(.system(size: 12, weight: .medium)).foregroundStyle(Theme.text2)
                                 .padding(.horizontal, 10).padding(.vertical, 6).background(Color.white.opacity(0.05), in: Capsule())
                         }
@@ -109,7 +109,7 @@ struct SurveyView: View {
                         Button {
                             store.measure(name, monitor: monitor)
                         } label: {
-                            Label(store.measuring != nil ? "Замеряю «\(store.measuring!)»…" : "Замерить", systemImage: "scope")
+                            Label(store.measuring != nil ? String(localized: "Замеряю «\(store.measuring!)»…") : String(localized: "Замерить"), systemImage: "scope")
                         }
                         .buttonStyle(.premium)
                         .disabled(store.measuring != nil || name.trimmingCharacters(in: .whitespaces).isEmpty)
@@ -143,13 +143,13 @@ struct SurveyView: View {
         let weak = sorted.filter { $0.rssi < -70 }
         let text: String
         if store.rooms.count == 1 {
-            text = "Замерьте ещё хотя бы одну комнату, чтобы сравнить."
+            text = String(localized: "Замерьте ещё хотя бы одну комнату, чтобы сравнить.")
         } else if weak.isEmpty {
-            text = "Во всех комнатах сигнал достаточный. Лучше всего в «\(best.name)», хуже всего в «\(worst.name)» (\(worst.rssi) dBm), но и там хватит для видео."
+            text = String(localized: "Во всех комнатах сигнал достаточный. Лучше всего в «\(best.name)», хуже всего в «\(worst.name)» (\(worst.rssi) dBm), но и там хватит для видео.")
         } else {
-            text = "Слабое покрытие: \(weak.map { "«\($0.name)» (\($0.rssi) dBm)" }.joined(separator: ", ")). Передвиньте роутер ближе к этим комнатам или поставьте mesh‑точку на полпути между «\(best.name)» и «\(weak.last!.name)». Репитер в самой слабой комнате не поможет: он будет повторять уже плохой сигнал."
+            text = String(localized: "Слабое покрытие: \(weak.map { "«\($0.name)» (\($0.rssi) dBm)" }.joined(separator: ", ")). Передвиньте роутер ближе к этим комнатам или поставьте mesh‑точку на полпути между «\(best.name)» и «\(weak.last!.name)». Репитер в самой слабой комнате не поможет: он будет повторять уже плохой сигнал.")
         }
-        return Card("Вывод", icon: "sparkles") {
+        return Card(String(localized: "Вывод"), icon: "sparkles") {
             Text(text).font(.system(size: 13.5)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -173,10 +173,10 @@ struct SurveyView: View {
             GaugeBar(value: r.quality, tint: tint)
             HStack(spacing: 12) {
                 mini("SNR", "\(r.snr) dB")
-                mini("Скорость", String(format: "%.0f", r.rate))
-                mini("Пинг", r.ping.map { String(format: "%.0f мс", $0) } ?? "—")
+                mini(String(localized: "Скорость"), String(format: "%.0f", r.rate))
+                mini(String(localized: "Пинг"), r.ping.map { String(format: String(localized: "%.0f мс"), $0) } ?? "—")
             }
-            if let loss = r.loss, loss > 0 { Text(String(format: "потери %.0f%%", loss * 100)).font(.system(size: 11.5)).foregroundStyle(Theme.warn) }
+            if let loss = r.loss, loss > 0 { Text(String(format: String(localized: "потери %.0f%%"), loss * 100)).font(.system(size: 11.5)).foregroundStyle(Theme.warn) }
             Text("\(r.band ?? "") · \(r.date.formatted(date: .omitted, time: .shortened))").font(.system(size: 11)).foregroundStyle(Theme.text3)
         }
         .padding(16)
@@ -252,12 +252,12 @@ struct AppTrafficView: View {
         SnapshotScroll {
             VStack(spacing: 18) {
                 HStack(spacing: 14) {
-                    total("Всего входящий", live.downRate, Theme.cyan, "arrow.down")
-                    total("Всего исходящий", live.upRate, Theme.pink, "arrow.up")
+                    total(String(localized: "Всего входящий"), live.downRate, Theme.cyan, "arrow.down")
+                    total(String(localized: "Всего исходящий"), live.upRate, Theme.pink, "arrow.up")
                 }
-                Card("Кто сейчас использует Wi‑Fi", icon: "app.badge",
-                     hint: Hint(title: "Трафик по приложениям", body: "Скорость каждого процесса через Wi‑Fi за последнюю секунду (данные системной утилиты nettop). Помогает найти, кто «съедает» канал: облачная синхронизация, торрент, обновления."),
-                     trailing: AnyView(Text(traffic.lastUpdate.map { "обновлено \($0.formatted(date: .omitted, time: .standard))" } ?? "загрузка…").font(.system(size: 11.5)).foregroundStyle(Theme.text3))) {
+                Card(String(localized: "Кто сейчас использует Wi‑Fi"), icon: "app.badge",
+                     hint: Hint(title: String(localized: "Трафик по приложениям"), body: String(localized: "Скорость каждого процесса через Wi‑Fi за последнюю секунду (данные системной утилиты nettop). Помогает найти, кто «съедает» канал: облачная синхронизация, торрент, обновления.")),
+                     trailing: AnyView(Text(traffic.lastUpdate.map { String(localized: "обновлено \($0.formatted(date: .omitted, time: .standard))") } ?? String(localized: "загрузка…")).font(.system(size: 11.5)).foregroundStyle(Theme.text3))) {
                     if traffic.apps.isEmpty {
                         Text("Сейчас никто не передаёт данные через Wi‑Fi.").font(.system(size: 13)).foregroundStyle(Theme.text2)
                     }
@@ -322,15 +322,15 @@ struct AppTrafficView: View {
 extension SurveyStore {
     func loadDemo() {
         let now = Date()
-        rooms = [("Гостиная", -48, 44, 1201.0, 3.0), ("Кухня", -59, 33, 864.0, 5.0), ("Кабинет", -63, 29, 720.0, 6.0), ("Спальня", -74, 18, 286.0, 14.0)].map {
-            RoomMeasurement(name: $0.0, date: now, rssi: $0.1, snr: $0.2, rate: $0.3, ping: $0.4, loss: 0, band: "5 ГГц")
+        rooms = [(String(localized: "Гостиная"), -48, 44, 1201.0, 3.0), (String(localized: "Кухня"), -59, 33, 864.0, 5.0), (String(localized: "Кабинет"), -63, 29, 720.0, 6.0), (String(localized: "Спальня"), -74, 18, 286.0, 14.0)].map {
+            RoomMeasurement(name: $0.0, date: now, rssi: $0.1, snr: $0.2, rate: $0.3, ping: $0.4, loss: 0, band: String(localized: "5 ГГц"))
         }
     }
 }
 
 extension AppTrafficMonitor {
     func loadDemo() {
-        apps = [AppTraffic(name: "Safari", pid: 0, down: 3.1e6, up: 0.12e6), AppTraffic(name: "Музыка", pid: 0, down: 0.41e6, up: 0.01e6),
+        apps = [AppTraffic(name: "Safari", pid: 0, down: 3.1e6, up: 0.12e6), AppTraffic(name: String(localized: "Музыка"), pid: 0, down: 0.41e6, up: 0.01e6),
                 AppTraffic(name: "iCloud Drive", pid: 0, down: 0.05e6, up: 0.9e6), AppTraffic(name: "Telegram", pid: 0, down: 0.08e6, up: 0.02e6),
                 AppTraffic(name: "mDNSResponder", pid: 0, down: 0.002e6, up: 0.001e6)]
         lastUpdate = .now

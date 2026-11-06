@@ -3,8 +3,8 @@ import CoreImage.CIFilterBuiltins
 
 /// Product identity in one place, so a rename touches a single constant.
 enum AppInfo {
-    static let name = "Эфирометр"
-    static let tagline = "Понятная диагностика домашнего Wi‑Fi для Mac"
+    static let name = String(localized: "Эфирометр")
+    static let tagline = String(localized: "Понятная диагностика домашнего Wi‑Fi для Mac")
     static let bundleID = "local.efirometr"
     static let isDemo = CommandLine.arguments.contains("--demo")
 
@@ -18,7 +18,7 @@ enum AppInfo {
     static var version: String { Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0" }
 
     static let donationAddress = "TXaAjjkbDLFbFKS2pWfmneXzfRNZZgGWkW"
-    static let donationNetwork = "USDT · сеть TRON (TRC20)"
+    static let donationNetwork = String(localized: "USDT · сеть TRON (TRC20)")
 }
 
 enum QRCode {
@@ -39,12 +39,12 @@ struct DonateView: View {
     @State private var copied = false
 
     private let features: [(String, String, String, Color)] = [
-        ("gauge.with.dots.needle.67percent", "Оценка и советы", "Балл от 0 до 100 и пошаговые инструкции, что поменять в роутере", Theme.good),
-        ("chart.xyaxis.line", "Каналы и соседи", "Спектр эфира, загрузка каналов и лучший канал для вашей сети", Theme.accent),
-        ("speedometer", "Тест скорости", "Реальная скорость интернета и где узкое место — Wi‑Fi или провайдер", Theme.cyan),
-        ("clock.arrow.circlepath", "Журнал и уведомления", "История обрывов и задержек, оповещения о проблемах", Theme.warn),
-        ("map", "Карта квартиры", "Замеры по комнатам: где слабый сигнал и куда ставить роутер", Theme.pink),
-        ("menubar.rectangle", "Скорость в строке меню", "Входящий и исходящий трафик всегда на виду", Theme.violet),
+        ("gauge.with.dots.needle.67percent", String(localized: "Оценка и советы"), String(localized: "Балл от 0 до 100 и пошаговые инструкции, что поменять в роутере"), Theme.good),
+        ("chart.xyaxis.line", String(localized: "Каналы и соседи"), String(localized: "Спектр эфира, загрузка каналов и лучший канал для вашей сети"), Theme.accent),
+        ("speedometer", String(localized: "Тест скорости"), String(localized: "Реальная скорость интернета и где узкое место — Wi‑Fi или провайдер"), Theme.cyan),
+        ("clock.arrow.circlepath", String(localized: "Журнал и уведомления"), String(localized: "История обрывов и задержек, оповещения о проблемах"), Theme.warn),
+        ("map", String(localized: "Карта квартиры"), String(localized: "Замеры по комнатам: где слабый сигнал и куда ставить роутер"), Theme.pink),
+        ("menubar.rectangle", String(localized: "Скорость в строке меню"), String(localized: "Входящий и исходящий трафик всегда на виду"), Theme.violet),
     ]
 
     var body: some View {
@@ -74,7 +74,7 @@ struct DonateView: View {
                 .frame(width: 112, height: 112)
                 .shadow(color: Theme.accent.opacity(0.35), radius: 18, y: 6)
             VStack(alignment: .leading, spacing: 8) {
-                Eyebrow(text: "О проекте", icon: "sparkles")
+                Eyebrow(text: String(localized: "О проекте"), icon: "sparkles")
                 Text(AppInfo.name).font(.system(size: 30, weight: .bold, design: .rounded)).foregroundStyle(Theme.text)
                 Text(AppInfo.tagline).font(.system(size: 15, weight: .medium)).foregroundStyle(Theme.accent)
                 Text("Wi‑Fi тормозит, а непонятно почему? Приложение смотрит на сеть глазами инженера: силу сигнала, помехи, загрузку каналов соседями, стандарт и защиту — и переводит всё это на человеческий язык. Без графиков ради графиков: только понятный диагноз и конкретные шаги, что сделать.")
@@ -108,10 +108,10 @@ struct DonateView: View {
 
     private var principles: some View {
         HStack(spacing: 10) {
-            principle("lock.shield", "Данные не покидают Mac")
-            principle("person.crop.circle.badge.xmark", "Без аккаунтов и рекламы")
-            principle("bolt", "Лёгкое: ~1% процессора")
-            principle("gift", "Бесплатно")
+            principle("lock.shield", String(localized: "Данные не покидают Mac"))
+            principle("person.crop.circle.badge.xmark", String(localized: "Без аккаунтов и рекламы"))
+            principle("bolt", String(localized: "Лёгкое: ~1% процессора"))
+            principle("gift", String(localized: "Бесплатно"))
         }
     }
 
@@ -143,7 +143,7 @@ struct DonateView: View {
             }
 
             VStack(alignment: .leading, spacing: 12) {
-                Eyebrow(text: "Поддержать разработку", icon: "heart.fill")
+                Eyebrow(text: String(localized: "Поддержать разработку"), icon: "heart.fill")
                 Text("Если приложение помогло — можно угостить автора кофе")
                     .font(.system(size: 20, weight: .bold, design: .rounded)).foregroundStyle(Theme.text)
                 Text("Проект развивается в свободное время. Любая сумма помогает добавлять новые функции и держать приложение бесплатным.")
@@ -168,7 +168,7 @@ struct DonateView: View {
                         withAnimation { copied = true }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { withAnimation { copied = false } }
                     } label: {
-                        Label(copied ? "Скопировано" : "Скопировать", systemImage: copied ? "checkmark" : "doc.on.doc")
+                        Label(copied ? String(localized: "Скопировано") : String(localized: "Скопировать"), systemImage: copied ? "checkmark" : "doc.on.doc")
                     }
                     .buttonStyle(.premium)
                 }

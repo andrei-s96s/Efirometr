@@ -104,7 +104,7 @@ struct LiveSignalChart: View {
         LiveChart(series: [
             .init(values: live.history.map { Double($0.rssi) }, color: Theme.accent, fill: true),
             .init(values: live.history.map { Double($0.noise) }, color: Theme.text3, dashed: true, width: 1),
-        ], range: -100 ... -20, label: { "\(Int($0))" }, threshold: (-67, "−67 dBm — минимум для видео", Theme.warn))
+        ], range: -100 ... -20, label: { "\(Int($0))" }, threshold: (-67, String(localized: "−67 dBm — минимум для видео"), Theme.warn))
     }
 }
 

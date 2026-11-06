@@ -97,7 +97,7 @@ final class WiFiMonitor: NSObject, ObservableObject {
     private func handlePing(_ ms: Double?) {
         if let ms {
             windowPings.append(ms)
-            if lossReported { Journal.shared.add(.lossRecovered, String(format: "Роутер снова отвечает (%.0f мс)", ms)) }
+            if lossReported { Journal.shared.add(.lossRecovered, String(format: String(localized: "Роутер снова отвечает (%.0f мс)"), ms)) }
             lossStreak = 0
             lossReported = false
         } else {
@@ -105,7 +105,7 @@ final class WiFiMonitor: NSObject, ObservableObject {
             lossStreak += 1
             if lossStreak >= 3 && !lossReported {
                 lossReported = true
-                Journal.shared.add(.loss, "Роутер не ответил на 3 пинга подряд")
+                Journal.shared.add(.loss, String(localized: "Роутер не ответил на 3 пинга подряд"))
             }
         }
     }
@@ -133,31 +133,31 @@ final class WiFiMonitor: NSObject, ObservableObject {
         guard let p = prevLink else { return }
         let j = Journal.shared
         if p.isConnected && !s.isConnected {
-            j.add(.disconnect, "Wi‑Fi отключился" + (p.ssid.map { " от «\($0)»" } ?? ""))
+            j.add(.disconnect, String(localized: "Wi‑Fi отключился") + (p.ssid.map { String(localized: " от «\($0)»") } ?? ""))
             return
         }
         if !p.isConnected && s.isConnected {
-            j.add(.reconnect, "Подключено" + (s.ssid.map { " к «\($0)»" } ?? "") + " · \(s.channel?.band.rawValue ?? "") · \(s.rssi) dBm")
+            j.add(.reconnect, String(localized: "Подключено") + (s.ssid.map { String(localized: " к «\($0)»") } ?? "") + " · \(s.channel?.band.title ?? "") · \(s.rssi) dBm")
             return
         }
         guard p.isConnected, s.isConnected, let pc = p.channel, let sc = s.channel else { return }
         if pc.band != sc.band {
-            j.add(.bandChange, "Диапазон: \(pc.band.rawValue) → \(sc.band.rawValue)")
+            j.add(.bandChange, String(localized: "Диапазон: \(pc.band.title) → \(sc.band.title)"))
         } else if pc.number != sc.number {
-            j.add(.channelChange, "Канал роутера: \(pc.number) → \(sc.number)")
+            j.add(.channelChange, String(localized: "Канал роутера: \(pc.number) → \(sc.number)"))
         }
         if let a = p.bssid, let b = s.bssid, a != b {
-            j.add(.roam, "Переход на другую точку доступа (\(b))")
+            j.add(.roam, String(localized: "Переход на другую точку доступа (\(b))"))
         }
         let threshold = AppSettings.shared.signalThreshold
         if s.rssi < threshold {
             if weakSince == nil { weakSince = .now }
             if !weakReported, let since = weakSince, Date().timeIntervalSince(since) >= 15 {
                 weakReported = true
-                j.add(.weakSignal, "Сигнал \(s.rssi) dBm — ниже порога \(threshold) dBm")
+                j.add(.weakSignal, String(localized: "Сигнал \(s.rssi) dBm — ниже порога \(threshold) dBm"))
             }
         } else if s.rssi >= threshold + 3 {
-            if weakReported { j.add(.signalRecovered, "Сигнал восстановился: \(s.rssi) dBm") }
+            if weakReported { j.add(.signalRecovered, String(localized: "Сигнал восстановился: \(s.rssi) dBm")) }
             weakSince = nil
             weakReported = false
         }
@@ -333,8 +333,8 @@ final class WiFiMonitor: NSObject, ObservableObject {
         isTestingLatency = true
         Task {
             let gateway = await Task.detached { SystemInfo.defaultGateway() }.value
-            async let gw: LatencyResult? = gateway != nil ? Pinger.run(label: "Роутер", host: gateway!) : nil
-            async let inet = Pinger.run(label: "Интернет", host: "1.1.1.1")
+            async let gw: LatencyResult? = gateway != nil ? Pinger.run(label: String(localized: "Роутер"), host: gateway!) : nil
+            async let inet = Pinger.run(label: String(localized: "Интернет"), host: "1.1.1.1")
             let results = await [gw, inet].compactMap { $0 }
             latency = results
             isTestingLatency = false
@@ -411,8 +411,8 @@ extension WiFiMonitor {
         groups = NetworkGroup.make(list)
         lastScan = .now
         locationAuthorized = true
-        latency = [LatencyResult(label: "Роутер", host: "192.168.1.1", avg: 3.2, min: 2.1, max: 9.8, jitter: 1.4, loss: 0),
-                   LatencyResult(label: "Интернет", host: "1.1.1.1", avg: 17.6, min: 14.2, max: 31.0, jitter: 3.1, loss: 0)]
+        latency = [LatencyResult(label: String(localized: "Роутер"), host: "192.168.1.1", avg: 3.2, min: 2.1, max: 9.8, jitter: 1.4, loss: 0),
+                   LatencyResult(label: String(localized: "Интернет"), host: "1.1.1.1", avg: 17.6, min: 14.2, max: 31.0, jitter: 3.1, loss: 0)]
         let snap = LinkSnapshot(interfaceName: "en0", ssid: "Home", bssid: "a4:2b:b0:5e:10:34", rssi: -52, noise: -92, txRate: 1201,
                                 channel: ChannelInfo(number: 36, band: .ghz5, width: 160), phy: .mode11ax, security: .wpa3Transition,
                                 countryCode: "EU", txPower: 63, powerOn: true)

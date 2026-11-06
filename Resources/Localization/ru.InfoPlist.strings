@@ -1,0 +1,4 @@
+"CFBundleName" = "Эфирометр";
+"CFBundleDisplayName" = "Эфирометр";
+"NSLocationUsageDescription" = "macOS показывает имена Wi‑Fi сетей (SSID/BSSID) только приложениям с доступом к геолокации. Координаты не используются.";
+"NSLocationWhenInUseUsageDescription" = "macOS показывает имена Wi‑Fi сетей (SSID/BSSID) только приложениям с доступом к геолокации. Координаты не используются.";
