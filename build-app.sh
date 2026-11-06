@@ -7,7 +7,9 @@ cd "$(dirname "$0")"
 NAME="Эфирометр"
 EXEC="Efirometr"
 BUNDLE_ID="local.efirometr"
-VERSION="${VERSION:-1.0.0}"   # CI passes the tag, e.g. VERSION=1.2.0
+# CI passes the tag (VERSION=1.2.0); locally fall back to the latest git tag.
+VERSION="${VERSION:-$(git describe --tags --abbrev=0 2>/dev/null | sed 's/^v//')}"
+VERSION="${VERSION:-1.0.0}"
 
 # Universal binary: Apple Silicon + Intel.
 ARCHS=(--arch arm64 --arch x86_64)
